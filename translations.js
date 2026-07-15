@@ -8,10 +8,10 @@
 const translations = {
 
   en: {
-    meta: { title: "Dr. [Your Name] — Mental Health Awareness", desc: "A public mental health awareness resource by a practising psychiatrist in Gujarat." },
+    meta: { title: "Dr. Raghav suthar — Mental Health Awareness", desc: "A public mental health awareness resource by a practising psychiatrist in Gujarat." },
     nav: { home:"Home", about:"About", services:"Services", topics:"Topics", resources:"Resources", blog:"Blog", contact:"Contact", bookConsultation:"Book a Consultation" },
     hero: {
-      eyebrow:"Mental Health Awareness · Gujarat",
+      eyebrow:"Mental Health Awareness ",
       title1:"It's okay to not be okay.",
       title2:"Let's talk about it, together.",
       subtitle:"A space for honest, judgement-free information on mental health — created by a practising psychiatrist to help you understand, cope, and know when and how to seek help.",
