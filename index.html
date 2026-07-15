@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. [Your Name] — Mental Health Awareness</title>
+<meta name="description" content="A public mental health awareness resource by a practising psychiatrist in Gujarat.">
+<meta property="og:title" content="Dr. [Your Name] — Mental Health Awareness">
+<meta property="og:description" content="Honest, judgement-free information on mental health, in English, Hindi and Gujarati.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%232D6A6A%22/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600&family=Noto+Sans+Gujarati:wght@400;500;600;700&family=Noto+Serif+Gujarati:wght@500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="lang-en">
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container nav-wrap">
+    <a href="#home" class="logo">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="18" fill="#2D6A6A" opacity="0.15"/>
+        <circle cx="20" cy="20" r="12" fill="#2D6A6A" opacity="0.35"/>
+        <circle cx="20" cy="20" r="6" fill="#D99A44"/>
+      </svg>
+      <span data-i18n="meta.title">Dr. [Your Name] — Mental Health Awareness</span>
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home" data-i18n="nav.home">Home</a></li>
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#topics" data-i18n="nav.topics">Topics</a></li>
+        <li><a href="#resources" data-i18n="nav.resources">Resources</a></li>
+        <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-right">
+      <div class="lang-switch" aria-label="Language switcher">
+        <button data-lang="en" class="active">English</button>
+        <button data-lang="hi">हिंदी</button>
+        <button data-lang="gu">ગુજરાતી</button>
+      </div>
+      <a href="#contact" class="btn btn-gold" style="padding:10px 18px;font-size:14px;" data-i18n="nav.bookConsultation">Book a Consultation</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" data-i18n="nav.home">Home</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#services" data-i18n="nav.services">Services</a>
+    <a href="#topics" data-i18n="nav.topics">Topics</a>
+    <a href="#resources" data-i18n="nav.resources">Resources</a>
+    <a href="#blog" data-i18n="nav.blog">Blog</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+    <div class="lang-switch lang-switch-mobile" style="margin-top:14px;">
+      <button data-lang="en">English</button>
+      <button data-lang="hi">हिंदी</button>
+      <button data-lang="gu">ગુજરાતી</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow" data-i18n="hero.eyebrow">Mental Health Awareness · Gujarat</div>
+      <h1><span data-i18n="hero.title1">It's okay to not be okay.</span><br><span class="line2" data-i18n="hero.title2">Let's talk about it, together.</span></h1>
+      <p class="subtitle" data-i18n="hero.subtitle">A space for honest, judgement-free information on mental health.</p>
+      <div class="hero-ctas">
+        <a href="#about" class="btn btn-primary" data-i18n="hero.ctaLearn">Learn More</a>
+        <a href="#contact" class="btn btn-gold" data-i18n="hero.ctaBook">Book a Consultation</a>
+        <a href="#resources" class="btn btn-ghost" data-i18n="hero.ctaResources">Find Resources</a>
+      </div>
+    </div>
+
+    <div class="breathe-wrap" aria-hidden="true">
+      <svg viewBox="0 0 300 300">
+        <circle class="breathe-ring r1" cx="150" cy="150" r="130" fill="#8FAF9F" opacity="0.18"/>
+        <circle class="breathe-ring r2" cx="150" cy="150" r="95" fill="#2D6A6A" opacity="0.22"/>
+        <circle class="breathe-ring r3" cx="150" cy="150" r="60" fill="#D99A44" opacity="0.35"/>
+        <circle cx="150" cy="150" r="30" fill="#163A3A"/>
+      </svg>
+      <div class="breathe-caption">Breathe in · Breathe out</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section-alt">
+  <div class="container about-grid">
+    <div>
+      <div class="eyebrow" data-i18n="about.eyebrow">About</div>
+      <h2 data-i18n="about.title">About the Doctor</h2>
+      <p data-i18n="about.bioLine1">Bio line 1</p>
+      <p data-i18n="about.bioLine2">Bio line 2</p>
+    </div>
+    <div class="mission-box reveal">
+      <h3 data-i18n="about.missionTitle">Our Mission</h3>
+      <p data-i18n="about.missionText">Mission text</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="services.eyebrow">What We Offer</div>
+      <h2 data-i18n="services.title">Services</h2>
+      <p data-i18n="services.subtitle">Support at every stage.</p>
+    </div>
+    <div class="grid-4" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- ================= TOPICS ================= -->
+<section id="topics" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="topics.eyebrow">Learn</div>
+      <h2 data-i18n="topics.title">Common Mental Health Topics</h2>
+      <p data-i18n="topics.subtitle">Understanding is the first step.</p>
+    </div>
+    <div class="grid-2x4" id="topicsGrid"></div>
+  </div>
+</section>
+
+<!-- ================= RESOURCES ================= -->
+<section id="resources">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="resources.eyebrow">Resources</div>
+      <h2 data-i18n="resources.title">Resources &amp; Self-Help</h2>
+      <p data-i18n="resources.subtitle">Free, confidential support is available right now.</p>
+    </div>
+    <div class="res-grid">
+      <div>
+        <h3 data-i18n="resources.helplinesTitle">National Helplines (India)</h3>
+        <div class="helpline-list" id="helplineList"></div>
+        <div class="res-disclaimer" data-i18n="resources.disclaimer">If in danger, call a helpline above.</div>
+      </div>
+      <div class="tips-box reveal">
+        <h3 data-i18n="resources.tipsTitle">Everyday Self-Help</h3>
+        <ul id="tipsList"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG ================= -->
+<section id="blog" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="blog.eyebrow">Read</div>
+      <h2 data-i18n="blog.title">Awareness Articles</h2>
+      <p data-i18n="blog.subtitle">Short reads on mental health, written for everyone.</p>
+    </div>
+    <div class="blog-grid" id="blogGrid"></div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="testimonials.eyebrow">Voices</div>
+      <h2 data-i18n="testimonials.title">What People Say</h2>
+    </div>
+    <div class="testi-grid" id="testiGrid"></div>
+    <p style="text-align:center;font-size:13px;margin-top:24px;" data-i18n="testimonials.disclaimer">Shared with permission.</p>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="contact.eyebrow">Get in Touch</div>
+      <h2 data-i18n="contact.title">Contact &amp; Appointments</h2>
+      <p data-i18n="contact.subtitle">Have a question, or want to book a consultation?</p>
+    </div>
+    <div class="contact-grid">
+      <div class="form-panel reveal">
+        <div class="form-success" id="formSuccess"></div>
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="fName" data-i18n="contact.formName">Full Name</label>
+            <input type="text" id="fName" name="name" required>
+          </div>
+          <div class="field">
+            <label for="fEmail" data-i18n="contact.formEmail">Email Address</label>
+            <input type="email" id="fEmail" name="email" required>
+          </div>
+          <div class="field">
+            <label for="fLang" data-i18n="contact.formLanguage">Preferred Language</label>
+            <select id="fLang" name="language">
+              <option value="en">English</option>
+              <option value="hi">हिंदी</option>
+              <option value="gu">ગુજરાતી</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fMessage" data-i18n="contact.formMessage">Message</label>
+            <textarea id="fMessage" name="message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="contact.formSubmit">Send Message</button>
+          <p class="form-note" data-i18n="contact.formNote">This form is for general queries.</p>
+        </form>
+      </div>
+
+      <div class="contact-side">
+        <div class="info-card reveal">
+          <h3 data-i18n="contact.clinicTitle">Clinic</h3>
+          <p data-i18n="contact.clinicAddressNote">Address and map will appear here.</p>
+          <p><strong data-i18n="contact.phoneLabel">Phone / WhatsApp</strong>: +91 00000 00000</p>
+          <p><strong data-i18n="contact.emailLabel">Email</strong>: hello@example.com</p>
+        </div>
+        <div class="map-placeholder">Google Maps embed goes here</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color:#fff;margin-bottom:12px;">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" fill="#D99A44" opacity="0.25"/>
+            <circle cx="20" cy="20" r="10" fill="#D99A44"/>
+          </svg>
+          <span data-i18n="meta.title">Dr. [Your Name]</span>
+        </div>
+        <p data-i18n="footer.about">A public mental health awareness initiative.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div>
+        <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#resources" data-i18n="nav.resources">Resources</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.disclaimerTitle">Disclaimer</h4>
+        <p class="footer-disclaimer" data-i18n="footer.disclaimerText">Not a substitute for professional care.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Dr. [Your Name]. <span data-i18n="footer.copyright">All rights reserved.</span></span>
+      <span data-i18n="footer.madeWith">Made with care.</span>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top">↑</button>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="translations.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
