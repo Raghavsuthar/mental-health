@@ -1,9 +1,7 @@
 /* ============================================================
    script.js
-   Handles: language switching, rendering repeated content
-   (services/topics/helplines/tips/blog/testimonials) from
-   translations.js, mobile menu, smooth scroll, back-to-top,
-   scroll reveal, and basic contact-form validation.
+   Upgraded to dynamically render pop-up modal panels
+   containing structured deep text for both public and clinicians.
    ============================================================ */
 
 (function () {
@@ -16,7 +14,6 @@
 
   function t(lang) { return translations[lang] || translations.en; }
 
-  /* ---------- set text for every [data-i18n] element ---------- */
   function applySimpleStrings(lang) {
     const dict = t(lang);
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -31,7 +28,6 @@
     document.documentElement.setAttribute('lang', lang);
   }
 
-  /* ---------- render card grids from arrays ---------- */
   function renderServices(lang) {
     const wrap = document.getElementById('servicesGrid');
     if (!wrap) return;
@@ -43,15 +39,92 @@
       </div>`).join('');
   }
 
+  /* Upgraded to make topic cards trigger the modal view */
   function renderTopics(lang) {
     const wrap = document.getElementById('topicsGrid');
     if (!wrap) return;
     wrap.innerHTML = t(lang).topics.items.map((item, i) => `
-      <div class="card topic-card reveal">
+      <div class="card topic-card reveal" data-index="${i}">
         <div class="icon">${ICONS.topics[i] || '•'}</div>
         <h3><span class="tag-dot"></span>${escapeHtml(item.title)}</h3>
         <p>${escapeHtml(item.desc)}</p>
+        <span style="color:var(--teal); font-size:13px; font-weight:600; display:block; margin-top:14px;">Click to read layout →</span>
       </div>`).join('');
+
+    // Attach click triggers
+    wrap.querySelectorAll('.topic-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const idx = card.getAttribute('data-index');
+        openDetailModal(idx, lang);
+      });
+    });
+  }
+
+  /* Dynamic Modal Generation for Public and Clinical Frameworks */
+  function openDetailModal(index, lang) {
+    const data = t(lang).topics.items[index];
+    if (!data || !data.detailTitle) return;
+
+    // Remove old modal instance if active
+    const oldModal = document.getElementById('detailModal');
+    if (oldModal) oldModal.remove();
+
+    // Create Modal Layout HTML Elements
+    const modal = document.createElement('div');
+    modal.id = 'detailModal';
+    modal.style.cssText = `
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(22, 58, 58, 0.45); backdrop-filter: blur(8px);
+      z-index: 9999; display: flex; align-items: center; justify-content: center;
+      padding: 20px; box-sizing: border-box;
+    `;
+
+    const cardHtml = `
+      <div style="background: var(--panel); width: 100%; max-width: 850px; max-height: 85vh; overflow-y: auto; border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-lift); position: relative; animation: modalFadeIn 0.3s ease;">
+        <button id="closeModalBtn" style="position: absolute; top: 20px; right: 20px; background: var(--teal-soft); border: none; font-size: 22px; width: 40px; height: 40px; border-radius: 50%; color: var(--teal-deep); cursor: pointer;">×</button>
+        
+        <h2 style="margin-bottom: 24px; border-bottom: 2px solid var(--teal-soft); padding-bottom: 12px; font-family: var(--font-display); color: var(--teal-deep);">${escapeHtml(data.detailTitle)}</h2>
+        
+        <!-- Toggle Tabs Layout for Public vs Medical Expert -->
+        <div style="display: flex; gap: 10px; margin-bottom: 24px; border-bottom: 1px solid var(--sage);">
+          <button id="tabPublic" style="padding: 10px 20px; background: var(--teal); color: white; border: none; border-radius: 8px 8px 0 0; font-weight: 600; cursor: pointer;">Public Guide</button>
+          <button id="tabClinical" style="padding: 10px 20px; background: var(--teal-soft); color: var(--teal-deep); border: none; border-radius: 8px 8px 0 0; font-weight: 600; cursor: pointer;">Clinician Guide</button>
+        </div>
+
+        <div id="modalContentBox" style="font-family: var(--font-body); line-height: 1.65; color: var(--text);">
+          ${data.publicSection}
+        </div>
+      </div>
+    `;
+
+    modal.innerHTML = cardHtml;
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden'; // Lock base scroll
+
+    // Modal Interaction Handlers
+    const publicBtn = modal.querySelector('#tabPublic');
+    const clinicalBtn = modal.querySelector('#tabClinical');
+    const contentBox = modal.querySelector('#modalContentBox');
+
+    publicBtn.addEventListener('click', () => {
+      publicBtn.style.background = 'var(--teal)'; publicBtn.style.color = 'white';
+      clinicalBtn.style.background = 'var(--teal-soft)'; clinicalBtn.style.color = 'var(--teal-deep)';
+      contentBox.innerHTML = data.publicSection;
+    });
+
+    clinicalBtn.addEventListener('click', () => {
+      clinicalBtn.style.background = 'var(--teal)'; clinicalBtn.style.color = 'white';
+      publicBtn.style.background = 'var(--teal-soft)'; publicBtn.style.color = 'var(--teal-deep)';
+      contentBox.innerHTML = data.clinicianSection;
+    });
+
+    const closeModal = () => {
+      modal.remove();
+      document.body.style.overflow = '';
+    };
+
+    modal.querySelector('#closeModalBtn').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
   }
 
   function renderHelplines(lang) {
@@ -103,7 +176,6 @@
     return div.innerHTML;
   }
 
-  /* ---------- language switching ---------- */
   function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('site-lang', lang);
@@ -121,10 +193,9 @@
     document.querySelectorAll('.lang-switch button').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
     });
-    initReveal(); // re-observe newly rendered cards
+    initReveal();
   }
 
-  /* ---------- mobile menu ---------- */
   function initMobileMenu() {
     const btn = document.getElementById('hamburger');
     const menu = document.getElementById('mobileMenu');
@@ -133,7 +204,6 @@
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
   }
 
-  /* ---------- back to top ---------- */
   function initBackToTop() {
     const btn = document.getElementById('backToTop');
     if (!btn) return;
@@ -143,7 +213,6 @@
     btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
 
-  /* ---------- scroll reveal ---------- */
   let observer;
   function initReveal() {
     if (!('IntersectionObserver' in window)) {
@@ -162,7 +231,6 @@
     document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
   }
 
-  /* ---------- contact form ---------- */
   function initForm() {
     const form = document.getElementById('contactForm');
     if (!form) return;
@@ -183,7 +251,6 @@
     });
   }
 
-  /* ---------- smooth scroll for in-page anchors ---------- */
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
@@ -203,6 +270,12 @@
     document.querySelectorAll('.lang-switch button, .lang-switch-mobile button').forEach(btn => {
       btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
     });
+    
+    // Add custom structural CSS animation for modal popup panel dynamically
+    const style = document.createElement('style');
+    style.innerHTML = `@keyframes modalFadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }`;
+    document.head.appendChild(style);
+
     initMobileMenu();
     initBackToTop();
     initForm();
