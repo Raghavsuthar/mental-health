@@ -36,14 +36,14 @@ const translations = {
     topics: {
       eyebrow:"Learn", title:"Common Mental Health Topics", subtitle:"Understanding is the first step. Tap a card to read more.",
       items:[
-        {title:"Depression", desc:"More than sadness — a persistent low mood that affects daily life, and is treatable."},
-        {title:"Anxiety", desc:"When worry becomes constant, physical, and hard to switch off."},
-        {title:"Stress & Burnout", desc:"How chronic stress affects the mind and body, and ways to recover."},
-        {title:"Bipolar Disorder", desc:"Understanding mood episodes — from depression to mania — and long-term management."},
-        {title:"OCD", desc:"Intrusive thoughts and repetitive behaviours — a real, treatable condition, not a personality quirk."},
-        {title:"Addiction", desc:"Substance use and dependence, and the path towards recovery."},
-        {title:"Child & Adolescent Mental Health", desc:"Recognising emotional and behavioural concerns early in young people."},
-        {title:"Suicide Prevention", desc:"Warning signs, how to start the conversation, and where to get urgent help."}
+        {title:"Depression", desc:"Much more than temporary sadness. Clinical depression is a persistent medical condition characterized by a loss of interest in daily activities, chronic low energy, changes in sleep patterns, feelings of worthlessness, and difficulty concentrating. It significantly impairs daily functioning but is highly treatable through professional therapy and medical evaluation."},
+        {title:"Anxiety Disorders", desc:"When normal worry transforms into persistent, overwhelming, and excessive fear regarding everyday situations. It manifests physically through a rapid heart rate, muscle tension, sweating, fatigue, and restlessness. Chronic anxiety can leads to avoidance behaviors and panic attacks, but targeted cognitive therapies and medical support offer excellent management pathways."},
+        {title:"Stress & Burnout", desc:"Chronic emotional and physical exhaustion resulting from prolonged exposure to severe workplace, academic, or personal stressors. Symptoms include complete depletion of energy, emotional detachment, a sense of cynicism, and a drop in overall efficacy. Recovering requires proactive stress management, lifestyle restructuring, and professional guidance."},
+        {title:"Bipolar Disorder", desc:"A complex neurological condition marked by significant shifts in mood, energy, and activity levels. Individuals experience intense emotional phases known as manic episodes (characterized by high energy, impulsivity, and reduced sleep) alternating with severe depressive episodes. Long-term stabilizing care allows individuals to live balanced lives."},
+        {title:"OCD (Obsessive-Compulsive Disorder)", desc:"A chronic mental health condition where a person experiences uncontrollable, recurring thoughts (obsessions) and feels an intense urge to repeat specific behaviors (compulsions) to relieve the resulting anxiety. It is a biological medical condition, not a simple personality trait, and responds exceptionally well to specialized therapy and medical care."},
+        {title:"Addiction & Substance Use", desc:"A chronic, relapsing brain disease characterized by compulsive substance seeking and use despite harmful consequences. It alters brain chemistry over time, impacting self-control and decision-making systems. Successful recovery involves medical detoxification, behavioral therapy, holistic rehabilitation, and continuous long-term support systems."},
+        {title:"Child & Adolescent Mental Health", desc:"Addresses behavioral, developmental, and emotional challenges unique to young minds, including ADHD, learning difficulties, and early-onset mood changes. Early identification of these shifts is vital to prevent long-term academic and social distress, ensuring proper psychological growth during crucial formative years."},
+        {title:"Suicide Prevention & Crisis Support", desc:"Recognizing crucial warning signs—such as absolute hopelessness, sudden social withdrawal, or explicit statements about self-harm. Knowing how to start a supportive, judgment-free conversation and immediately connecting individuals in distress to emergency medical helplines can effectively save lives during a severe psychological crisis."}
       ]
     },
     resources: {
