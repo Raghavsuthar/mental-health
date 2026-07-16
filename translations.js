@@ -7,28 +7,28 @@ const translations = {
 
   en: {
     meta: { title: "Dr. Raghav Suthar — Mental Health Awareness", desc: "A public mental health awareness resource by a practising psychiatrist in Gujarat." },
-    nav: { home:"Home", about:"About", services:"Services", topics:"Topics", resources:"Resources", blog:"Blog", contact:"Contact", bookConsultation:"Book a Consultation" },
+    nav: { home:"Home", about:"About", services:"Outreach", topics:"Topics", resources:"Resources", blog:"Blog", contact:"Contact" },
     hero: {
       eyebrow:"Mental Health Awareness · Gujarat",
       title1:"It's okay to not be okay.",
       title2:"Let's talk about it, together.",
-      subtitle:"A space for honest, judgement-free information on mental health — created by a practising psychiatrist to help you understand, cope, and know when and how to seek help.",
-      ctaLearn:"Learn More", ctaBook:"Book a Consultation", ctaResources:"Find Resources"
+      subtitle:"A space for honest, judgement-free information on mental health — created by a practising psychiatrist to help you understand, cope, and address basic queries safely.",
+      ctaLearn:"Learn More", ctaResources:"Submit a Query"
     },
     about: {
       eyebrow:"About", title:"About the Doctor",
-      bioLine1:"Dr. Raghav Suthar is a psychiatrist practising in Gujarat, with a special interest in making mental healthcare understandable and accessible to everyone.",
-      bioLine2:"This website exists because so much of the suffering around mental illness comes from silence, not the illness itself.",
+      bioLine1:"Dr. Raghav Suthar is a psychiatrist practising in Gujarat, with a special interest in making mental healthcare understandable, scientifically accurate, and accessible to everyone.",
+      bioLine2:"This website serves as a public awareness resource. It does not offer clinical medical treatments or online diagnostic medical consultations.",
       missionTitle:"Our Mission",
-      missionText:"To reduce stigma, spread accurate mental health awareness, and help people recognize when it's time to seek professional support."
+      missionText:"To reduce social stigma, spread accurate clinical awareness benchmarks, and guide individuals regarding safety frameworks safely."
     },
     services: {
-      eyebrow:"What We Offer", title:"Services", subtitle:"Support at every stage — from a first conversation to ongoing care.",
+      eyebrow:"Community Outreach", title:"Public Awareness & Inquiries", subtitle:"A safe space to ask questions, counter misconceptions, and gather clear medical guidance.",
       items:[
-        {title:"Consultation", desc:"One-on-one psychiatric consultation for assessment, diagnosis, and a personalised care plan."},
-        {title:"Therapy & Counselling", desc:"Structured talk therapy and counselling sessions for individuals and families."},
-        {title:"Workshops", desc:"Interactive sessions for schools, colleges, and communities on stress, emotional wellbeing, and resilience."},
-        {title:"Corporate Talks", desc:"Mental health awareness sessions and wellness programmes designed for workplaces."}
+        {title:"Public Query Box", desc:"Have a general question regarding symptoms, psychiatric terminology, or medication principles? Drop a message in the secure contact panel below."},
+        {title:"Anonymous Guidance", desc:"Ask questions regarding mental health stigma, family support approaches, or lifestyle metrics completely free of charge and securely."},
+        {title:"School & College Outreach", desc:"Request community awareness workshops or informative presentations for your educational institute to support local students."},
+        {title:"Stigma Reduction", desc:"Access cross-referenced biological guidelines designed to dismantle harmful social myths surrounding psychiatric care."}
       ]
     },
     topics: {
@@ -59,7 +59,7 @@ const translations = {
           title: "Bipolar Disorder", 
           desc: "A complex neurological condition marked by significant shifts in mood, energy, and activity levels.",
           detailTitle: "Clinical Overview: Bipolar Affective Disorder (BPAD)",
-          publicSection: "<h4>For the Public: Understanding Bipolar Disorder</h4><p>Bipolar disorder is a biological brain condition marked by extreme shifts in mood, energy, and behavior that go far beyond typical emotional ups and downs.</p><h5>The Two Extreme Cycles:</h5><ul><li><strong>Manic Phases</strong>: Periods of extreme high energy, feeling overly euphoric or irritable, speaking rapidly, racing thoughts, reckless spending, and an severely reduced need for sleep without feeling tired.</li><li><strong>Depressive Phases</strong>: Periods of deep sadness, complete lack of energy, feelings of total worthlessness, excessive sleeping, and withdrawal from society.</li></ul><h5>When to seek care:</h5><p>Bipolar disorder requires long-term tracking under a psychiatrist. Seek help immediately if you observe dangerous impulsive behaviors or rapid shifts in mood that damage stability.</p>",
+          publicSection: "<h4>For the Public: Understanding Bipolar Disorder</h4><p>Bipolar disorder is a biological brain condition marked by extreme shifts in mood, energy, and behavior that go far beyond typical emotional ups and downs.</p><h5>The Two Extreme Cycles:</h5><ul><li><strong>Manic Phases</strong>: Periods of extreme high energy, feeling overly euphoric or irritable, speaking rapidly, racing thoughts, reckless spending, and a severely reduced need for sleep without feeling tired.</li><li><strong>Depressive Phases</strong>: Periods of deep sadness, complete lack of energy, feelings of total worthlessness, excessive sleeping, and withdrawal from society.</li></ul><h5>When to seek care:</h5><p>Bipolar disorder requires long-term tracking under a psychiatrist. Seek help immediately if you observe dangerous impulsive behaviors or rapid shifts in mood that damage stability.</p>",
           clinicianSection: "<h4>For Clinicians: Management Guidelines</h4><h5>Critical Safety Screening Protocols:</h5><ul><li><strong>Screening</strong>: Utilize the MDQ (Mood Disorder Questionnaire) before prescribing Antidepressant monotherapy to prevent drug-induced manic switches.</li><li><strong>Bipolar I vs. Bipolar II</strong>: Bipolar I requires at least one lifetime full Manic Episode (may include psychosis). Bipolar II requires a history of at least one Hypomanic Episode AND at least one Major Depressive Episode, without full mania. Maintenance relies heavily on mood stabilizers and atypical antipsychotics.</li></ul>"
         },
         {
@@ -121,44 +121,44 @@ const translations = {
       disclaimer:"Shared with permission. Identifying details removed to protect privacy."
     },
     contact: {
-      eyebrow:"Get in Touch", title:"Contact & Appointments", subtitle:"Have a question, or want to book a consultation? Reach out below.",
-      formName:"Full Name", formEmail:"Email Address", formLanguage:"Preferred Language", formMessage:"Message",
-      formSubmit:"Send Message", formNote:"This form is for general queries. If this is an emergency, please call a helpline instead.",
-      clinicTitle:"Clinic", clinicAddressNote:"Address and map will appear here.", phoneLabel:"Phone / WhatsApp", emailLabel:"Email",
-      formSuccess:"Thank you — your message has been noted. We'll get back to you soon."
+      eyebrow:"Get in Touch", title:"Ask an Anonymous Question", subtitle:"Have a query regarding mental health terminology or awareness? Contact me below.",
+      formName:"Full Name", formEmail:"Email Address", formLanguage:"Preferred Language", formMessage:"Message / General Query",
+      formSubmit:"Send Message", formNote:"This form is for general questions. If this is a medical crisis, please access the helpline framework instead.",
+      clinicTitle:"Public Project", clinicAddressNote:"This platform is strictly dedicated to medical education and stigma reduction.", phoneLabel:"Phone / WhatsApp", emailLabel:"Email",
+      formSuccess:"Thank you — your awareness question has been captured. We will respond to your provided inbox shortly."
     },
     footer: {
       about:"A public mental health awareness initiative by a practising psychiatrist in Gujarat.",
       quickLinks:"Quick Links", disclaimerTitle:"Disclaimer",
-      disclaimerText:"This website is for general awareness and educational purposes only. It is not a substitute for professional diagnosis or treatment. Please consult a qualified mental health professional for personal medical advice.",
+      disclaimerText: "This website is for general awareness and educational purposes only. It is not a substitute for professional clinical treatment. If you are experiencing a medical emergency, please call local helpline emergency rooms immediately.",
       copyright:"All rights reserved.", madeWith:"Made with care."
     }
   },
 
   hi: {
     meta: { title:"डॉ. राघव सुथार — मानसिक स्वास्थ्य जागरूकता", desc:"गुजरात में एक प्रैक्टिसिंग मनोचिकित्सक द्वारा सार्वजनिक मानसिक स्वास्थ्य जागरूकता संसाधन।" },
-    nav: { home:"होम", about:"परिचय", services:"सेवाएँ", topics:"विषय", resources:"संसाधन", blog:"ब्लॉग", contact:"संपर्क", bookConsultation:"परामर्श बुक करें" },
+    nav: { home:"होम", about:"परिचय", services:"आउटरीच", topics:"विषय", resources:"संसंसाधन", blog:"ब्लॉग", contact:"संपर्क" },
     hero: {
       eyebrow:"मानसिक स्वास्थ्य जागरूकता · गुजरात",
       title1:"ठीक न होना भी ठीक है।",
       title2:"आइए, इस बारे में मिलकर बात करें।",
-      subtitle:"मानसिक स्वास्थ्य पर ईमानदार, बिना किसी पूर्वाग्रह वाली जानकारी का एक स्थान — एक प्रैक्टिसिंग मनोचिकित्सक द्वारा बनाया गया, ताकि आप समझ सकें, सामना कर सकें, और जान सकें कि कब और कैसे मदद लें।",
-      ctaLearn:"अधिक जानें", ctaBook:"परामर्श बुक करें", ctaResources:"संसाधन खोजें"
+      subtitle:"मानसिक स्वास्थ्य पर ईमानदार, बिना किसी पूर्वाग्रह वाली जानकारी का एक स्थान — एक प्रैक्टिसिंग मनोचिकित्सक द्वारा बनाया गया, ताकि आप समझ सकें, सामना कर सकें, और सामान्य प्रश्नों को सुरक्षित रूप से पूछ सकें।",
+      ctaLearn:"अधिक जानें", ctaResources:"प्रश्न भेजें"
     },
     about: {
       eyebrow:"परिचय", title:"डॉक्टर के बारे में",
-      bioLine1:"डॉ. राघव सुथार गुजरात में प्रैक्टिस करने वाले मनोचिकित्सक हैं, जिनकी विशेष रुचि मानसिक स्वास्थ्य देखभाल को हर किसी के लिए समझने योग्य और सुलभ बनाने में है।",
-      bioLine2:"यह वेबसाइट इसलिए बनाई गई है क्योंकि मानसिक बीमारी से जुड़ा अधिकांश कष्ट चुप्पी से आता है, बीमारी से नहीं।",
+      bioLine1:"डॉ. राघव सुथार गुजरात में प्रैक्टिस करने वाले मनोचिकित्सक हैं, जिनकी विशेष रुचि मानसिक स्वास्थ्य देखभाल को हर किसी के लिए समझने योग्य, वैज्ञानिक रूप से सटीक और सुलभ बनाने में है।",
+      bioLine2:"यह वेबसाइट एक सार्वजनिक जागरूकता संसाधन के रूप में कार्य करती है। यह नैदानिक चिकित्सा उपचार या ऑनलाइन नैदानिक परामर्श प्रदान नहीं करती है।",
       missionTitle:"हमारा लक्ष्य",
-      missionText:"कलंक (स्टिग्मा) को कम करना, सटीक मानसिक स्वास्थ्य जागरूकता फैलाना, और लोगों को यह पहचानने में मदद करना कि कब पेशेवर सहायता लेने का समय है।"
+      missionText:"सामाजिक कलंक को कम करना, सटीक नैदानिक जागरूकता मानकों को फैलाना, और सुरक्षा ढाँचे के संबंध में लोगों का मार्गदर्शन करना।"
     },
     services: {
-      eyebrow:"हम क्या प्रदान करते हैं", title:"सेवाएँ", subtitle:"हर चरण में सहयोग — पहली बातचीत से लेकर निरंतर देखभाल तक।",
+      eyebrow:"सामुदायिक संपर्क", title:"सार्वजनिक जागरूकता एवं प्रश्न", subtitle:"मानसिक स्वास्थ्य से जुड़े सवाल पूछने, भ्रांतियों को दूर करने और सटीक चिकित्सीय मार्गदर्शन पाने का एक सुरक्षित स्थान।",
       items:[
-        {title:"परामर्श", desc:"आकलन, निदान और व्यक्तिगत देखभाल योजना के लिए एक-से-एक मनोचिकित्सा परामर्श।"},
-        {title:"थेरेपी और काउंसलिंग", desc:"व्यक्तियों और परिवारों के लिए संरचित टॉक थेरेपी और काउंसलिंग सत्र।"},
-        {title:"कार्यशालाएँ", desc:"स्कूलों, कॉलेजों और समुदायों के लिए तनाव, भावनात्मक स्वास्थ्य और लचीलेपन पर इंटरैक्टिव सत्र।"},
-        {title:"कॉर्पोरेट सत्र", desc:"कार्यस्थलों के लिए डिज़ाइन किए गए मानसिक स्वास्थ्य जागरूकता सत्र और वेलनेस कार्यक्रम।"}
+        {title:"सार्वजनिक प्रश्न बॉक्स", desc:"क्या आपके पास मानसिक स्वास्थ्य के लक्षणों, शब्दावली या दवाओं से जुड़ा कोई सामान्य सवाल है? नीचे दिए गए संपर्क पैनल में अपना संदेश लिखें।"},
+        {title:"निःशुल्क मार्गदर्शन", desc:"मानसिक बीमारी से जुड़े कलंक (स्टिग्मा), पारिवारिक सहयोग या जीवनशैली में सुधार से जुड़े प्रश्न पूरी तरह से सुरक्षित रूप से पूछें।"},
+        {title:"स्कूल और कॉलेज आउटरीच", desc:"युवा छात्रों की मदद के लिए अपने शैक्षणिक संस्थान में जागरूकता कार्यशालाओं या सत्रों के आयोजन के लिए अनुरोध भेजें।"},
+        {title:"भ्रांतियों का निवारण", desc:"मानसिक स्वास्थ्य के इलाज से जुड़े सामाजिक अंधविश्वासों और भ्रांतियों को वैज्ञानिक तर्कों से दूर करने में मदद पाएं।"}
       ]
     },
     topics: {
@@ -175,50 +175,50 @@ const translations = {
           title: "चिंता (एंग्ज़ाइटी डिसऑर्डर)", 
           desc: "जब सामान्य चिंता रोजमर्रा की परिस्थितियों के प्रति एक स्थायी, अत्यधिक और बेकाबू डर का रूप ले लेती है।",
           detailTitle: "क्लिनिकल अवलोकन: सामान्यीकृत चिंता और पैनिक विकार",
-          publicSection: "<h4>आम जनता के लिए: चिंता रोग को समझना</h4><p>चिंता विकार अस्थायी तनाव से बढ़कर होते हैं। यह एक ऐसी स्थिति है जिसमें मस्तिष्क लगातार खतरे के मोड में रहता है और सामान्य स्थितियों को भी गंभीर समझने लगता है।</p><h5>मुख्य लक्षण जिन पर ध्यान दें:</h5><ul><li>रोजमर्रा की घटनाओं के बारे में लगातार और बेकाबू चिंता होना।</li><li>शारीरिक लक्षण: दिल की धड़कन बढ़ना, मांसपेशियों में खिंचाव, कंपन और अचानक पसीना आना।</li><li>बेचैनी, लगातार तनाव महसूस होना या सोने में परेशानी।</li><li>अचानक अत्यधिक डर का दौरा पड़ना, जिसमें छाती में दर्द या सांस फूलना (पैनिक अटैक) शामिल हैं।</li></ul>",
+          publicSection: "<h4>आम जनता के लिए: चिंता रोग को समझना</h4><p>चिंता विकार अस्थायी तनाव से बढ़कर होते हैं। यह एक ऐसी स्थिति है जिसमें मस्तिष्क लगातार खतरे के मोड में रहता है और सामान्य स्थितियों को भी गंभीर समझने लगता है।</p><h5>मुख्य लक्षण जिन पर ध्यान दें:</h5><ul><li>रोजमर्रा की घटनाओं के बारे में लगातार और बेकाबू चिंता होना।</li><li>शारीरिक लक्षण: दिल की धड़कन बढ़ना, मांसपेशियों में खिंचाव, कंपनและ अचानक पसीना आना।</li><li>बेचैनी, लगातार तनाव महसूस होना या सोने में परेशानी।</li><li>अचानक अत्यधिक डर का दौरा पड़ना, जिसमें छाती में दर्द या सांस फूलना (पैनिक अटैक) शामिल हैं।</li></ul>",
           clinicianSection: "<h4>चिकित्सकों के लिए: नैदानिक रूपरेखा</h4><h5>स्क्रीनिंग और विभेदन:</h5><ul><li><strong>GAD-7 Scale</strong>: बेसलाइन और प्रगति को ट्रैक करने के लिए उपयोग करें। स्कोर ≥ 10 सामान्यीकृत चिंता विकार की ओर संकेत करता है।</li><li><strong>शारीरिक लक्षण रूल-आउट</strong>: चिंता के लक्षणों को कार्डियक अतालता, हाइपरथायरायडिज्म, कैफीन नशा या वेस्टिबुलर शिथिलता से अलग करें।</li></ul>"
         },
         {
           title: "तनाव और बर्नआउट", 
           desc: "लंबे समय तक काम, पढ़ाई या व्यक्तिगत जीवन में भारी दबाव के कारण होने वाली अत्यधिक मानसिक थकावट।",
           detailTitle: "क्लिनिकल अवलोकन: क्रोनिक स्ट्रेस और ऑक्युपेशनल बर्नआउट",
-          publicSection: "<h4>आम जनता के लिए: बर्नआउट को समझना</h4><p>बर्नआउट अत्यधिक और लंबे समय तक चलने वाले तनाव (आमतौर पर काम, कॉलेज या देखभाल की जिम्मेदारी) के कारण होने वाली शारीरिक, मानसिक और भावनात्मक थकावट की स्थिति है।</p><h5>मुख्य लक्षण जिन पर ध्यान दें:</h5><ul><li>लगभग हर दिन पूरी तरह से ऊर्जाहीन, थका हुआ और खाली महसूस करना।</li><li>अपने काम या दैनिक भूमिकाओं के प्रति नकारात्मक, उदासीन या चिड़चिड़ा नजरिया विकसित होना।</li><li>कार्यक्षमता, एकाग्रता या रचनात्मकता में भारी गिरावट आना।</li></ul>",
-          clinicianSection: "<h4>चिकित्सकों के लिए: मूल्यांकन दिशानिर्देश</h4><h5>नैदानिक विभेदन (Clinical Differentiation):</h5><p>कार्यस्थल-विशिष्ट ऑक्युपेशनल बर्नआउट को व्यापक मेजर डिप्रेसिव डिसऑर्डर (MDD) से अलग करने के लिए सावधानीपूर्वक मूल्यांकन करें। बर्नआउट में हताशा एक विशिष्ट वातावरण (जैसे नौकरी) तक सीमित होती है, जबकि MDD में जीवन के सभी क्षेत्रों में व्यापक एनहेडोनिया और हीनभावना दिखाई देती है।</p>"
+          publicSection: "<h4>आम जनता के लिए: बर्नआउट को समझना</h4><p>बर्नआउट अत्यधिक और लंबे समय तक बढ़ने वाले तनाव के कारण होने वाली शारीरिक, मानसिक और भावनात्मक थकावट की स्थिति है।</p><h5>मुख्य लक्षण जिन पर ध्यान दें:</h5><ul><li>लगभग हर दिन पूरी तरह से ऊर्जाहीन, थका हुआ और खाली महसूस करना।</li><li>अपने काम या दैनिक भूमिकाओं के प्रति नकारात्मक, उदासीन या चिड़चिड़ा नजरिया विकसित होना।</li></ul>",
+          clinicianSection: "<h4>चिकित्सकों के लिए: मूल्यांकन दिशानिर्देश</h4><h5>नैदानिक विभेदन (Clinical Differentiation):</h5><p>कार्यस्थल-विशिष्ट ऑक्युपेशनल बर्नआउट को व्यापक मेजर डिप्रेसिव डिसऑर्डर (MDD) से अलग करने के लिए सावधानीपूर्वक मूल्यांकन करें।</p>"
         },
         {
           title: "बाइपोलर डिसऑर्डर", 
           desc: "एक जटिल मानसिक स्थिति जिसमें व्यक्ति के मूड, ऊर्जा और कार्य करने की क्षमता में बहुत बड़े उतार-चढ़ाव आते हैं।",
           detailTitle: "क्लिनिकल अवलोकन: बाइपोलर अफेक्टिव डिसऑर्डर (BPAD)",
-          publicSection: "<h4>आम जनता के लिए: बाइपोलर डिसऑर्डर को समझना</h4><p>बाइपोलर डिसऑर्डर एक मस्तिष्क से जुड़ी स्थिति है जिसमें मरीज के मूड, ऊर्जा और व्यवहार में अत्यधिक तीव्र उतार-चढ़ाव आते हैं, जो सामान्य मूड स्विंग्स से बहुत अलग होते हैं।</p><h5>दो मुख्य चक्र (Cycles):</h5><ul><li><strong>मैनिक चरण (Mania)</strong>: अत्यधिक उत्साह, खुद को सर्वशक्तिमान समझना, बहुत तेज बोलना, विचारों का तेजी से दौड़ना, अत्यधिक बिना सोचे-समझे पैसे खर्च करना और नींद की जरूरत में भारी कमी आना।</li><li><strong>अवसाद चरण (Depression)</strong>: गहरा दुख, ऊर्जा की भारी कमी, समाज से पूरी तरह कट जाना और रोते रहना।</li></ul>",
-          clinicianSection: "<h4>चिकित्सकों के लिए: प्रबंधन दिशानिर्देश</h4><h5>सुरक्षा स्क्रीनिंग प्रोटोकॉल:</h5><ul><li><strong>स्क्रीनिंग</strong>: एंटीडिप्रेसेंट मोनोथेरेपी शुरू करने से पहले MDQ (Mood Disorder Questionnaire) का उपयोग करें ताकि दवा-प्रेरित मैनिक स्विचिंग को रोका जा सके।</li><li><strong>वर्गीकरण</strong>: बाइपोलर I के लिए कम से कम एक पूर्ण मैनिक एपिसोड की आवश्यकता होती है। बाइपोलर II के लिए कम से कम एक हाइपोमैनिक और एक मेजर डिप्रेसिव एपिसोड आवश्यक है। मुख्य उपचार मूड स्टेबलाइजर्स पर निर्भर करता है।</li></ul>"
+          publicSection: "<h4>आम जनता के लिए: बाइपोलर डिसऑर्डर को समझना</h4><p>बाइपोलर डिसऑर्डर एक मस्तिष्क से जुड़ी स्थिति है जिसमें मरीज के मूड, ऊर्जा और व्यवहार में अत्यधिक तीव्र उतार-चढ़ाव आते हैं।</p><h5>दो मुख्य चरण:</h5><ul><li><strong>मैनिक चरण (Mania)</strong>: अत्यधिक उत्साह, बहुत तेज बोलना, विचारों का तेजी से दौड़ना और नींद की जरूरत में भारी कमी आना।</li><li><strong>अवसाद चरण (Depression)</strong>: गहरा दुख, ऊर्जा की भारी कमी और समाज से पूरी तरह कट जाना।</li></ul>",
+          clinicianSection: "<h4>चिकित्सकों के लिए: प्रबंधन दिशानिर्देश</h4><h5>सुरक्षा स्क्रीनिंग प्रोटोकॉल:</h5><ul><li><strong>स्क्रीनिंग</strong>: एंटीडिप्रेसेंट मोनोथेरेपी शुरू करने से पहले MDQ का उपयोग करें ताकि दवा-प्रेरित मैनिक स्विचिंग को रोका जा सके।</li></ul>"
         },
         {
           title: "ओसीडी (ऑब्सेसिव कंपल्सिव डिसऑर्डर)", 
           desc: "यह एक ऐसी स्थिति है जिसमें व्यक्ति के मन में अवांछित विचार बार-बार आते हैं, और वह एक ही व्यवहार दोहराता है।",
           detailTitle: "क्लिनिकल अवलोकन: ऑब्सेसिव-कंपल्सिव डिसऑर्डर (OCD)",
-          publicSection: "<h4>आम जनता के लिए: ओसीडी को समझना</h4><p>ओसीडी मस्तिष्क से जुड़ी एक बीमारी है, यह केवल साफ-सफाई की आदत या सनक नहीं है। इसमें मरीज अवांछित विचारों और क्रियाओं के एक असहज चक्र में फंस जाता है।</p><h5>दो मुख्य भाग:</h5><ul><li><strong>ऑब्सेशन्स (Obsessions)</strong>: मन में बार-बार आने वाले परेशान करने वाले अनचाहे विचार या डर (जैसे गंदगी का डर, या किसी नुकसान का डर)।</li><li><strong>कंपल्शन्स (Compulsions)</strong>: उन अनचाहे विचारों की चिंता को कम करने के लिए बार-बार किया जाने वाला व्यवहार (जैसे बार-बार हाथ धोना, ताले चेक करना या गिनती करना)।</li></ul>",
-          clinicianSection: "<h4>चिकित्सकों के लिए: नैदानिक मानक</h4><h5>हस्तक्षेप और मेट्रिक्स:</h5><ul><li><strong>तीव्रता मूल्यांकन</strong>: बेसलाइन स्थापित करने के लिए Y-BOCS (Yale-Brown Obsessive Compulsive Scale) का उपयोग करें। ये लक्षण प्रतिदिन कम से कम 1 घंटे से अधिक समय लेते हों और कार्यक्षमता को बाधित करते हों।</li><li><strong>उपचार</strong>: उच्च खुराक SSRI दवाओं के साथ एक्सपोजर एंड रिस्पांस प्रिवेंशन (ERP) बिहेवियरल थेरेपी का संयोजन सबसे प्रभावी है।</li></ul>"
+          publicSection: "<h4>आम जनता के लिए: ओसीडी को समझना</h4><p>ओसीडी मस्तिष्क से जुड़ी एक बीमारी है, यह केवल साफ-सफाई की आदत या सनक नहीं है। इसमें मरीज अवांछित विचारों और क्रियाओं के एक असहज चक्र में फंस जाता है।</p><h5>दो मुख्य भाग:</h5><ul><li><strong>ऑब्सेशन्स</strong>: मन में बार-बार आने वाले परेशान करने वाले अनचाहे विचार (जैसे गंदगी का डर)।</li><li><strong>कंपल्शन्स</strong>: उन अनचाहे विचारों की चिंता को कम करने के लिए बार-बार किया जाने वाला व्यवहार (जैसे बार-बार हाथ धोना)।</li></ul>",
+          clinicianSection: "<h4>चिकित्सकों के लिए: नैदानिक मानक</h4><h5>उपचार:</h5><p>उच्च खुराक SSRI दवाओं के साथ एक्सपोजर एंड रिस्पांस प्रिवेंशन (ERP) बिहेवियरल थेरेपी का संयोजन सबसे प्रभावी है।</p>"
         },
         {
           title: "नशा और लत (एडिक्शन)", 
           desc: "यह मस्तिष्क से जुड़ी एक दीर्घकालिक बीमारी है जिसमें नुकसानदेह परिणामों के बावजूद व्यक्ति नशा बंद नहीं कर पाता।",
           detailTitle: "क्लिनिकल अवलोकन: सब्सटेंस यूज़ डिसऑर्डर (SUD)",
-          publicSection: "<h4>आम जनता के लिए: नशे की लत को समझना</h4><p>लत या एडिक्शन एक मस्तिष्क रोग है जो व्यक्ति के नियंत्रण को पूरी तरह समाप्त कर देता है, चाहे वह शराब, तंबाकू, नशीली दवाएं या कोई अन्य पदार्थ हो।</p><h5>मुख्य लक्षण:</h5><ul><li>पदार्थ का सेवन करने की अत्यधिक और तीव्र इच्छा होना।</li><li>समय के साथ समान असर के लिए पदार्थ की मात्रा को बढ़ाना पड़ना (Tolerance)।</li><li>नशा छोड़ने का प्रयास करने पर हाथ कांपना, पसीना आना, घबराहट या उल्टी होना (विड्रॉल लक्षण)।</li></ul>",
-          clinicianSection: "<h4>चिकित्सकों के लिए: डिटॉक्सिफिकेशन प्रोटोकॉल</h4><h5>चिकित्सकीय प्रबंधन:</h5><ul><li><strong>विड्रॉल ट्रैकिंग</strong>: अल्कोहल विड्रॉल के लिए CIWA-Ar स्केल और ओपिओइड के लिए COWS स्केल का उपयोग करें ताकि डिटॉक्सिफिकेशन दवाओं की खुराक तय की जा सके।</li><li><strong>जटिलता रोकथाम</strong>: दौरे (Seizures), डेलिरियम ट्रैमेंस (Delirium Tremens) और वर्निक-कोर्साकॉफ सिंड्रोम जैसी जानलेवा जटिलताओं को रोकने के लिए उचित चिकित्सकीय और दीर्घकालिक पुनर्वास दृष्टिकोण अपनाएं।</li></ul>"
+          publicSection: "<h4>आम जनता के लिए: नशे की लत को समझना</h4><p>लत या एडिक्शन एक मस्तिष्क रोग है जो व्यक्ति के नियंत्रण को पूरी तरह समाप्त कर देता है, चाहे वह शराब हो या कोई अन्य पदार्थ।</p><h5>मुख्य लक्षण:</h5><ul><li>पदार्थ का सेवन करने की अत्यधिक इच्छा होना।</li><li>नशा छोड़ने का प्रयास करने पर हाथ कांपना, पसीना आना या घबराहट होना (विड्रॉल लक्षण)।</li></ul>",
+          clinicianSection: "<h4>चिकित्सकों के लिए: डिटॉक्सिफिकेशन प्रोटोकॉल</h4><h5>चिकित्सकीय प्रबंधन:</h5><p>अल्कोहल विड्रॉल के लिए CIWA-Ar स्केल और ओपिओइड के लिए COWS स्केल का उपयोग करें। दौरे (Seizures) जैसी जानलेवा जटिलताओं को रोकने के लिए उचित चिकित्सकीय और दीर्घकालिक पुनर्वास दृष्टिकोण अपनाएं।</p>"
         },
         {
           title: "बाल एवं किशोर मानसिक स्वास्थ्य", 
           desc: "बच्चों और किशोरों में होने वाली व्यवहार संबंधी, विकासात्मक और भावनात्मक समस्याओं पर ध्यान देना।",
           detailTitle: "क्लिनिकल अवलोकन: बाल चिकित्सा एवं न्यूरोडेवलपमेंटल केयर",
-          publicSection: "<h4>आम जनता के लिए: बच्चों का मानसिक स्वास्थ्य</h4><p>बढ़ती उम्र में बच्चों और किशोरों का मस्तिष्क विकास के दौर से गुजरता है, जिससे उनमें विशिष्ट भावनात्मक और व्यवहार संबंधी चुनौतियां आ सकती हैं।</p><h5>मुख्य समस्याएं:</h5><ul><li><strong>विकासात्मक समस्याएं</strong>: हर समय अत्यधिक भाग-दौड़ करना, ध्यान न लगा पाना, या सामाजिक मेलजोल में असमर्थता (जैसे ADHD या ऑटिज़्म के लक्षण)।</li><li><strong>भावनात्मक बदलाव</strong>: अचानक स्कूल के ग्रेड गिर जाना, अत्यधिक गुस्सा करना, स्कूल जाने से मना करना या अकेले कमरे में बंद रहना।</li></ul>",
-          clinicianSection: "<h4>चिकित्सकों के लिए: बाल चिकित्सा प्रोटोकॉल</h4><h5>मूल्यांकन पैरामीटर:</h5><p>विकासात्मक मील के पत्थर (Developmental milestones), शैक्षणिक प्रदर्शन और पारिवारिक गतिशीलता का आकलन करें। लंबे समय तक दवाओं को शुरू करने से पहले थेरेपी, स्कूल काउंसलिंग और माता-पिता के प्रशिक्षण (Parent training) को प्राथमिकता दें।</p>"
+          publicSection: "<h4>आम जनता के लिए: बच्चों का मानसिक स्वास्थ्य</h4><p>बच्चों और किशोरों में उनके मस्तिष्क के विकास के दौरान विशिष्ट भावनात्मक और व्यवहार संबंधी चुनौतियां आ सकती हैं।</p><h5>मुख्य समस्याएं:</h5><ul><li><strong>विकासात्मक समस्याएं</strong>: हर समय अत्यधिक भाग-दौड़ करना, ध्यान न लगा पाना (जैसे ADHD के लक्षण)।</li><li><strong>भावनात्मक बदलाव</strong>: अचानक स्कूल के ग्रेड गिर जाना, अत्यधिक गुस्सा करना या अकेले कमरे में बंद रहना।</li></ul>",
+          clinicianSection: "<h4>चिकित्सकों के लिए: बाल चिकित्सा प्रोटोकॉल</h4><p>लंबे समय तक दवाओं को शुरू करने से पहले थेरेपी, स्कूल काउंसलिंग और माता-पिता के प्रशिक्षण को प्राथमिकता दें।</p>"
         },
         {
           title: "आत्महत्या रोकथाम और क्राइसिस सपोर्ट", 
           desc: "गंभीर मानसिक संकट के संकेतों को पहचानना, जैसे कि पूरी तरह से निराश होना या आत्म-नुकसान की बात करना।",
           detailTitle: "क्लिनिकल अवलोकन: क्राइसिस मैनेजमेंट और सुसाइड रिस्क मिटिगेशन",
-          publicSection: "<h4>आम जनता के लिए: आत्महत्या रोकथाम गाइड</h4><p>आत्महत्या के विचार गहरे मानसिक दर्द और अत्यधिक संकट का परिणाम होते हैं, यह कोई व्यक्तिगत कमजोरी नहीं है। समय पर लक्षणों को पहचान कर जान बचाई जा सकती है।</p><h5>अत्यधिक गंभीर लक्षण:</h5><ul><li>दूसरों पर बोझ होने की बात करना या यह कहना कि जीने का कोई मकसद नहीं है।</li><li>अलविदा कहना, अपनी कीमती चीजें दूसरों को दे देना या अचानक डिप्रेशन के बाद बहुत शांत या खुश दिखना।</li><li>खुद को नुकसान पहुंचाने के तरीकों के बारे में बात करना या खोजना।</li></ul><h5>तुरंत क्या करें?</h5><p>यदि कोई व्यक्ति ऐसे संकेत दे, तो उसे अकेला न छोड़ें। बिना किसी जजमेंट के सीधे बात करें और उन्हें तुरंत 24x7 आपातकालीन हेल्पलाइन जैसे **टेली-मानस (14416)** से जोड़ें।</p>",
-          clinicianSection: "<h4>चिकित्सकों के लिए: जोखिम मूल्यांकन प्रोटोकॉल</h4><h5>आपातकालीन हस्तक्षेप:</h5><ul><li><strong>जोखिम मूल्यांकन</strong>: C-SSRS (Columbia-Suicide Severity Rating Scale) का उपयोग कर सक्रिय रूप से सुसाइडल इंटेंट, प्लान और साधनों तक पहुंच की जांच करें।</li><li><strong>सुरक्षा प्रबंधन</strong>: गंभीर संकट में मरीज को कभी भी अकेला न छोड़ें। साधनों तक पहुंच तुरंत प्रतिबंधित करें, परिवार को शामिल कर एक संकट सुरक्षा योजना (Crisis Safety Plan) बनाएं। केवल 'नो-शर्म कॉन्ट्रैक्ट्स' पर भरोसा न करें।</li></ul>"
+          publicSection: "<h4>आम जनता के लिए: आत्महत्या रोकथाम गाइड</h4><p>आत्महत्या के विचार गहरे मानसिक दर्द का परिणाम होते हैं, यह कोई व्यक्तिगत कमजोरी नहीं है।</p><h5>अत्यधिक गंभीर लक्षण:</h5><ul><li>दूसरों पर बोझ होने की बात करना या यह कहना कि जीने का कोई मकसद नहीं है।</li><li>खुद को नुकसान पहुंचाने के तरीकों के बारे में खोजना।</li></ul><h5>तुरंत क्या करें?</h5><p>यदि कोई व्यक्ति ऐसे संकेत दे, तो उसे अकेला न छोड़ें। बिना किसी जजमेंट के सीधे बात करें और उन्हें तुरंत 24x7 आपातकालीन हेल्पलाइन जैसे **टेली-मानस (14416)** से जोड़ें।</p>",
+          clinicianSection: "<h4>चिकित्सकों के लिए: जोखिम मूल्यांकन प्रोटोकॉल</h4><p>C-SSRS का उपयोग कर सक्रिय रूप से सुसाइडल इंटेंट, प्लान और साधनों तक पहुंच की जांच करें। साधनों तक पहुंच तुरंत प्रतिबंधित करें, परिवार को शामिल कर एक संकट सुरक्षा योजना (Crisis Safety Plan) बनाएं।</p>"
         }
       ]
     },
@@ -251,44 +251,44 @@ const translations = {
       disclaimer:"अनुमति से साझा किया गया। गोपनीयता की सुरक्षा के लिए पहचान संबंधी विवरण हटा दिए गए हैं।"
     },
     contact: {
-      eyebrow:"संपर्क करें", title:"संपर्क और अपॉइंटमेंट", subtitle:"कोई सवाल है, या परामर्श बुक करना चाहते हैं? नीचे संपर्क करें।",
-      formName:"पूरा नाम", formEmail:"ईमेल पता", formLanguage:"पसंदीदा भाषा", formMessage:"संदेश",
-      formSubmit:"संदेश भेजें", formNote:"यह फॉर्म सामान्य प्रश्नों के लिए है। यदि यह आपातकाल है, तो कृपया इसके बजाय हेल्पलाइन पर कॉल करें।",
-      clinicTitle:"क्लिनिक", clinicAddressNote:"पता और मानचित्र यहाँ दिखाई लगेंगे।", phoneLabel:"फोन / व्हाट्सऐप", emailLabel:"ईमेल",
-      formSuccess:"धन्यवाद — आपका संदेश दर्ज कर लिया गया है। हम जल्द ही आपसे संपर्क करेंगे।"
+      eyebrow:"संपर्क करें", title:"एक सामान्य प्रश्न पूछें", subtitle:"क्या आपके पास मानसिक स्वास्थ्य शब्दावली या जागरूकता के संबंध में कोई प्रश्न है? नीचे मुझसे संपर्क करें।",
+      formName:"पूरा नाम", formEmail:"ईमेल पता", formLanguage:"पसंदीदा भाषा", formMessage:"संदेश / सामान्य प्रश्न",
+      formSubmit:"संदेश भेजें", formNote:"यह फॉर्म सामान्य प्रश्नों के लिए है। यदि यह एक चिकित्सा संकट है, तो कृपया इसके बजाय हेल्पलाइन ढांचे का उपयोग करें।",
+      clinicTitle:"सार्वजनिक परियोजना", clinicAddressNote:"यह मंच पूरी तरह से चिकित्सा शिक्षा और कलंक को कम करने के लिए समर्पित है।", phoneLabel:"फोन / व्हाट्सऐप", emailLabel:"ईमेल",
+      formSuccess:"धन्यवाद — आपका जागरूकता प्रश्न दर्ज कर लिया गया है। हम जल्द ही आपके द्वारा प्रदान किए गए इनबॉक्स पर प्रतिक्रिया देंगे।"
     },
     footer: {
       about:"गुजरात में एक प्रैक्टिसिंग मनोचिकित्सक द्वारा सार्वजनिक मानसिक स्वास्थ्य जागरूकता पहल।",
       quickLinks:"त्वरित लिंक", disclaimerTitle:"अस्वीकरण",
-      disclaimerText:"यह वेबसाइट केवल सामान्य जागरूकता और शैक्षिक उद्देश्यों के लिए है। यह पेशेवर निदान या उपचार का विकल्प नहीं है। कृपया व्यक्तिगत चिकित्सा सलाह के लिए किसी योग्य मानसिक स्वास्थ्य पेशेवर से परामर्श करें।",
+      disclaimerText: "यह वेबसाइट केवल सामान्य जागरूकता और शैक्षिक उद्देश्यों के लिए है। यह पेशेवर नैदानिक उपचार का विकल्प नहीं है। यदि आप एक चिकित्सा आपात स्थिति का सामना कर रहे हैं, तो कृपया तुरंत स्थानीय हेल्पलाइन आपातकालीन कक्षों को कॉल करें।",
       copyright:"सर्वाधिकार सुरक्षित।", madeWith:"देखभाल के साथ बनाया गया।"
     }
   },
 
   gu: {
     meta: { title:"ડૉ. રાઘવ સુથાર — માનસિક સ્વાસ્થ્ય જાગૃતિ", desc:"ગુજરાતમાં એક પ્રેક્ટિસિંગ મનોચિકિત્સક દ્વારા જાહેર માનસિક સ્વાસ્થ્ય જાગૃતિ સંસાધન." },
-    nav: { home:"હોમ", about:"વિશે", services:"સેવાઓ", topics:"વિષયો", resources:"સંસાધનો", blog:"બ્લોગ", contact:"સંપર્ક", bookConsultation:"પરામર્શ બુક કરો" },
+    nav: { home:"હોમ", about:"વિશે", services:"આઉટરીચ", topics:"વિષયો", resources:"સંસાધનો", blog:"બ્લોગ", contact:"સંપર્ક" },
     hero: {
       eyebrow:"માનસિક સ્વાસ્થ્ય જાગૃતિ · ગુજરાત",
       title1:"સારું ન લાગવું પણ ઠીક છે.",
       title2:"ચાલો, સાથે મળીને વાત કરીએ.",
-      subtitle:"માનસિક સ્વાસ્થ્ય વિશે પ્રામાણિક, પૂર્વગ્રહ વિનાની માહિતી માટેનું સ્થળ — એક પ્રેક્ટિસિંગ મનોચિકિત્સક દ્વારા બનાવવામાં આવ્યું, જેથી તમે સમજી શકો, સામનો કરી શકો, અને ક્યારે અને કેવી રીતે મદદ લેવી તે જાણી શકો.",
-      ctaLearn:"વધુ જાણો", ctaBook:"પરામર્શ બુક કરો", ctaResources:"સંસાધનો શોધો"
+      subtitle:"માનસિક સ્વાસ્થ્ય વિશે પ્રામાણિક, પૂર્વગ્રહ વિનાની માહિતી માટેનું સ્થળ — એક પ્રેક્ટિસિંગ મનોચિકિત્સક દ્વારા બનાવવામાં આવ્યું, જેથી તમે સમજી શકો, સામનો કરી શકો અને સામાન્ય પ્રશ્નો સુરક્ષિત રીતે પૂછી શકો.",
+      ctaLearn:"વધુ જાણો", ctaResources:"પ્રશ્ન મોકલો"
     },
     about: {
       eyebrow:"વિશે", title:"ડોક્ટર વિશે",
-      bioLine1:"ડૉ. રાઘવ સુથાર ગુજરાતમાં પ્રેક્ટિસ કરતા મનોચિકિત્સક છે, જેમને માનસિક સ્વાસ્થ્ય સંભાળને દરેક માટે સમજી શકાય તેવી અને સુલભ બનાવવામાં ખાસ રસ છે.",
-      bioLine2:"આ વેબસાઇટ એટલા માટે બનાવવામાં આવી છે કારણ કે માનસિક બીમારી સાથે જોડાયેલ મોટાભાગની પીડા મૌનમાંથી આવે છે, બીમારીમાંથી નહીં.",
+      bioLine1:"ડૉ. રાઘવ સુથાર ગુજરાતમાં પ્રેક્ટિસ કરતા મનોચિકિત્સક છે, જેમને માનસિક સ્વાસ્થ્ય સંભાળને દરેક માટે સમજી શકાય તેવી, વૈજ્ઞાનિક રીતે સચોટ અને સુલભ બનાવવામાં ખાસ રસ છે.",
+      bioLine2:"આ વેબસાઇટ જાહેર જાગૃતિ સંસાધન તરીકે સેવા આપે છે. તે ક્લિનિકલ તબીબી સારવાર અથવા ઓનલાઇન નિદાન પરામર્શ ઓફર કરતી નથી.",
       missionTitle:"અમારું ધ્યેય",
-      missionText:"કલંક ઘટાડવું, સચોટ માનસિક સ્વાસ્થ્ય જાગૃતિ ફેલાવવી, અને લોકોને એ ઓળખવામાં મદદ કરવી કે ક્યારે વ્યાવસાયિક સહાય લેવાનો સમય છે."
+      missionText:"સામાજિક કલંક ઘટાડવું, સચોટ ક્લિનિકલ જાગૃતિના ધોરણો ફેલાવવા અને સુરક્ષા માળખા અંગે લોકોને માર્ગદર્શન આપવું."
     },
     services: {
-      eyebrow:"અમે શું ઓફર કરીએ છીએ", title:"સેવાઓ", subtitle:"દરેક તબક્કે સહયોગ — પ્રથમ વાતચીતથી લઈને સતત સંભાળ સુધી.",
+      eyebrow:"સામુદાયિક સંપર્ક", title:"જાહેર જાગૃતિ અને પ્રશ્નો", subtitle:"માનસિક સ્વાસ્થ્ય સંબંધિત પ્રશ્નો પૂછવા, ભ્રમણાઓ દૂર કરવા અને સચોટ તબીબી માર્ગદર્શન મેળવવાનું એક સુરક્ષિત સ્થાન.",
       items:[
-        {title:"પરામર્શ", desc:"મૂલ્યાંકન, નિદાન અને વ્યક્તિગત સંભાળ યોજના માટે એક-થી-એક મનોચિકિત્સા પરામર્શ."},
-        {title:"થેરાપી અને કાઉન્સેલિંગ", desc:"વ્યક્તિઓ અને પરિવારો માટે સંરચિત ટોક થેરાપી અને કાઉન્સેલિંગ સત્રો."},
-        {title:"વર્કશોપ્સ", desc:"શાળાઓ, કોલેજો અને સમુદાયો માટે તણાવ, ભાવનાત્મક સુખાકારી અને સ્થિતિસ્થાપકતા પર ઇન્ટરેક્ટિવ સત્રો."},
-        {title:"કોર્પોરેટ સત્રો", desc:"કાર્યસ્થળો માટે રચાયેલ માનસિક સ્વાસ્થ્ય જાગૃતિ સત્રો અને વેલનેસ કાર્યક્રમો."}
+        {title:"જાહેર પ્રશ્ન બોક્સ", desc:"શું તમારી પાસે માનસિક સ્વાસ્થ્યના લક્ષણો, તબીબી શબ્દો અથવા દવાઓ વિશે કોઈ સામાન્ય પ્રશ્ન છે? નીચે આપેલા સંપર્ક પેનલમાં તમારો સંદેશ લખો."},
+        {title:"મફત અને સુરક્ષિત માર્ગદર્શન", desc:"માનસિક બીમારી સાથે જોડાયેલા સામાજિક કલંક, કૌટુંબિક સહયોગ અથવા જીવનશૈલી સંબંધિત પ્રશ્નો સંપૂર્ણપણે સુરક્ષિત રીતે પૂછો."},
+        {title:"શાળા & કોલેજ આઉટરીચ", desc:"યુવા વિદ્યાર્થીઓની મદદ માટે તમારી શૈક્ષણિક સંસ્થામાં જાગૃતિ વર્કશોપ અથવા સત્રોના આયોજન માટે વિનંતી મોકલો."},
+        {title:"ભ્રમણાઓનું નિવારણ", desc:"માનસિક સ્વાસ્થ્યની સારવાર સાથે જોડાયેલી સામાજિક માન્યતાઓ અને અંધશ્રદ્ધાઓને વૈજ્ઞાનિક તથ્યો દ્વારા દૂર કરવામાં મદદ મેળવો."}
       ]
     },
     topics: {
@@ -298,57 +298,57 @@ const translations = {
           title: "ડિપ્રેશન (ગંભીર હતાશાનો રોગ)", 
           desc: "આ માત્ર થોડા સમયની ઉદાસી નથી. ક્લિનિકલ ડિપ્રેશન એક ગંભીર તબીબી સ્થિતિ છે જે વૈશ્વિક સ્તરે લાખો લોકોને અસર કરે છે.",
           detailTitle: "ક્લિનિકલ વિહંગાવલોકન: મેજર ડિપ્રેસિવ ડિસઓર્ડર (MDD)",
-          publicSection: "<h4>સામાન્ય જનતા માટે: ડિપ્રેશનને સમજવું</h4><p>ડિપ્રેશન એ મગજ સાથે જોડાયેલી એક જૈવિક તબીબી સ્થિતિ છે, કોઈ વ્યક્તિની નબળાઈ કે આળસની નિશાની નથી. તે મગજના રસાયણોમાં ફેરફાર કરે છે, જે તમારા વિચારવા, અનુભવવા અને ઊંઘવા, ખાવા કે કામ કરવા જેવી દૈનિક પ્રવૃત્તિઓ પર સીધી અસર કરે છે.</p><h5>ધ્યાન રાખવા જેવા મુખ્ય લક્ષણો:</h5><ul><li>સતત મન ઉદાસ રહેવું, ખાલીપો અનુભવવો અથવા ૨ અઠવાડિયાથી વધુ સમય સુધી વારંવાર રડવું આવવું.</li><li>તમને પહેલા જે પ્રવૃત્તિઓ કે શોખ ખૂબ ગમતા હતા તેમાં હવે બિલકુલ રસ ન રહેવો (Anhedonia).</li><li>કોઈ પણ શારીરિક મહેનત વિના પણ સતત ભારે નબળાઈ, થાક અને શક્તિનો અભાવ અનુભવવો.</li><li>ઊંઘમાં મોટો ફેરફાર થવો (અનિદ્રા અથવા સામાન્ય કરતાં ઘણું વધારે ઊંઘવું) અને ભૂખ કે વજનમાં અસામાન્ય ફેરફાર થવો.</li></ul><h5>ડોક્ટરની સલાહ ક્યારે લેવી?</h5><p>જો આ લક્ષણો સતત ૨ અઠવાડિયાથી વધુ સમય સુધી ચાલુ રહે અને તમારા પારિવારિક જીવન, નોકરી કે સામાજિક સંબંધોમાં અવરોધ ઊભો કરે, તો મનોચિકિત્સકનો સંપર્ક કરો.</p>",
-          clinicianSection: "<h4>તબીબો માટે: નૈદાનિક અને સ્ક્રીનીંગ માર્ગદર્શિકા</h4><h5>DSM-5 નૈદાનિક માપદંડ (Diagnostic Criteria):</h5><p>દર્દીમાં એક જ ૨-અઠવાડિયાના સમયગાળા દરમિયાન નીચેનામાંથી ૫ અથવા વધુ લક્ષણો હાજર હોવા જોઈએ; ઓછામાં ઓછું ૧ લક્ષણ કાં તો (૧) ઉદાસ મૂડ અથવા (૨) રસ કે आनंदનો અભાવ હોવો જ જોઈએ.</p><ul><li>દિવસનો મોટાભાગનો સમય ઉદાસ અથવા નીચો મૂડ રહેવો.</li><li>તમામ અથવા લગભગ તમામ પ્રવૃત્તિઓમાં રસ અથવા આનંદમાં સ્પષ્ટ ઘટાડો થવો.</li><li>અનિદ્રા (Insomnia) અથવા અતિનિદ્રા (Hypersomnia) ની સમસ્યા.</li><li>લગભગ દરરોજ થાક અથવા શક્તિનો મોટો અભાવ વર્તાવો.</li></ul><h5>સાક્ષ્ય-આધારિત સ્ક્રીનીંગ પ્રોટોકોલ:</h5><ul><li><strong>PHQ-9 Scale</strong>: સ્કોર ૦-૪ (ન્યૂનતમ), ૫-૯ (હળવું), ૧૦-૧૪ (મધ્યમ), ૧૫-૧૯ (મધ્યમ ગંભીર), ૨૦-૨૭ (ગંભીર ડિપ્રેશન). આત્મ-નુકસાનના જોખમ માટે હંમેશા Item 9 નું પરીક્ષણ કરો.</li><li><strong>વિભેદક નિદાન (Differential Diagnosis)</strong>: થાઈરોઈડની તપાસ (TSH panel) કરી હાઈપોથાઈરોઈડિઝમની શક્યતા નકારી કાઢો. એન્ટીડિપ્રેશન્ટ શરૂ કરતા પહેલા બાયપોલર લક્ષણોની તપાસ અવશ્ય કરો જેથી મેનિક સ્વિચિંગ અટકાવી શકાય.</li></ul>"
+          publicSection: "<h4>સામાન્ય જનતા માટે: ડિપ્રેશનને સમજવું</h4><p>ડિપ્રેશન એ મગજ સાથે જોડાયેલી એક જૈવિક તબીબી સ્થિતિ છે, કોઈ વ્યક્તિની નબળાઈ કે આળસની નિશાની નથી. તે મગજના રસાયણોમાં ફેરફાર કરે છે, જે તમારા વિચારવા, અનુભવવા અને ઊંઘવા, ખાવા કે કામ કરવા જેવી દૈનિક પ્રવૃત્તિઓ પર સીધી અસર કરે છે.</p><h5>ધ્યાન રાખવા જેવા મુખ્ય લક્ષણો:</h5><ul><li>સતત મન ઉદાસ રહેવું, ખાલીપો અનુભવવો અથવા ૨ અઠવાડિયાથી વધુ સમય સુધી વારંવાર રડવું આવવું.</li><li>તમને પહેલા જે પ્રવૃત્તિઓ કે શોખ ખૂબ ગમતા હતા તેમાં હવે બિલકુલ રસ ન રહેવો (Anhedonia).</li><li>કોઈ પણ શારીરિક મહેનત વિના પણ સતત ભારે નબળાઈ, થાક અને શક્તિનો અભાવ अनुभवવો.</li></ul><h5>ડોક્ટરની સલાહ ક્યારે લેવી?</h5><p>જો આ લક્ષણો સતત ૨ અઠવાડિયાથી વધુ સમય સુધી ચાલુ રહે અને તમારા પારિવારિક જીવન, નોકરી કે સામાજિક સંબંધોમાં અવરોધ ઊભો કરે, તો મનોચિકિત્સકનો સંપર્ક કરો.</p>",
+          clinicianSection: "<h4>તબીબો માટે: નૈદાનિક અને સ્ક્રીનીંગ માર્ગદર્શિકા</h4><h5>DSM-5 નૈદાનિક માપદંડ (Diagnostic Criteria):</h5><ul><li>દિવસનો મોટાભાગનો સમય ઉદાસ અથવા નીચો મૂડ રહેવો.</li><li>તમામ અથવા લગભગ તમામ પ્રવૃત્તિઓમાં રસ અથવા આનંદમાં સ્પષ્ટ ઘટાડો થવો.</li><li>અનિદ્રા (Insomnia) અથવા અતિનિદ્રા (Hypersomnia) ની સમસ્યા.</li></ul><h5>સાક્ષ્ય-આધારિત સ્ક્રીનીંગ પ્રોટોકોલ:</h5><ul><li><strong>PHQ-9 Scale</strong>: સ્કોર ૦-૪ (ન્યૂનતમ), ૫-૯ (હળવું), ૧૦-૧૪ (મધ્યમ), ૧૫-૧૯ (મધ્યમ ગંભીર), ૨૦-૨૭ (ગંભીર ડિપ્રેશન). આત્મ-નુકસાનના જોખમ માટે હંમેશા Item 9 નું પરીક્ષણ કરો.</li><li><strong>વિભેદક નિદાન (Differential Diagnosis)</strong>: થાઈરોઈડની તપાસ (TSH panel) કરી હાઈપોથાઈરોઈડિઝમની શક્યતા નકારી કાઢો। એન્ટીડિપ્રેશન્ટ શરૂ કરતા પહેલા બાયપોલર લક્ષણોની તપાસ અવશ્ય કરો જેથી મેનિક સ્વિચિંગ અટકાવી શકાય.</li></ul>"
         },
         {
           title: "એન્ઝાયટી ડિસઓર્ડર (ચિંતા રોગ)", 
           desc: "જ્યારે સામાન્ય ચિંતા રોજિંદી પરિસ્થિતિઓ પ્રત્યે સતત, અતિશય અને કાબૂ બહારના ડરનું સ્વરૂપ લઈ લે છે.",
           detailTitle: "ક્લિનિકલ વિહંગાવલોકન: જનરલાઈઝ્ડ એન્ઝાયટી અને પેનિક ડિસઓર્ડર",
-          publicSection: "<h4>સામાન્ય જનતા માટે: ચિંતા રોગને સમજવો</h4><p>એન્ઝાયટી ડિસઓર્ડર સામાન્ય તણાવ કરતાં વધુ ગંભીર હોય છે. તે એક એવી સ્થિતિ છે જેમાં મગજ સતત હાઈ એલર્ટ પર રહે છે અને સામાન્ય બાબતોને પણ મોટું જોખમ માને છે.</p><h5>ધ્યાન રાખવા જેવા મુખ્ય લક્ષણો:</h5><ul><li>રોજિંદી સામાન્ય બાબતો વિશે સતત અને બેકાબૂ ચિંતા થવી.</li><li>શારીરિક લક્ષણો: હૃદયના ધબકારા વધવા, સ્નાયુઓમાં જકડન, ધ્રુજારી અને અચાનક પરસેવો વળવો.</li><li>સતત અશાંતિ અનુભવવી અથવા ઊંઘવામાં મુશ્કેલી થવી.</li><li>અચાનક અત્યંત તીવ્ર ડરનો હુમલો થવો, જેમાં છાતીમાં દુખાવો અથવા શ્વાસ લેવામાં તકલીફ (પેનિક એટેક) થાય.</li></ul>",
-          clinicianSection: "<h4>તબીબો માટે: ક્લિનિકલ માર્ગદર્શિકા</h4><h5>સ્ક્રીનીંગ અને મોનિટરિંગ:</h5><ul><li><strong>GAD-7 Scale</strong>: ક્લિનિકલ બેઝલાઈન નક્કી કરવા માટે આ સ્કેલનો ઉપયોગ કરો. સ્કોર ≥ 10 જનરલાઈઝ્ડ એન્ઝાયટી ડિસઓર્ડર દર્શાવે છે.</li><li><strong>શારીરિક લક્ષણોનું સ્ક્રીનીંગ</strong>: એન્ઝાયટીના લક્ષણોને કાર્ડિયાક એરિથમિયા, હાઇપરથાઇરોઇડિઝમ, કેફીનનો નશો અથવા વેસ્ટિબ્યુલર સમસ્યાઓથી અલગ તારવો.</li></ul>"
+          publicSection: "<h4>સામાન્ય જનતા માટે: ચિંતા રોગને સમજવો</h4><p>એન્ઝાયટી ડિસઓર્ડર સામાન્ય તણાવ કરતાં વધુ ગંભીર હોય છે. તે એક એવી સ્થિતિ છે જેમાં મગજ સતત હાઈ એલર્ટ પર રહે છે.</p><h5>ધ્યાન રાખવા જેવા મુખ્ય લક્ષણો:</h5><ul><li>રોજિંદી સામાન્ય બાબતો વિશે સતત અને બેકાબૂ ચિંતા થવી.</li><li>શારીરિક લક્ષણો: હૃદયના ધબકારા વધવા, સ્નાયુઓમાં જકડન અને અચાનક પરસેવો વળવો.</li><li>અચાનક અત્યંત તીવ્ર ડરનો હુમલો થવો (પેનિક એટેક).</li></ul>",
+          clinicianSection: "<h4>તબીબો માટે: ક્લિનિકલ માર્ગદર્શિકા</h4><h5>સ્ક્રીનીંગ:</h5><ul><li><strong>GAD-7 Scale</strong>: સ્કોર ≥ 10 જનરલાઈઝ્ડ એન્ઝાયટી ડિસઓર્ડર દર્શાવે છે. લક્ષણોને હાઇપરથાઇરોઇડિઝમ અથવા કેફીન નશાથી અલગ તારવો.</li></ul>"
         },
         {
-          title: "તણાવ અને બર્નઆઉટ", 
+          title: "તણાવ & બર્નઆઉટ", 
           desc: "લાંબા સમય સુધી કામ, અભ્યાસ અથવા વ્યક્તિગત જીવનમાં ભારે દબાણને કારણે થતો અતિશય માનસિક અને શારીરિક થાક.",
           detailTitle: "ક્લિનિકલ વિહંગાવલોકન: ક્રોનિક સ્ટ્રેસ અને ઓક્યુપેશનલ બર્નઆઉટ",
-          publicSection: "<h4>સામાન્ય જનતા માટે: બર્નઆઉટને સમજવું</h4><p>બર્નઆઉટ એ અતિશય અને લાંબા સમય સુધી ચાલતા તણાવને કારણે થતી શારીરિક, માનસિક અને ભાવનાત્મક થાકની સ્થિતિ છે (જે મોટે ભાગે કામ, અભ્યાસ અથવા કોઈ જવાબદારીમાંથી ઉદ્ભવે છે).</p><h5>ધ્યાન રાખવા જેવા મુખ્ય લક્ષણો:</h5><ul><li>રોજ સવારે ઉઠતી વખતે જ ભારે થાક, શક્તિનો અભાવ અને ખાલીપો અનુભવવો.</li><li>પોતાના કામ અથવા રોજિંદી ભૂમિકાઓ પ્રત્યે નકારાત્મક, ઉદાસીન કે અકળામણભર્યું વલણ વિકસવું.</li><li>કાર્યક્ષમતા અને એકાગ્રતામાં ખૂબ મોટો ઘટાડો થવો.</li></ul>",
-          clinicianSection: "<h4>તબીબો માટે: મૂલ્યાંકન માર્ગદર્શિકા</h4><h5>ક્લિનિકલ તફાવત (Clinical Differentiation):</h5><p>કાર્યસ્થળ-આધારિત ઓક્યુપેશનલ બર્નઆઉટને વ્યાપક મેજર ડિપ્રેસિવ ડિસઓર્ડર (MDD) થી અલગ કરવા માટે ચોક્કસ તપાસ કરો. બર્નઆઉટમાં હતાશા એક ચોક્કસ વાતાવરણ (જેમ કે નોકરી) પૂરતી મર્યાદિત હોય છે, જ્યારે MDD માં જીવનના તમામ ક્ષેત્રોમાં ગંભીર એનહેડોનિયા અને નકારાત્મકતા દેખાય છે.</p>"
+          publicSection: "<h4>સામાન્ય જનતા માટે: બર્નઆઉટને સમજવું</h4><p>બર્નઆઉટ એ અતિશય અને લાંબા સમય સુધી ચાલી રહેલા તણાવને કારણે થતી શારીરિક અને ભાવનાત્મક થાકની સ્થિતિ છે.</p><h5>ધ્યાન રાખવા જેવા મુખ્ય લક્ષણો:</h5><ul><li>રોજ સવારે ઉઠતી વખતે જ ભારે થાક અને શક્તિનો અભાવ અનુભવવો.</li><li>પોતાના કામ પ્રત્યે ઉદાસીન કે અકળામણભર્યું વલણ વિકસવું.</li></ul>",
+          clinicianSection: "<h4>તબીબો માટે: મૂલ્યાંકન માર્ગદર્શિકા</h4><p>કાર્યસ્થળ-આધારિત ઓક્યુપેશનલ બર્નઆઉટને વ્યાપક મેજર ડિપ્રેસિવ ડિસઓર્ડર (MDD) થી અલગ કરવા માટે કાળજીપૂર્વક તપાસ કરો.</p>"
         },
         {
           title: "બાયપોલર ડિસઓર્ડર", 
           desc: "એક જટિલ માનસિક સ્થિતિ છે જેમાં વ્યક્તિના મૂડ, ઉર્જા અને કાર્ય કરવાની ક્ષમતામાં મોટા ઉતાર-ચઢાવ આવે છે.",
-          detailTitle: "UkLMQLkL'i rOhg'iFkOhg: LkIepOgR krOkRxLI rHkhgRMR (BPAD)",
-          publicSection: "<h4>સામાન્ય જનતા માટે: બાયપોલર ડિસઓર્ડરને સમજવો</h4><p>બાયપોલર ડિસઓર્ડર એ મગજ સાથે જોડાયેલી સ્થિતિ છે જેમાં દર્દીના મૂડ અને ઉર્જામાં અત્યંત તીવ્ર ફેરફારો થાય છે, જે સામાન્ય મૂડ સ્વિંગ્સ કરતાં તદ્દન અલગ હોય છે.</p><h5>બે મુખ્ય ચક્રો (Cycles):</h5><ul><li><strong>મેનિક તબક્કો (Mania)</strong>: અતિશય ઉત્સાહ, અસામાન્ય ઉર્જા અનુભવવી, ખૂબ ઝડપથી બોલવું, વિચારોનું મગજમાં ઝડપથી દોડવું, બેફામ ખર્ચ કરવો અને ઊંઘની જરૂરિયાત સાવ ઘટી જવી.</li><li><strong>ડિપ્રેશન તબક્કો (Depression)</strong>: ઊંડી ઉદાસી, શક્તિનો સંપૂર્ણ નાશ થવો, રડવું અને સમાજથી સાવ અલિપ્ત થઈ જવું.</li></ul>",
-          clinicianSection: "<h4>તબીબો માટે: સંચાલન માર્ગદર્શિકા</h4><h5>સુરક્ષા સ્ક્રીનીંગ પ્રોટોકોલ:</h5><ul><li><strong>સ્ક્રીનીંગ</strong>: એન્ટીડિપ્રેશન્ટ મોનોથેરાપી શરૂ કરતા પહેલા MDQ (Mood Disorder Questionnaire) નો ઉપયોગ કરો જેથી દવા-પ્રેરિત મેનિક સ્વિચિંગ અટકાવી શકાય.</li><li><strong>વર્ગીકરણ</strong>: બાયપોલર I માટે જીવનમાં ઓછામાં ઓછા એક પૂર્ણ મેનિક એપિસોડની જરૂર છે. બાયપોલર II માટે હાઇપોમેનિક અને ડિપ્રેસિવ એપિસોડ હોવા જરૂરી છે. મુખ્ય સારવાર મૂડ સ્ટેબિલાઇઝર્સ પર આધારિત છે.</li></ul>"
+          detailTitle: "ક્લિનિકલ વિહંગાવલોકન: બાયપોલર અફેક્ટિવ ડિસઓર્ડર (BPAD)",
+          publicSection: "<h4>સામાન્ય જનતા માટે: બાયપોલર ડિસઓર્ડરને સમજવો</h4><p>બાયપોલર ડિસઓર્ડર એ મગજ સાથે જોડાયેલી સ્થિતિ છે જેમાં મૂડમાં અતિશય તીવ્ર ફેરફારો થાય છે.</p><h5>બે મુખ્ય તબક્કા:</h5><ul><li><strong>મેનિક તબક્કો (Mania)</strong>: અતિશય ઉત્સાહ, અસામાન્ય ઉર્જા, વિચારોનું મગજમાં ઝડપથી દોડવું અને ઊંઘની જરૂરિયાત સાવ ઘટી જવી.</li><li><strong>ડિપ્રેશન તબક્કો (Depression)</strong>: ઊંડી ઉદાસી, શક્તિનો સંપૂર્ણ નાશ થવો અને સમાજથી સાવ અલિપ્ત થઈ જવું.</li></ul>",
+          clinicianSection: "<h4>તબીબો માટે: સંચાલન માર્ગદર્શિકા</h4><p>એન્ટીડિપ્રેશન્ટ મોનોથેરાપી શરૂ કરતા પહેલા MDQ નો उपयोग કરો જેથી દવા-પ્રેરિત મેનિક સ્વિચિંગ અટકાવી શકાય। મુખ્ય સારવાર મૂડ સ્ટેબિલાઇઝર્સ પર આધારિત છે.</p>"
         },
         {
           title: "ઓસીડી (ઓબ્સેસિવ કમ્પલ્સિવ ડિસઓર્ડર)", 
           desc: "આ એક એવી સ્થિતિ છે જેમાં વ્યક્તિના મનમાં અનિચ્છનીય વિચારો વારંવાર આવે છે, અને તે ચિંતા અનુભવે છે.",
           detailTitle: "ક્લિનિકલ વિહંગાવલોકન: ઓબ્સેસિવ-કમ્પલ્સિવ ડિસઓર્ડર (OCD)",
-          publicSection: "<h4>સામાન્ય જનતા માટે: ઓસીડીને સમજવું</h4><p>ઓસીડી એ મગજની તબીબી સ્થિતિ છે, તે કોઈ સામાન્ય આદત, ચોખ્ખાઈનો શોખ કે વ્યક્તિગત વિશિષ્ટતા નથી. આમાં વ્યક્તિ અનિચ્છનીય વિચારો અને ક્રિયાઓના એક અસહ્ય ચક્રમાં ફસાઈ જાય છે.</p><h5>બે મુખ્ય ભાગો:</h5><ul><li><strong>ઓબ્સેસન્સ (Obsessions)</strong>: મનમાં વારંવાર આવતા અવાંછિત અને પરેશાન કરનારા વિચારો કે ડર (જેમ કે ચેપ/ગંદકી લાગવાનો ભય કે નુકસાન થવાનો ડર).</li><li><strong>કમ્પલ્સન્સ (Compulsions)</strong>: તે વિચારોની ચિંતા હળવી કરવા માટે વારંવાર કરવામાં આવતી ક્રિયાઓ (જેમ કે વારંવાર હાથ ધોવા, તાળાં ચકાસવાં કે ગણતરી કરવી).</li></ul>",
-          clinicianSection: "<h4>તબીબો માટે: નૈદાનિક ધોરણો</h4><h5>હસ્તક્ષેપ અને સ્કેલ:</h5><ul><li><strong>તીવ્રતા માપન</strong>: ક્લિનિકલ બેઝલાઈન માટે Y-BOCS (Yale-Brown Obsessive Compulsive Scale) નો ઉપયોગ કરો. આ લક્ષણો દિવસનો ૧ કલાકથી વધુ સમય બગાડતા હોવા જોઈએ.</li><li><strong>પ્રથમ લાઇન સારવાર</strong>: હાઈ-ડોઝ SSRI દવાઓ અને એક્સપોઝર એન્ડ રિસ્પોન્સ પ્રિવેન્શન (ERP) બિહેવિયરલ થેરાપીનું મિશ્રણ સૌથી ઉત્તમ પરિણામ આપે છે.</li></ul>"
+          publicSection: "<h4>સામાન્ય જનતા માટે: ઓસીડીને સમજવું</h4><p>ઓસીડી એ મગજની તબીબી સ્થિતિ છે, તે કોઈ સામાન્ય આદત નથી. આમાં વ્યક્તિ અનિચ્છનીય વિચારો અને ક્રિયાઓના ચક્રમાં ફસાઈ જાય છે.</p><h5>બે મુખ્ય ભાગો:</h5><ul><li><strong>ઓબ્સેસન્સ</strong>: મનમાં વારંવાર આવતા અવાંછિત અને પરેશાન કરનારા વિચારો (જેમ કે ગંદકી લાગવાનો ભય).</li><li><strong>કમ્પલ્સન્સ</strong>: તે વિચારોની ચિંતા હળવી કરવા માટે વારંવાર કરવામાં આવતી ક્રિયાઓ (જેમ કે વારંવાર હાથ ધોવા).</li></ul>",
+          clinicianSection: "<h4>તબીબો માટે: નૈદાનિક ધોરણો</h4><p>ક્લિનિકલ બેઝલાઈન માટે Y-BOCS નો ઉપયોગ કરો. હાઈ-ડોઝ SSRI દવાઓ અને એક્સપોઝર એન્ડ રિસ્પોન્સ પ્રિવેન્શન (ERP) થેરાપીનું મિશ્રણ સૌથી ઉત્તમ પરિણામ આપે છે.</p>"
         },
         {
-          title: "વ્યસન અને લત (એડિક્શન)", 
+          title: "વ્યસન & લત (એડિક્શન)", 
           desc: "આ મગજ સાથે જોડાયેલી એક લાંબા ગાળાની બીમારી છે જેમાં નુકસાનકારક પરિણામો હોવા છતાં વ્યક્તિ નશો કરી બેસે છે.",
           detailTitle: "ક્લિનિકલ વિહંગાવલોકન: સબસ્ટન્સ યુઝ ડિસઓર્ડર (SUD)",
-          publicSection: "<h4>સામાન્ય જનતા માટે: વ્યસનની લતને સમજવી</h4><p>વ્યસન એ મગજની ક્રોનિક બીમારી છે જે વ્યક્તિના આત્મ-નિયંત્રણને નષ્ટ કરી નાખે છે, પછી તે દારૂ, તમાકુ, દવાઓ કે અન્ય નશીલા પદાર્થો હોય.</p><h5>ધ્યાન રાખવા જેવા મુખ્ય લક્ષણો:</h5><ul><li>તે પદાર્થનું સેવન કરવાની અત્યંત તીવ્ર અને અણધારી ઈચ્છા થવી.</li><li>સમય જતાં તે જ અસર મેળવવા માટે પદાર્થની માત્રા વધારવી પડવી (Tolerance).</li><li>નશો છોડવાનો પ્રયત્ન કરવાથી શરીરમાં ધ્રુજારી, પરસેવો, અત્યંત ગભરામણ કે બેચેની થવી (વિડ્રોઅલ લક્ષણો).</li></ul>",
-          clinicianSection: "<h4>તબીબો માટે: ડિટોક્સિફિકેશન પ્રોટોકોલ</h4><h5>તબીબી સંચાલન:</h5><ul><li><strong>વિડ્રોઅલ મોનિટરિંગ</strong>: આલ્કોહોલ વિડ્રોઅલ માટે CIWA-Ar સ્કેલ અને ઓપીઓઇડ માટે COWS સ્કેલનો ઉપયોગ કરી દવાઓ નક્કી કરો.</li><li><strong>જટિલતા અટકાવવી</strong>: ખેંચ (Seizures), ડેલિરિયમ ટ્રેમેન્સ (Delirium Tremens) અને મગજની ગંભીર ક્ષતિ જેવી જાનલેવા જટિલતાઓને રોકવા માટે તબીબી દેખરેખ હેઠળ ડિટોક્સિફિકેશન કરો.</li></ul>"
+          publicSection: "<h4>સામાન્ય જનતા માટે: વ્યસનની લતને સમજવી</h4><p>વ્યસન એ મગજની બીમારી છે જે વ્યક્તિના આત્મ-નિયંત્રણને નષ્ટ કરી નાખે છે, પછી તે દારૂ હોય કે અન્ય પદાર્થો.</p><h5>ધ્યાન રાખવા જેવા મુખ્ય લક્ષણો:</h5><ul><li>તે પદાર્થનું સેવન કરવાની અત્યંત તીવ્ર ઈચ્છા થવી.</li><li>નશો છોડવાનો પ્રયત્ન કરવાથી શરીરમાં ધ્રુજારી, પરસેવો કે બેચેની થવી (વિડ્રોઅલ લક્ષણો).</li></ul>",
+          clinicianSection: "<h4>તબીબો માટે: ડિટોક્સિફિકેશન પ્રોટોકોલ</h4><p>આલ્કોહોલ વિડ્રોઅલ માટે CIWA-Ar સ્કેલ અને ઓપીઓઇડ માટે COWS સ્કેલનો ઉપયોગ કરી દવાઓ નક્કી કરો। ખેંચ (Seizures) જેવી જાનલેવા જટિલતાઓને રોકવા માટે યોગ્ય તબીબી દેખરેખ હેઠળ ડિટોક્સિફિકેશન કરો.</p>"
         },
         {
-          title: "બાળ અને કિશોર માનસિક સ્વાસ્થ્ય", 
+          title: "બાળ & કિશોર માનસિક સ્વાસ્થ્ય", 
           desc: "બાળકો અને કિશોરોમાં જોવા મળતી વર્તણૂક સંબંધિત, વિકાસાત્મક અને ભાવનાત્મક સમસ્યાઓ પર ધ્યાન આપવું.",
           detailTitle: "ક્લિનિકલ વિહંગાવલોકન: પીડિયાટ્રિક અને ન્યુરોડેવલપમેન્ટલ કેર",
-          publicSection: "<h4>સામાન્ય જનતા માટે: બાળકોનું માનસિક સ્વાસ્થ્ય</h4><p>બાળકો અને કિશોરોનો મગજનો વિકાસ ચાલુ હોય છે, જેથી તેમનામાં વિશિષ્ટ ભાવનાત્મક અને વર્તણૂક સંબંધિત પડકારો આવી શકે છે.</p><h5>મુખ્ય સમસ્યાઓ:</h5><ul><li><strong>વિકાસાત્મક પડકારો</strong>: એક જગ્યાએ શાંત ન બેસવું, ભણવામાં ધ્યાન ન આપવું, અથવા સામાજિક કુશળતાનો અભાવ (જેમ કે ADHD અથવા ઓટિઝમના લક્ષણો).</li><li><strong>ભાવનાત્મક ફેરફારો</strong>: અચાનક શાળાના પરિણામો બગડી જવા, અત્યંત ગુસ્સો કરવો, શાળાએ જવાની ના પાડવી કે એકલા રહેવું.</li></ul>",
-          clinicianSection: "<h4>તબીબો માટે: પીડિયાટ્રિક પ્રોટોકોલ</h4><h5>મૂલ્યાંકન માપદંડો:</h5><p>વિકાસના તબક્કા (Developmental milestones), શૈક્ષણિક પ્રદર્શન અને કૌટુંબિક સંબંધો તપાસો. લાંબા ગાળાની દવાઓ શરૂ કરતાં પહેલાં બિહેવિયરલ થેરાપી, સ્કૂલ કાઉન્સેલિંગ અને પેરેન્ટ ટ્રેનિંગને પ્રાથમિકતા આપો.</p>"
+          publicSection: "<h4>સામાન્ય જનતા માટે: બાળકોનું માનસિક સ્વાસ્થ્ય</h4><p>બાળકો અને કિશોરોના મગજનો વિકાસ ચાલુ હોય છે, જેથી તેમનામાં વિશિષ્ટ ભાવનાત્મક અને વર્તણૂક સંબંધિત પડકારો આવી શકે છે.</p><h5>મુખ્ય સમસ્યાઓ:</h5><ul><li>Constant hyperactivity, ભણવામાં ધ્યાન ન આપવું (જેમ કે ADHD ના લક્ષણો).</li><li>અચાનક શાળાના પરિણામો બગડી જવા, અત્યંત ગુસ્સો કરવો કે એકલા રહેવું.</li></ul>",
+          clinicianSection: "<h4>તબીબો માટે: પીડિયાટ્રિક પ્રોટોકોલ</h4><p>વિકાસના તબક્કા અને કૌટુંબિક સંબંધો તપાસો। લાંબા ગાળાની દવાઓ શરૂ કરતાં પહેલાં બિહેવિયરલ થેરાપી અને પેરેન્ટ ટ્રેનિંગને પ્રાથમિકતા આપો.</p>"
         },
         {
-          title: "આત્મહત્યા નિવારણ અને કટોકટી સપોર્ટ", 
+          title: "આત્મહત્યા નિવારણ & કટોકટી સપોર્ટ", 
           desc: "ગંભીર માનસિક સંકટના સંકેતોને ઓળખવા, જેમ કે સંપૂર્ણપણે નિરાશ થઈ જવું અથવા આત્મ-નુકસાનની વાતો કરવી.",
           detailTitle: "ક્લિનિકલ વિહંગાવલોકન: કટોકટી સંચાલન અને આત્મહત્યા જોખમ નિવારણ",
-          publicSection: "<h4>સામાન્ય જનતા માટે: આત્મહત્યા નિવારણ માર્ગદર્શિકા</h4><p>આત્મહત્યાના વિચારો અસહ્ય માનસિક પીડા અને કટોકટીનું પરિણામ છે, તે કોઈ નબળાઈ નથી. યોગ્ય સમયે લક્ષણો ઓળખીને જીવ બચાવી શકાય છે.</p><h5>અત્યંત ગંભીર સંકેતો:</h5><ul><li>પોતે અન્ય લોકો પર બોજ હોવાની વાતો કરવી કે જીવવાનો કોઈ અર્થ નથી તેમ કહેવું.</li><li>અચાનક વિદાય લેવાની વાતો કરવી, પોતાની કીમતી વસ્તુઓ બીજાને આપી દેવી, અથવા ભારે ડિપ્રેશન પછી અચાનક સાવ શાંત થઈ જવું.</li><li>પોતાને નુકસાન પહોંચાડવાના રસ્તાઓ શોધવા.</li></ul><h5>તરત જ શું કરવું?</h5><p>જો કોઈ આવી સ્થિતિમાં જણાય, તો તેને એકલા ન મૂકો. કોઈ પણ જજમેન્ટ વગર પ્રેમથી વાત કરો અને તેમને તરત જ ૨૪/૭ કાર્યરત કટોકટી હેલ્પલાઇન **ટેલી-માનસ (14416)** સાથે જોડો.</p>",
-          clinicianSection: "<h4>તબીબો માટે: જોખમ મૂલ્યાંકન પ્રોટોકોલ</h4><h5>તાત્કાલિક હસ્તક્ષેપ:</h5><ul><li><strong>જોખમ માપન</strong>: C-SSRS (Columbia-Suicide Severity Rating Scale) નો ઉપયોગ કરી આત્મહત્યાના ઈરાદા, પ્લાન અને સાધનોની ઉપલબ્ધતા ચકાસો.</li><li><strong>સુરક્ષા પ્લાન</strong>: અતિ ગંભીર કટોકટી ધરાવતા દર્દીને ક્યારેય એકલા ન જવા દો. સાધનોની પહોંચ તુરંત બંધ કરાવો, પરિવારને સામેલ કરી એક કટોકટી સુરક્ષા યોજના (Crisis Safety Plan) બનાવો. માત્ર 'નો-હાર્મ કોન્ટ્રેક્ટ્સ' પર ભરોસો ન રાખવો.</li></ul>"
+          publicSection: "<h4>સામાન્ય જનતા માટે: આત્મહત્યા નિવારણ માર્ગદર્શિકા</h4><p>આત્મહત્યાના વિચારો અસહ્ય માનસિક પીડાનું પરિણામ છે, તે કોઈ નબળાઈ નથી. યોગ્ય સમયે લક્ષણો ઓળખીને જીવ બચાવી શકાય છે.</p><h5>અત્યંત ગંભીર સંકેતો:</h5><ul><li>પોતે અન્ય લોકો પર બોજ હોવાની વાતો કરવી કે જીવવાનો કોઈ અર્થ નથી તેમ કહેવું.</li><li>પોતાને નુકसાન પહોંચાડવાના રસ્તાઓ શોધવા.</li></ul><h5>તરત જ શું કરવું?</h5><p>જો કોઈ આવી સ્થિતિમાં જણાય, तो તેને એકલા ન મૂકો. કોઈ પણ જજમેન્ટ વગર પ્રેમથી વાત કરો અને તેમને તરત જ ૨૪/૭ કાર્યરત કટોકટી હેલ્પલાઇન **ટેલી-માનસ (14416)** સાથે જોડો.</p>",
+          clinicianSection: "<h4>તબીબો માટે: જોખમ મૂલ્યાંકન પ્રોટોકોલ</h4><p>C-SSRS નો ઉપયોગ કરી આત્મહત્યાના ઈરાદા, પ્લાન અને સાધનોની ઉપલબ્ધતા ચકાસો। પરિવારને સામેલ કરી એક કટોકટી સુરક્ષા યોજના (Crisis Safety Plan) બનાવો.</p>"
         }
       ]
     },
@@ -356,13 +356,13 @@ const translations = {
       eyebrow:"સંસાધનો", title:"સંસાધનો & સ્વ-સહાય", subtitle:"મફત, ગોપનીય સહાય અત્યારે જ ઉપલબ્ધ છે.",
       helplinesTitle:"રાષ્ટ્રીય હેલ્પલાઇન (ભારત)",
       helplines:[
-        {name:"ટેલી-માનસ (Tele-MANAS)", number:"14416", desc:"ભારત સરકારની 24x7 બહુભાષી માનસિક સ્વાસ્થ્ય હેલ્પલાઇન."},
+        {name:"ટેલી-માનસ (Tele-MANAS)", number:"14416", desc:"ભારત跨સરકારની 24x7 બહુભાષી માનસિક સ્વાસ્થ્ય હેલ્પલાઇન."},
         {name:"કિરણ (KIRAN)", number:"1800-599-0019", desc:"રાષ્ટ્રીય માનસિક સ્વાસ્થ્ય પુનર્વસન હેલ્પલાઇન, 24x7."},
         {name:"આઈકોલ (iCall)", number:"9152987821", desc:"TISS દ્વારા મનો-સામાજિક હેલ્પલાઇન, સોમ–શનિ."}
       ],
       tipsTitle:"રોજિંદી સ્વ-સહાય",
       tips:["તમે વિશ્વાસ કરો છો તે વ્યક્તિ સાથે તમારી લાગણીઓ વિશે વાત કરો","નિયમિત ઊંઘ અને ભોજનની દિનચર્યા જાળવો","દારૂ મર્યાદિત કરો અને જાતે દવા લેવાનું ટાળો","ચિંતા વધે ત્યારે ધીમા શ્વાસ લેવાનો પ્રયાસ કરો","વ્યાવસાયિક મદદ વહેલી લો — તે અસરકારક છે"],
-      disclaimer:"જો તમે અથવા તમારા કોઈ પરિચિત તાત્કાલિક જોખમમાં હોય, તો કૃપા કરીને ઉપર આપેલી હેલ્પલાઇન પર કૉલ કરો અથવા નજીકના ઇમરજન્સી રૂમમાં જાઓ."
+      disclaimer:"જો તમે અથવા તમારા કોઈ પરિચિત તાત્કાલિક જોખમમાં હોય, તો કૃภา કરીને ઉપર આપેલી હેલ્પલાઇન પર કૉલ કરો અથવા નજીકના ઇમરજન્સી રૂમમાં જાઓ."
     },
     blog: {
       eyebrow:"વાંચો", title:"જાગૃતિ લેખો", subtitle:"માનસિક સ્વાસ્થ્ય પર ટૂંકા લેખો, દરેક માટે લખાયેલા.",
@@ -381,16 +381,16 @@ const translations = {
       disclaimer:"પરવાનગીથી શેર કરવામાં આવ્યું છે. ગોપનીયતાના રક્ષણ માટે ઓળખ સંબંધિત વિગતો દૂર કરવામાં આવી છે."
     },
     contact: {
-      eyebrow:"સંપર્કમાં રહો", title:"સંપર્ક & એપોઇન્ટમેન્ટ", subtitle:"કોઈ પ્રશ્ન છે, અથવા પરામર્શ બુક કરવા માંગો છો? નીચે સંપર્ક કરો.",
-      formName:"પૂરું નામ", formEmail:"ઇમેઇલ સરનામું", formLanguage:"પસંદગીની ભાષા", formMessage:"સંદેશ",
-      formSubmit:"સંદેશ મોકલો", formNote:"આ ફોર્મ સામાન્ય પ્રશ્નો માટે है. જો આ કટોકટી હોય, તો કૃપા કરીને તેના બદલે હેલ્પલાઇન પર કૉલ કરો.",
-      clinicTitle:"ક્લિનિક", clinicAddressNote:"સરનામું અને નકશો અહીં દેખાશે.", phoneLabel:"ફોન / વોટ્સએપ", emailLabel:"ઇમેઇલ",
-      formSuccess:"આભાર — તમારો સંદેશ નોંધાઈ ગયો છે. અમે જલ્દી તમારો સંદેશ મેળવીશું."
+      eyebrow:"સંપર્કમાં રહો", title:"સામાન્ય પ્રશ્ન પૂછો", subtitle:"શું તમારી પાસે માનસિક સ્વાસ્થ્ય પરિભાષા અથવા જાગૃતિ સંબંધિત કોઈ પ્રશ્ન છે? નીચે મારો સંપર્ક કરો.",
+      formName:"પૂરું નામ", formEmail:"ઇમેઇલ સરનામું", formLanguage:"પસંદગીની ભાષા", formMessage:"સંદેશ / સામાન્ય પ્રશ્ન",
+      formSubmit:"સંદેશ મોકલો", formNote:"આ ફોર્મ સામાન્ય પ્રશ્નો માટે છે. જો આ તબીબી કટોકટી હોય, તો કૃપા કરીને તેના બદલે હેલ્પલાઇન માળખાનો ઉપયોગ કરો.",
+      clinicTitle:"જાહેર પ્રોજેક્ટ", clinicAddressNote:"આ મંચ સંપૂર્ણપણે તબીબી શિક્ષણ અને કલંક ઘટાડવા માટે સમર્પિત છે.", phoneLabel:"ફોન / વોટ્સએપ", emailLabel:"ઇમેઇલ",
+      formSuccess:"આભાર — તમારો જાગૃતિ પ્રશ્ન નોંધી લેવામાં આવ્યો છે. અમે ટૂંક સમયમાં તમારા આપેલા ઇનબોક્સમાં જવાબ આપીશું."
     },
     footer: {
       about:"ગુજરાતમાં એક પ્રેક્ટિસિંગ મનોચિકિત્સક દ્વારા જાહેર માનસિક સ્વાસ્થ્ય જાગૃતિ પહેલ.",
       quickLinks:"ઝડપી લિંક્સ", disclaimerTitle:"અસ્વીકરણ",
-      disclaimerText:"આ વેબસાઇટ ફક્ત સામાન્ય જાગૃતિ અને શૈક્ષણિક હેતુઓ માટે છે. તે વ્યાવસાયિક નિદાન અથવા સારવારનો વિકલ્પ નથી. કૃપા કરીને વ્યક્તિગત તબીબી સલાહ માટે લાયક માનસિક સ્વાસ્થ્ય વ્યાવસાયિકની સલાહ લો.",
+      disclaimerText: "આ વેબસાઇટ ફક્ત સામાન્ય જાગૃતિ અને શૈક્ષણિક હેતુઓ માટે છે. તે વ્યાવસાયિક ક્લિનિકલ સારવારનો વિકલ્પ નથી. જો તમે તબીબી કટોકટીનો અનુભવ કરી રહ્યાં છો, તો કૃપા કરીને તાત્કાલિક સ્થાનિક હેલ્પલાઇન ઇમરજન્સી રૂમમાં કૉલ કરો.",
       copyright:"સર્વાધિકાર સુરક્ષિત.", madeWith:"કાળજી સાથે બનાવ્યું."
     }
   }
