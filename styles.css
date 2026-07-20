@@ -34,9 +34,9 @@
 /* Hindi / Gujarati: swap the display face for a serif that actually
    supports the script well, and bump body line-height for readability */
 body.lang-hi{ --font-display: 'Noto Serif Devanagari', serif; }
-body.lang-hi, body.lang-hi *{ line-height: 1.7; }
+body.lang-hi, body.lang-hi * { line-height: 1.7; }
 body.lang-gu{ --font-display: 'Noto Serif Gujarati', serif; }
-body.lang-gu, body.lang-gu *{ line-height: 1.7; }
+body.lang-gu, body.lang-gu * { line-height: 1.7; }
 
 *{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
@@ -266,4 +266,16 @@ footer p{ color: rgba(255,255,255,.7); font-size:14px; }
 /* focus visibility for keyboard users */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
   outline: 2px solid var(--teal); outline-offset: 2px;
+}
+
+.modal-window::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-window::-webkit-scrollbar-track {
+  background: var(--teal-soft);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+.modal-window::-webkit-scrollbar-thumb {
+  background: var(--sage);
+  border-radius: 4px;
 }
