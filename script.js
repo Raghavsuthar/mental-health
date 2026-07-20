@@ -2,6 +2,7 @@
    script.js
    Upgraded to dynamically render pop-up modal panels
    containing structured deep text for both public and clinicians.
+   Updated with explicit localized validation and ARIA metrics.
    ============================================================ */
 
 (function () {
@@ -39,39 +40,38 @@
       </div>`).join('');
   }
 
-  /* Upgraded to make topic cards trigger the modal view */
   function renderTopics(lang) {
     const wrap = document.getElementById('topicsGrid');
     if (!wrap) return;
     wrap.innerHTML = t(lang).topics.items.map((item, i) => `
-      <div class="card topic-card reveal" data-index="${i}">
+      <div class="card topic-card reveal" data-index="${i}" role="button" {{/* Access indicators */}} tabindex="0" aria-haspopup="dialog">
         <div class="icon">${ICONS.topics[i] || '•'}</div>
         <h3><span class="tag-dot"></span>${escapeHtml(item.title)}</h3>
         <p>${escapeHtml(item.desc)}</p>
         <span style="color:var(--teal); font-size:13px; font-weight:600; display:block; margin-top:14px;">Click to read layout →</span>
       </div>`).join('');
 
-    // Attach click triggers
     wrap.querySelectorAll('.topic-card').forEach(card => {
-      card.addEventListener('click', () => {
+      const triggerModal = () => {
         const idx = card.getAttribute('data-index');
         openDetailModal(idx, lang);
-      });
+      };
+      card.addEventListener('click', triggerModal);
+      card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerModal(); } });
     });
   }
 
-  /* Dynamic Modal Generation for Public and Clinical Frameworks */
   function openDetailModal(index, lang) {
     const data = t(lang).topics.items[index];
     if (!data || !data.detailTitle) return;
 
-    // Remove old modal instance if active
     const oldModal = document.getElementById('detailModal');
     if (oldModal) oldModal.remove();
 
-    // Create Modal Layout HTML Elements
     const modal = document.createElement('div');
     modal.id = 'detailModal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
     modal.style.cssText = `
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(22, 58, 58, 0.45); backdrop-filter: blur(8px);
@@ -80,12 +80,11 @@
     `;
 
     const cardHtml = `
-      <div style="background: var(--panel); width: 100%; max-width: 850px; max-height: 85vh; overflow-y: auto; border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-lift); position: relative; animation: modalFadeIn 0.3s ease;">
-        <button id="closeModalBtn" style="position: absolute; top: 20px; right: 20px; background: var(--teal-soft); border: none; font-size: 22px; width: 40px; height: 40px; border-radius: 50%; color: var(--teal-deep); cursor: pointer;">×</button>
+      <div class="modal-window" style="background: var(--panel); width: 100%; max-width: 850px; max-height: 85vh; overflow-y: auto; border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-lift); position: relative; animation: modalFadeIn 0.3s ease;">
+        <button id="closeModalBtn" aria-label="Close details" style="position: absolute; top: 20px; right: 20px; background: var(--teal-soft); border: none; font-size: 22px; width: 40px; height: 40px; border-radius: 50%; color: var(--teal-deep); cursor: pointer;">×</button>
         
         <h2 style="margin-bottom: 24px; border-bottom: 2px solid var(--teal-soft); padding-bottom: 12px; font-family: var(--font-display); color: var(--teal-deep);">${escapeHtml(data.detailTitle)}</h2>
         
-        <!-- Toggle Tabs Layout for Public vs Medical Expert -->
         <div style="display: flex; gap: 10px; margin-bottom: 24px; border-bottom: 1px solid var(--sage);">
           <button id="tabPublic" style="padding: 10px 20px; background: var(--teal); color: white; border: none; border-radius: 8px 8px 0 0; font-weight: 600; cursor: pointer;">Public Guide</button>
           <button id="tabClinical" style="padding: 10px 20px; background: var(--teal-soft); color: var(--teal-deep); border: none; border-radius: 8px 8px 0 0; font-weight: 600; cursor: pointer;">Clinician Guide</button>
@@ -99,12 +98,14 @@
 
     modal.innerHTML = cardHtml;
     document.body.appendChild(modal);
-    document.body.style.overflow = 'hidden'; // Lock base scroll
+    document.body.style.overflow = 'hidden';
 
-    // Modal Interaction Handlers
     const publicBtn = modal.querySelector('#tabPublic');
     const clinicalBtn = modal.querySelector('#tabClinical');
     const contentBox = modal.querySelector('#modalContentBox');
+    const closeBtn = modal.querySelector('#closeModalBtn');
+
+    closeBtn.focus();
 
     publicBtn.addEventListener('click', () => {
       publicBtn.style.background = 'var(--teal)'; publicBtn.style.color = 'white';
@@ -121,10 +122,20 @@
     const closeModal = () => {
       modal.remove();
       document.body.style.overflow = '';
+      const triggers = document.querySelectorAll('.topic-card');
+      if (triggers[index]) triggers[index].focus();
     };
 
-    modal.querySelector('#closeModalBtn').addEventListener('click', closeModal);
+    closeBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    
+    const operationalEscape = (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+        window.removeEventListener('keydown', operationalEscape);
+      }
+    };
+    window.addEventListener('keydown', operationalEscape);
   }
 
   function renderHelplines(lang) {
@@ -239,9 +250,30 @@
       const name = form.querySelector('#fName');
       const email = form.querySelector('#fEmail');
       let valid = true;
+
+      form.querySelectorAll('.error-msg').forEach(msg => msg.remove());
       [name, email].forEach(f => f.style.borderColor = '');
-      if (!name.value.trim()) { name.style.borderColor = '#c0533f'; valid = false; }
-      if (!email.value.trim() || !/^\S+@\S+\.\S+$/.test(email.value)) { email.style.borderColor = '#c0533f'; valid = false; }
+
+      if (!name.value.trim()) { 
+        name.style.borderColor = '#c0533f'; 
+        valid = false;
+        const err = document.createElement('span');
+        err.className = 'error-msg';
+        err.style.cssText = 'color:#c0533f; font-size:12px; display:block; margin-top:4px;';
+        err.textContent = t(currentLang).contact.errorName || 'Required';
+        name.parentNode.appendChild(err);
+      }
+      
+      if (!email.value.trim() || !/^\S+@\S+\.\S+$/.test(email.value)) { 
+        email.style.borderColor = '#c0533f'; 
+        valid = false;
+        const err = document.createElement('span');
+        err.className = 'error-msg';
+        err.style.cssText = 'color:#c0533f; font-size:12px; display:block; margin-top:4px;';
+        err.textContent = t(currentLang).contact.errorEmail || 'Invalid Email';
+        email.parentNode.appendChild(err);
+      }
+
       if (!valid) return;
 
       const successBox = document.getElementById('formSuccess');
@@ -271,7 +303,6 @@
       btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
     });
     
-    // Add custom structural CSS animation for modal popup panel dynamically
     const style = document.createElement('style');
     style.innerHTML = `@keyframes modalFadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }`;
     document.head.appendChild(style);
