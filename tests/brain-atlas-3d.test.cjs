@@ -19,9 +19,8 @@ test('3D atlas regions have unique stable IDs and valid layers', () => {
 
 test('chapter IDs are either null or known Brain Atlas chapter IDs', () => {
   const allowed = new Set([
-    'prefrontal-cortex', 'primary-somatosensory-cortex', 'primary-visual-cortex',
-    'hippocampus', 'amygdala', 'thalamus', 'basal-ganglia', 'cerebellum',
-    'brainstem', 'frontal-lobe', 'parietal-lobe', 'temporal-lobe', 'occipital-lobe'
+    'prefrontal-cortex', 'primary-somatosensory-cortex', 'hippocampus', 'amygdala', 'mediodorsal-thalamus', 'caudate-nucleus',
+    'cerebellar-hemispheres', 'midbrain'
   ]);
   for (const region of data) {
     assert.ok(region.chapterId === null || allowed.has(region.chapterId), region.id);
