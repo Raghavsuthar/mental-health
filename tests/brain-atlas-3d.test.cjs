@@ -26,3 +26,25 @@ test('chapter IDs are either null or known Brain Atlas chapter IDs', () => {
     assert.ok(region.chapterId === null || allowed.has(region.chapterId), region.id);
   }
 });
+
+const { brainAtlasData } = require('../brain-atlas.js');
+const { getStructureById } = require('../brain-atlas-ui.js');
+const { initBrainAtlas3D } = require('../brain-atlas-3d.js');
+
+test('each mapped 3D region opens an existing chapter; unmapped regions stay unmapped', () => {
+  for (const region of data) {
+    if (region.chapterId) {
+      assert.ok(getStructureById(brainAtlasData, region.chapterId), region.id);
+    } else {
+      assert.equal(getStructureById(brainAtlasData, region.chapterId), null);
+    }
+  }
+});
+
+test('3D viewer safely no-ops when no host is available', () => {
+  const viewer = initBrainAtlas3D({ host: null, regions: data });
+  assert.equal(typeof viewer.destroy, 'function');
+  assert.equal(typeof viewer.selectRegion, 'function');
+  assert.equal(typeof viewer.resetView, 'function');
+  viewer.destroy();
+});
