@@ -53,7 +53,7 @@
 
     wrap.querySelectorAll('.topic-card').forEach(card => {
       const triggerModal = () => {
-        const evidenceIds = ['depression','anxiety','bipolar','schizophrenia','ocd','substance-use','evidence-placeholder','suicide'];
+        const evidenceIds = ['depression','anxiety','bipolar','schizophrenia','ocd','substance-use','child-adolescent','suicide'];
         const idx = Number(card.getAttribute('data-index'));
         const topicId = evidenceIds[idx];
         if (topicId && typeof evidenceLibrary !== 'undefined') {
