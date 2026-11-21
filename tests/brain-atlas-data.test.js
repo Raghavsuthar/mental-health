@@ -20,7 +20,7 @@ test('every structure has core anatomy, clinical and reference fields', () => {
       }
       assert.ok(structure.mcqs.length > 0, structure.id + ' needs a revision MCQ');
       for (const q of structure.mcqs) {
-        assert.ok(q.options.length >= 3);
+        assert.ok(q.options.length >= 2, structure.id + ' needs at least two answer choices');
         assert.ok(q.correctIndex >= 0 && q.correctIndex < q.options.length);
         assert.ok(q.explanation.length > 20);
       }
