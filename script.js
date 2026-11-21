@@ -48,7 +48,7 @@
     wrap.innerHTML = t(lang).topics.items.map((item, i) => {
       const topicId = TOPIC_EVIDENCE_IDS[i];
       const cardClass = topicId ? 'topic-card' : 'topic-card-static';
-      const interaction = topicId ? `data-evidence-topic="${topicId}" role="button" tabindex="0" aria-haspopup="region"` : '';
+      const interaction = topicId ? `data-evidence-topic="${topicId}" role="button" tabindex="0"` : '';
       const action = topicId ? '<span class="topic-card-action">Open evidence-based learning guide →</span>' : '';
       return `
         <div class="card ${cardClass} reveal" ${interaction}>
