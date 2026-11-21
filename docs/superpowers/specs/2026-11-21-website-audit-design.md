@@ -11,11 +11,13 @@ Stabilise the existing public mental-health education website by correcting conf
 ## Goals
 
 - Ensure each topic card opens the correct matching evidence guide.
+- Ensure evidence-library search and filters are initialised and remain synchronised when a topic guide is opened.
 - Stop presenting a local-only contact form as if it sent or stored a message.
 - Remove the placeholder email address and the misleading anonymity claim.
 - Remove inert blog links that look actionable but do nothing.
 - Prevent hidden 3D layers from being selected by canvas hit-testing.
-- Improve mobile-menu state announcements and keyboard dismissal.
+- Improve mobile-menu state announcements, keyboard dismissal, and visible focus for keyboard-operated topic cards.
+- Remove obsolete or invalid popup semantics from in-page topic navigation.
 - Strengthen automated checks so these defects are caught in future changes.
 
 ## Non-goals
