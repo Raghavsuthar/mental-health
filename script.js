@@ -305,7 +305,8 @@
     });
     renderEvidenceLibrary();
   }
-\n  function escapeHtml(str) {
+
+  function escapeHtml(str) {
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
@@ -324,6 +325,7 @@
     renderTips(lang);
     renderBlog(lang);
     renderTestimonials(lang);
+    renderEvidenceLibrary();
 
     document.querySelectorAll('.lang-switch button').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.lang === lang);
