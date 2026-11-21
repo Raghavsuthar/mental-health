@@ -14,7 +14,7 @@ The repository is a static HTML/CSS/vanilla-JavaScript mental-health education s
 
 | Priority | Finding | Resolution |
 |---|---|---|
-| High | Evidence-library search and filter controls were never initialised, so they appeared but did not respond | Call `initEvidenceLibrary()` during page startup; preserve live search rendering |
+| High | Evidence-library search and filter controls were never initialised, so they appeared but did not respond | Call `initEvidenceLibrary()` during page startup; preserve live search rendering and reset stale filters when opening a guide |
 | High | Topic cards were associated with the wrong evidence IDs; in particular Stress & Burnout could open Bipolar, and Bipolar could open Schizophrenia | Replace the incorrect mapping with an explicit guide map; Stress & Burnout is no longer presented as an actionable guide until a matching guide exists |
 | High | Contact form showed a success message despite having no delivery service; it collected name/email while English called it anonymous | Remove the nonfunctional form and state clearly that no contact channel is configured and nothing is sent or stored |
 | High | Contact panel displayed `temporary-email@example.com` | Remove the placeholder rather than inventing a real address |
@@ -22,15 +22,16 @@ The repository is a static HTML/CSS/vanilla-JavaScript mental-health education s
 | Medium | Blog cards displayed inert “Read more” anchors | Remove nonfunctional links until real article pages exist |
 | Medium | Hidden 3D brain meshes could still be hit-tested after a layer was switched off | Filter invisible meshes out of raycasting |
 | Medium | Keyboard-activatable topic cards lacked a visible focus outline | Add a clear `:focus-visible` indicator |
+| Medium | Topic cards used an invalid `aria-haspopup="region"` value after the interaction changed from a modal to an in-page guide | Remove the obsolete popup attribute |
 | Medium | Mobile menu did not expose expanded state or close on Escape | Add `aria-controls`, synchronised `aria-expanded`, Escape dismissal and focus return |
 | Low | CI used action versions that produced Node 20 deprecation warnings and ran only on a narrow set of push branches | Upgrade to `actions/checkout@v7.0.1` and `actions/setup-node@v7.1.0`, run checks on `main`, `feat/**`, and `fix/**`, and set `contents: read` |
 
 ## Verification
 
 - JavaScript syntax check: passed.
-- Node test suite: **21 passed, 0 failed**.
-- GitHub Actions push run: [44879421639](https://github.com/Raghavsuthar/mental-health/actions/runs/44879421639) — success.
-- GitHub Actions pull-request run: [44879425499](https://github.com/Raghavsuthar/mental-health/actions/runs/44879425499) — success.
+- Node test suite: **23 passed, 0 failed**.
+- GitHub Actions push run: [44879547983](https://github.com/Raghavsuthar/mental-health/actions/runs/44879547983) — success.
+- GitHub Actions pull-request run: [44879550244](https://github.com/Raghavsuthar/mental-health/actions/runs/44879550244) — success.
 - Main-branch GitHub Pages build before this PR: [44878475580](https://github.com/Raghavsuthar/mental-health/actions/runs/44878475580) — success.
 
 ## Findings not changed / limitations
