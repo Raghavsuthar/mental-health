@@ -1,0 +1,100 @@
+# Website Audit Bug-Fix Implementation Plan
+
+> **For agentic workers:** Use the Superpowers executing-plans workflow. Steps use checkbox syntax for tracking.
+
+**Goal:** Fix confirmed user-facing defects in the existing static mental-health website without changing its architecture.
+
+**Architecture:** Keep the current HTML/CSS/vanilla-JS design. Add focused regression tests, make minimal source changes, and verify through the repository's Node test runner and GitHub Actions.
+
+**Tech Stack:** Static HTML, CSS, browser JavaScript, Node.js built-in test runner, GitHub Actions.
+
+**Spec:** `docs/superpowers/specs/2026-11-21-website-audit-design.md`
+
+## Global Constraints
+
+- Work only on `fix/website-audit-2026-11-21`, based on `main`.
+- No framework migration or new runtime dependencies.
+- Do not invent a contact address, backend, or successful message delivery.
+- Do not merge or alter the separate open Brain Atlas PR #3.
+- Keep mental-health education and crisis messaging conservative and transparent.
+
+## Review Focus
+
+- A topic card must not open an unrelated evidence guide.
+- The contact section must not imply that data was sent, stored, or anonymous when that is untrue.
+- A hidden 3D layer must not remain selectable by pointer hit-testing.
+- A nonfunctional blog link must not appear to be an active navigation action.
+- Mobile navigation state must be perceivable and dismissible by keyboard.
+
+---
+
+### Task 1: Add regression tests for confirmed defects
+
+**Files:**
+- Modify: `tests/site-stability.test.js`
+- Modify: `tests/brain-atlas-3d.test.cjs`
+
+**Interfaces:**
+- Add a pure `visibleMeshesForPicking(meshes)` helper to `brain-atlas-3d.js`; it returns only meshes whose `visible` property is not false.
+
+- [ ] Add tests for explicit topic-to-guide mapping, truthful/non-collecting contact UI, removal of inert blog anchors, and mobile-menu ARIA state.
+- [ ] Add a test proving invisible meshes are excluded from the 3D pick list.
+- [ ] Run the relevant tests and confirm the new assertions fail against the current code.
+
+### Task 2: Correct topic guide mapping and inactive blog links
+
+**Files:**
+- Modify: `script.js`
+- Test: `tests/site-stability.test.js`
+
+- [ ] Replace the incorrect index-to-guide mapping with the correct explicit mapping; leave Stress & Burnout non-interactive until a matching guide exists.
+- [ ] Remove the inert `href="#"` Read More anchors from blog cards.
+- [ ] Run the focused regression tests.
+
+### Task 3: Make contact UI honest and privacy-preserving
+
+**Files:**
+- Modify: `index.html`
+- Modify: `translations.js`
+- Modify: `script.js`
+- Test: `tests/site-stability.test.js`
+
+- [ ] Replace the inactive form with a clear notice that no secure contact channel is configured and no messages are sent or stored.
+- [ ] Remove the placeholder email and the English anonymity claim.
+- [ ] Remove obsolete fake-success form handling.
+- [ ] Update English, Hindi, and Gujarati contact copy consistently.
+- [ ] Run the focused regression tests.
+
+### Task 4: Exclude hidden 3D meshes from picking
+
+**Files:**
+- Modify: `brain-atlas-3d.js`
+- Modify: `tests/brain-atlas-3d.test.cjs`
+
+- [ ] Add and export `visibleMeshesForPicking(meshes)`.
+- [ ] Use the helper before raycasting.
+- [ ] Run the 3D regression tests.
+
+### Task 5: Improve mobile-menu accessibility
+
+**Files:**
+- Modify: `index.html`
+- Modify: `script.js`
+- Test: `tests/site-stability.test.js`
+
+- [ ] Add `aria-controls` and `aria-expanded` to the menu button.
+- [ ] Keep `aria-expanded` synchronised when opening and closing.
+- [ ] Close the menu on Escape and return focus to the menu button.
+- [ ] Run the focused regression tests.
+
+### Task 6: Verify and review
+
+**Files:**
+- Review all changed files and workflow output.
+
+- [ ] Run `node --check` on all top-level JavaScript and test files.
+- [ ] Run `node --test tests/*.test.*`.
+- [ ] Confirm GitHub Actions checks pass on the pull request.
+- [ ] Perform a separate self-review because no independent reviewer subagent is available.
+- [ ] Open a PR to `main`; do not merge it.
+- [ ] Document any deferred findings and verification limitations.
