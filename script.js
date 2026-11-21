@@ -314,7 +314,8 @@
     if (search) search.addEventListener('input', () => {
       evidenceQuery = search.value;
       selectedEvidenceTopic = null;
-      });
+      renderEvidenceLibrary();
+    });
     document.querySelectorAll('.evidence-filter').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.evidence-filter').forEach(x => x.classList.remove('active'));
@@ -324,7 +325,6 @@
         renderEvidenceLibrary();
       });
     });
-    renderEvidenceLibrary();
   }
 
   function escapeHtml(str) {
