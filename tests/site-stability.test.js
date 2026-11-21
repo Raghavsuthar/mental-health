@@ -13,7 +13,7 @@ test('HTML loads the evidence library as a real script element', () => {
 });
 
 test('topic cards map only to the matching evidence guides', () => {
-  assert.match(script, /const TOPIC_EVIDENCE_IDS = \['depression', 'anxiety', null, 'bipolar', 'ocd', 'substance-use', 'child-adolescent', 'suicide'\]/);
+  assert.match(script, /const TOPIC_EVIDENCE_IDS = Object\.freeze\(\['depression', 'anxiety', null, 'bipolar', 'ocd', 'substance-use', 'child-adolescent', 'suicide'\]\)/);
   assert.match(script, /const topicId = TOPIC_EVIDENCE_IDS\[i\]/);
   assert.match(script, /topic-card-static/);
   assert.doesNotMatch(script, /const evidenceIds = \['depression','anxiety','bipolar','schizophrenia'/);
