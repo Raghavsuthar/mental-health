@@ -3,11 +3,15 @@ name: Brain Atlas checks
 on:
   push:
     branches:
-      - feat/brain-atlas
-      - feat/interactive-3d-brain-atlas
+      - main
+      - 'feat/**'
+      - 'fix/**'
   pull_request:
     branches:
       - main
+
+permissions:
+  contents: read
 
 jobs:
   checks:
