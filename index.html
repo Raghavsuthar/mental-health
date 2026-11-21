@@ -35,7 +35,9 @@
         <li><a href="#home" data-i18n="nav.home">Home</a></li>
         <li><a href="#about" data-i18n="nav.about">About</a></li>
         <li><a href="#services" data-i18n="nav.services">Outreach</a></li>
-        <li><a href="#topics" data-i18n="nav.topics">Topics</a></li>
+        <li><a href="#topics" data-i18n="nav.topics">Topics</a>
+    <a href="#brain-atlas">Brain Atlas</a></li>
+        <li><a href="#brain-atlas">Brain Atlas</a></li>
         <li><a href="#resources" data-i18n="nav.resources">Resources</a></li>
         <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
@@ -133,6 +135,25 @@
   </div>
 </section>
 
+
+<!-- ================= BRAIN ATLAS ================= -->
+<section id="brain-atlas" class="brain-atlas-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Neuroanatomy · MBBS / DNB Psychiatry</div>
+      <h2>Brain Atlas: Structure, Function &amp; Clinical Correlation</h2>
+      <p>Explore major brain structures, their connections, functions, lesion patterns and psychiatric relevance.</p>
+    </div>
+    <div class="atlas-intro">
+      <strong>How to use this atlas:</strong> Search by structure, function, symptom or clinical syndrome, or browse by anatomical system. Each chapter includes a short revision question.
+      <span class="atlas-language-note">Anatomical chapters are currently provided in English; the surrounding website interface may be viewed in Hindi or Gujarati.</span>
+    </div>
+    <div id="brainAtlasApp" aria-live="polite">
+      <p>Loading brain atlas…</p>
+    </div>
+    <div class="atlas-disclaimer"><strong>Educational resource only.</strong> Lesion patterns are simplified teaching summaries. Psychiatric disorders are complex, distributed-network conditions; the associations described here are not diagnostic tests or explanations of an individual patient's illness. Consult standard texts and current clinical guidance.</div>
+  </div>
+</section>
 
 <!-- ================= EVIDENCE-BASED LEARNING LIBRARY ================= -->
 <section id="evidence-library" class="evidence-section">
@@ -312,7 +333,10 @@
 <button id="backToTop" aria-label="Back to top">↑</button>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<script src="translations.js"></script>\n<script src="evidence-library.js"></script>
+<script src="translations.js"></script>
+<script src="evidence-library.js"></script>
+<script src="brain-atlas.js"></script>
+<script src="brain-atlas-ui.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

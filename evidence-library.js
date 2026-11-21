@@ -32,7 +32,7 @@ const evidenceLibrary = {
       icon:"🌧️",
       title:"Depressive disorders",
       level:"Core",
-      review:"2026-11",
+      contentUpdated:"2026-11",
       evidence:"WHO + NICE NG222 + IPS CPG",
       summary:"Depression involves persistent depressed mood or loss of interest/pleasure with associated cognitive, behavioural and biological symptoms that cause distress or functional impairment.",
       public:[
@@ -51,7 +51,7 @@ const evidenceLibrary = {
       icon:"🌀",
       title:"Anxiety disorders",
       level:"Core",
-      review:"2026-11",
+      contentUpdated:"2026-11",
       evidence:"WHO + NICE CG113",
       summary:"Anxiety disorders involve excessive fear or worry with cognitive, physical and behavioural symptoms that are difficult to control and cause clinically significant distress or impairment.",
       public:[
@@ -70,7 +70,7 @@ const evidenceLibrary = {
       icon:"🌗",
       title:"Bipolar disorder",
       level:"Core",
-      review:"2026-11",
+      contentUpdated:"2026-11",
       evidence:"WHO + IPS 2017 + CANMAT/ISBD update + Indian 2025 CPG",
       summary:"Bipolar disorder is characterised by episodes of mania/hypomania and depression, with changes in mood, energy, activity and cognition.",
       public:[
@@ -89,7 +89,7 @@ const evidenceLibrary = {
       icon:"🧠",
       title:"Schizophrenia and psychosis",
       level:"Core",
-      review:"2026-11",
+      contentUpdated:"2026-11",
       evidence:"WHO + IPS CPG",
       summary:"Schizophrenia is a psychotic disorder associated with disturbances in perception, thought, behaviour and functioning. Psychosis also occurs in many other conditions, so assessment must be broad.",
       public:[
@@ -108,7 +108,7 @@ const evidenceLibrary = {
       icon:"🔁",
       title:"Obsessive-compulsive disorder",
       level:"Core",
-      review:"2026-11",
+      contentUpdated:"2026-11",
       evidence:"NICE CG31 + WHO",
       summary:"OCD involves obsessions, compulsions or both that are time-consuming or cause significant distress or impairment.",
       public:[
@@ -127,7 +127,7 @@ const evidenceLibrary = {
       icon:"⚡",
       title:"Post-traumatic stress disorder",
       level:"Core",
-      review:"2026-11",
+      contentUpdated:"2026-11",
       evidence:"WHO + NICE",
       summary:"PTSD can follow exposure to an extremely threatening or horrific event or series of events and includes trauma-related re-experiencing, avoidance and persistent threat-related symptoms.",
       public:[
@@ -146,7 +146,7 @@ const evidenceLibrary = {
       icon:"🧭",
       title:"Substance use disorders",
       level:"Core",
-      review:"2026-11",
+      contentUpdated:"2026-11",
       evidence:"WHO + evidence-based SUD guidance",
       summary:"Substance use disorders are health conditions involving impaired control over substance use, continued use despite harm and clinically significant functional or health consequences.",
       public:[
@@ -165,7 +165,7 @@ const evidenceLibrary = {
       icon:"🧒",
       title:"Child & adolescent mental health",
       level:"Core",
-      review:"2026-11",
+      contentUpdated:"2026-11",
       evidence:"WHO + developmental psychiatry guidance",
       summary:"Mental health in children and adolescents is shaped by development, family, school, peers, biology and environment. Assessment must be developmentally informed.",
       public:[
@@ -184,7 +184,7 @@ const evidenceLibrary = {
       icon:"🕊️",
       title:"Suicide and self-harm",
       level:"Safety",
-      review:"2026-11",
+      contentUpdated:"2026-11",
       evidence:"WHO + national/local crisis resources",
       summary:"Suicidal thoughts and self-harm require compassionate, direct assessment and safety-focused care. They should never be reduced to a single numerical risk score.",
       public:[

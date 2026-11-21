@@ -339,3 +339,45 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .evidence-filters{width:100%;overflow:auto;}
   .evidence-filter{white-space:nowrap;}
 }
+
+
+/* ================= BRAIN ATLAS ================= */
+.brain-atlas-section{padding:88px 0;background:var(--bg,#f7f8f6)}
+.atlas-intro,.atlas-disclaimer{padding:16px 18px;border:1px solid var(--border,#dce4e1);border-radius:14px;background:var(--surface,#fff);color:var(--text,#263b3a);line-height:1.65;margin:18px 0}
+.atlas-language-note{display:block;margin-top:6px;font-size:.92rem;color:var(--muted,#667775)}
+.atlas-toolbar{display:grid;grid-template-columns:minmax(0,2fr) minmax(180px,1fr);gap:12px;margin:22px 0}
+.atlas-search,.atlas-filter{width:100%;min-height:48px;border:1px solid var(--border,#dce4e1);border-radius:12px;padding:10px 14px;background:var(--surface,#fff);color:var(--text,#263b3a);font:inherit}
+.atlas-layout{display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:22px;align-items:start}
+.atlas-chapters,.atlas-reader{background:var(--surface,#fff);border:1px solid var(--border,#dce4e1);border-radius:16px;padding:18px;min-width:0}
+.atlas-chapters{max-height:760px;overflow:auto;position:sticky;top:90px}
+.atlas-system-title{font-size:.92rem;margin:14px 0 7px;color:var(--accent,#2d6a6a)}
+.atlas-system-title:first-child{margin-top:0}
+.atlas-chapter{display:block;width:100%;text-align:left;border:0;border-radius:9px;background:transparent;color:var(--text,#263b3a);padding:9px 10px;font:inherit;cursor:pointer;overflow-wrap:anywhere}
+.atlas-chapter:hover,.atlas-chapter[aria-pressed="true"]{background:var(--soft,#edf4f1);color:var(--accent,#2d6a6a)}
+.atlas-count,.atlas-kicker{font-size:.84rem;color:var(--muted,#667775);margin:0 0 8px}
+.atlas-title{font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;margin:4px 0 10px;overflow-wrap:anywhere}
+.atlas-lead{font-size:1.02rem;line-height:1.65;color:var(--muted,#667775);margin-bottom:22px}
+.atlas-subheading{font-size:1.05rem;margin:22px 0 8px;color:var(--accent,#2d6a6a)}
+.atlas-list{padding-left:21px;line-height:1.7;margin:0}
+.atlas-list li{margin:5px 0;overflow-wrap:anywhere}
+.atlas-mcq{margin-top:26px;padding:18px;border-radius:14px;background:var(--soft,#edf4f1)}
+.atlas-question{font-weight:600;line-height:1.55}
+.atlas-options{display:grid;gap:8px}
+.atlas-option{padding:11px 13px;border:1px solid var(--border,#dce4e1);border-radius:10px;background:var(--surface,#fff);color:var(--text,#263b3a);text-align:left;font:inherit;cursor:pointer}
+.atlas-option:disabled{cursor:default;opacity:.9}
+.atlas-option.is-correct{border-color:#23845b;background:#e9f7ef}
+.atlas-option.is-incorrect{border-color:#bd5a51;background:#fff0ee}
+.atlas-feedback{line-height:1.6;margin-bottom:0}
+.atlas-reference{margin:7px 0;overflow-wrap:anywhere}
+.atlas-reference a{color:var(--accent,#2d6a6a);text-decoration:underline}
+.atlas-chapter:focus-visible,.atlas-option:focus-visible,.atlas-search:focus-visible,.atlas-filter:focus-visible,.atlas-reference a:focus-visible{outline:3px solid #d99a44;outline-offset:2px}
+@media(max-width:760px){.brain-atlas-section{padding:58px 0}.atlas-toolbar{grid-template-columns:1fr}.atlas-layout{grid-template-columns:1fr}.atlas-chapters{position:static;max-height:320px}.atlas-reader{padding:16px}.atlas-intro,.atlas-disclaimer{padding:14px}}
+@media(prefers-reduced-motion:reduce){.brain-atlas-section *{scroll-behavior:auto!important;transition:none!important}}
+
+
+.atlas-pathway{margin:22px 0;padding:16px;border:1px solid var(--border,#dce4e1);border-radius:14px;background:var(--soft,#edf4f1);min-width:0}
+.atlas-flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;min-width:0}
+.atlas-flow-node{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:9px 12px;border:1px solid var(--border,#dce4e1);border-radius:10px;background:var(--surface,#fff);color:var(--text,#263b3a);font-size:.9rem;font-weight:600;text-align:center;overflow-wrap:anywhere;max-width:100%}
+.atlas-flow-arrow{font-size:1.2rem;color:var(--accent,#2d6a6a);font-weight:700}
+.atlas-flow-note{font-size:.84rem;color:var(--muted,#667775);margin:12px 0 0;line-height:1.5}
+@media(max-width:520px){.atlas-flow{flex-direction:column}.atlas-flow-arrow{transform:rotate(90deg)}.atlas-flow-node{width:100%}}
