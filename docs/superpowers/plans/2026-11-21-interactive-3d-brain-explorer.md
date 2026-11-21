@@ -42,7 +42,7 @@
 - [x] Review license/attribution and limitations.
 - [x] Inspect changes as a separate self-review (no subagent tool is available); record findings.
 - [x] Report tests and browser/device checks that could not be run.
-- [x] Provide PR link and wait for user's choice before merge.
+- [ ] Provide PR link and wait for user's choice before merge.
 
 
 ## Execution record
