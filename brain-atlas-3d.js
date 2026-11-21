@@ -56,7 +56,7 @@
     const list=host.querySelector("[data-3d-list]"),details=host.querySelector("[data-3d-details]");
     const reset=host.querySelector("[data-3d-reset]");
     if(!loadButton||!canvas||!status||!list||!details)return;
-    let scene,camera,renderer,controls,modelRoot,selectedMesh=null;
+    let scene,camera,renderer,controls,modelRoot,selectedMesh=null,dracoLoader=null,resizeBound=false,pointerDown=null,suppressClick=false;
     let manifestNodes=[],meshesById=new Map(),nodesById=new Map(),loaded=false,loading=false;
     const setStatus=(message,isError)=>{status.textContent=message;status.classList.toggle("is-error",Boolean(isError));};
     const make=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
@@ -124,8 +124,8 @@
       return Promise.all([
         fetch(MANIFEST_URL).then(r=>{if(!r.ok)throw new Error("Structure index could not be loaded.");return r.json();}),
         new Promise((resolve,reject)=>{
-          const draco=new root.THREE.DRACOLoader();draco.setDecoderPath(DRACO_URL);
-          const loader=new root.THREE.GLTFLoader();loader.setDRACOLoader(draco);
+          dracoLoader=new root.THREE.DRACOLoader();dracoLoader.setDecoderPath(DRACO_URL);
+          const loader=new root.THREE.GLTFLoader();loader.setDRACOLoader(dracoLoader);
           loader.load(MODEL_URL,resolve,event=>{
             if(event.total)setStatus("Loading anatomical model… "+Math.round(event.loaded/event.total*100)+"%");
             else setStatus("Loading anatomical model… "+Math.round(event.loaded/1048576)+" MB received");
@@ -155,14 +155,17 @@
         camera.near=0.01;camera.far=100;camera.updateProjectionMatrix();controls.update();
         renderList(search?search.value:"");loaded=true;
         setStatus("Model loaded. Drag to rotate; scroll or pinch to zoom. Select any structure to explore it.");
-        loadButton.hidden=true;canvas.focus();animate();
+        loadButton.hidden=true;
+        if(dracoLoader){dracoLoader.dispose();dracoLoader=null;}
+        canvas.focus();animate();
       });
     }
     async function start() {
       if(loading||loaded)return;loading=true;loadButton.disabled=true;setStatus("Preparing the 3D viewer…");
       try{
-        const ctx=canvas.getContext("webgl2")||canvas.getContext("webgl");
-        if(!ctx)throw new Error("WebGL is unavailable in this browser. The text Brain Atlas remains available below.");
+        const probe=document.createElement("canvas");
+        const ctx=probe.getContext("webgl2");
+        if(!ctx)throw new Error("WebGL 2 is unavailable in this browser. The text Brain Atlas remains available below.");
         for(const url of SCRIPT_URLS)await loadScript(url);
         const T=root.THREE;if(!T||!T.GLTFLoader||!T.DRACOLoader||!T.OrbitControls)throw new Error("A required 3D viewer component did not load.");
         renderer=new T.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:"low-power"});
@@ -173,10 +176,13 @@
         const fill=new T.DirectionalLight(0x9ac7c1,0.9);fill.position.set(-6,2,-4);scene.add(fill);
         controls=new T.OrbitControls(camera,canvas);controls.enableDamping=true;controls.dampingFactor=0.07;
         controls.minDistance=0.8;controls.maxDistance=50;controls.enablePan=true;
-        resize();root.addEventListener("resize",resize);await loadModel();
+        resize();root.addEventListener("resize",resize);resizeBound=true;await loadModel();
       }catch(error){
         setStatus(error&&error.message?error.message:"The 3D brain could not be loaded. Please retry or use the text atlas below.",true);
         loadButton.disabled=false;loadButton.textContent="Retry loading 3D brain";
+        if(controls){controls.dispose();controls=null;}
+        if(resizeBound){root.removeEventListener("resize",resize);resizeBound=false;}
+        if(dracoLoader){dracoLoader.dispose();dracoLoader=null;}
         if(renderer){renderer.dispose();renderer=null;}
       }finally{loading=false;}
     }
@@ -187,8 +193,15 @@
       controls.target.set(0,0,0);camera.position.set(1.7*2.8,1.7*1.1,1.7*3.2);
       controls.update();highlight(null);showDetails(null);
     });
+    canvas.addEventListener("pointerdown",event=>{pointerDown={x:event.clientX,y:event.clientY};});
+    canvas.addEventListener("pointerup",event=>{
+      if(pointerDown&&Math.hypot(event.clientX-pointerDown.x,event.clientY-pointerDown.y)>6){
+        suppressClick=true;root.setTimeout(()=>{suppressClick=false;},0);
+      }
+      pointerDown=null;
+    });
     canvas.addEventListener("click",event=>{
-      if(!loaded||!camera||!modelRoot)return;
+      if(suppressClick||!loaded||!camera||!modelRoot)return;
       const rect=canvas.getBoundingClientRect(),pointer=new root.THREE.Vector2(((event.clientX-rect.left)/rect.width)*2-1,-((event.clientY-rect.top)/rect.height)*2+1);
       const raycaster=new root.THREE.Raycaster();raycaster.setFromCamera(pointer,camera);
       const hits=raycaster.intersectObject(modelRoot,true);if(!hits.length)return;
