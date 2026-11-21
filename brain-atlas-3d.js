@@ -133,22 +133,26 @@
         })
       ]).then(([manifest,gltf])=>{
         manifestNodes=indexManifestNodes(manifest);nodesById=new Map(manifestNodes.map(n=>[String(n.id),n]));modelRoot=gltf.scene;
-        const T=root.THREE;
+        const T=root.THREE,coreBounds=new T.Box3();let hasCore=false;
         modelRoot.traverse(object=>{
           if(!object.isMesh)return;
           let metadata=object.userData||{},parent=object.parent;
           while(parent&&metadata.bx_id===undefined&&parent.userData){metadata=parent.userData;parent=parent.parent;}
           const id=metadata.bx_id;
           if(id!==undefined&&id!==null){const key=String(id);if(!meshesById.has(key))meshesById.set(key,[]);meshesById.get(key).push(object);}
+          if(metadata.bx_core===1||metadata.bx_core===true){coreBounds.expandByObject(object);hasCore=true;}
           const color=PALETTE[metadata.bx_cat]||"#8FAF9F";
           object.material=new T.MeshStandardMaterial({color,roughness:0.82,metalness:0.02,emissive:color,emissiveIntensity:0.035});
           object.castShadow=false;object.receiveShadow=false;
         });
+        const bounds=hasCore?coreBounds:new T.Box3().setFromObject(modelRoot);
+        const center=bounds.getCenter(new T.Vector3()),sphere=bounds.getBoundingSphere(new T.Sphere());
+        const specimen=new T.Group();specimen.add(modelRoot);modelRoot.position.sub(center);
+        specimen.scale.setScalar(1.7/(sphere.radius||1));specimen.rotation.y=Math.PI;modelRoot=specimen;
         scene.add(modelRoot);
-        const bounds=new T.Box3().setFromObject(modelRoot),sphere=bounds.getBoundingSphere(new T.Sphere());
-        controls.target.copy(sphere.center);
-        camera.position.copy(sphere.center).add(new T.Vector3(sphere.radius*2.8,sphere.radius*1.1,sphere.radius*3.2));
-        camera.near=Math.max(sphere.radius/100,0.01);camera.far=sphere.radius*20;camera.updateProjectionMatrix();controls.update();
+        controls.target.set(0,0,0);
+        camera.position.set(1.7*2.8,1.7*1.1,1.7*3.2);
+        camera.near=0.01;camera.far=100;camera.updateProjectionMatrix();controls.update();
         renderList(search?search.value:"");loaded=true;
         setStatus("Model loaded. Drag to rotate; scroll or pinch to zoom. Select any structure to explore it.");
         loadButton.hidden=true;canvas.focus();animate();
