@@ -3,6 +3,7 @@
 const THREE_URL="https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
 const CONTROLS_URL="https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/controls/OrbitControls.js";
 async function loadThree(){const [THREE,controls]=await Promise.all([import(THREE_URL),import(CONTROLS_URL)]);return {THREE,OrbitControls:controls.OrbitControls};}
+function visibleMeshesForPicking(meshes){return (Array.isArray(meshes)?meshes:[]).filter(mesh=>mesh&&mesh.visible!==false);}
 function initBrainAtlas3D(options){
  const host=options&&options.host,regions=options&&options.regions,onSelect=options&&options.onSelect;
  if(!host||!Array.isArray(regions))return {destroy(){},selectRegion(){},resetView(){}};
@@ -73,7 +74,7 @@ function initBrainAtlas3D(options){
     pickMeshes.push(mesh);scene.add(mesh);
    });
    canvas.addEventListener("pointerdown",event=>{pointerStart={x:event.clientX,y:event.clientY};});
-   function pick(event){if(pointerStart&&Math.hypot(event.clientX-pointerStart.x,event.clientY-pointerStart.y)>6){pointerStart=null;return;}pointerStart=null;const rect=canvas.getBoundingClientRect();pointer.x=((event.clientX-rect.left)/rect.width)*2-1;pointer.y=-((event.clientY-rect.top)/rect.height)*2+1;raycaster.setFromCamera(pointer,camera);const hits=raycaster.intersectObjects(pickMeshes,false);if(hits.length){const r=regions.find(x=>x.id===hits[0].object.name);if(r)select(r);}}
+   function pick(event){if(pointerStart&&Math.hypot(event.clientX-pointerStart.x,event.clientY-pointerStart.y)>6){pointerStart=null;return;}pointerStart=null;const rect=canvas.getBoundingClientRect();pointer.x=((event.clientX-rect.left)/rect.width)*2-1;pointer.y=-((event.clientY-rect.top)/rect.height)*2+1;raycaster.setFromCamera(pointer,camera);const hits=raycaster.intersectObjects(visibleMeshesForPicking(pickMeshes),false);if(hits.length){const r=regions.find(x=>x.id===hits[0].object.name);if(r)select(r);}}
    canvas.addEventListener("pointerup",pick);
    function resize(){const w=Math.max(stage.clientWidth,280),h=Math.max(Math.min(stage.clientWidth*.68,420),300);camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false);}
    if(typeof ResizeObserver!=="undefined"){resizeObserver=new ResizeObserver(resize);resizeObserver.observe(stage);}else {resizeFallback=resize;root.addEventListener("resize",resizeFallback);}
@@ -91,5 +92,5 @@ function initBrainAtlas3D(options){
  return api;
 }
 root.initBrainAtlas3D=initBrainAtlas3D;
-if(typeof module!=="undefined"&&module.exports)module.exports={initBrainAtlas3D};
+if(typeof module!=="undefined"&&module.exports)module.exports={initBrainAtlas3D,visibleMeshesForPicking};
 })(typeof window!=="undefined"?window:globalThis);
