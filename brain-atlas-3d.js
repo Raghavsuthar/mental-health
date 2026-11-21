@@ -22,12 +22,12 @@ function initBrainAtlas3D(options){
  regionList.setAttribute("aria-label","Select a brain region");
  const disclaimer=make("p","atlas3d-disclaimer","Schematic 3D teaching model — not to scale; not for diagnosis, imaging interpretation or procedural planning.");
  shell.append(stage,status,toolbar,regionList,disclaimer);host.append(shell);
- let renderer=null,scene=null,camera=null,controls=null,frame=0,resizeObserver=null,disposed=false,meshById=new Map(),deepVisible=true,surfaceVisible=true,selectedId=null;
+ let renderer=null,scene=null,camera=null,controls=null,frame=0,resizeObserver=null,resizeFallback=null,disposed=false,meshById=new Map(),pickMeshes=[],deepVisible=true,surfaceVisible=true,selectedId=null;
  const buttons=new Map();
  function select(region){
   selectedId=region.id;
   buttons.forEach((button,id)=>{button.setAttribute("aria-pressed",String(id===selectedId));});
-  meshById.forEach((mesh,id)=>{const selected=id===selectedId;mesh.material.emissiveIntensity=selected?.38:0.04;mesh.scale.set(...regions.find(r=>r.id===id).scale.map(v=>v*(selected?1.09:1)));});
+  meshById.forEach((mesh,id)=>{const selected=id===selectedId;mesh.material.emissiveIntensity=selected ? 0.38 : 0.04;const scale=regions.find(r=>r.id===id).scale.map(v=>v*(selected?1.09:1));mesh.scale.set(...scale);if(mesh.userData.mirror)mesh.userData.mirror.scale.set(...scale);});
   status.textContent=region.label+": "+region.description;
   if(typeof onSelect==="function")onSelect(region);
  }
@@ -40,7 +40,7 @@ function initBrainAtlas3D(options){
   stage.append(p);
   status.textContent="Text-based atlas remains available.";
  }
- const api={destroy(){disposed=true;if(frame)cancelAnimationFrame(frame);if(resizeObserver)resizeObserver.disconnect();if(controls)controls.dispose();if(renderer){renderer.dispose();renderer.domElement.remove();}host.replaceChildren();},selectRegion(id){const r=regions.find(x=>x.id===id);if(r)select(r);},resetView(){if(controls){camera.position.set(3.8,2.2,4.2);controls.target.set(0,0,0);controls.update();}}};
+ const api={destroy(){disposed=true;if(frame)cancelAnimationFrame(frame);if(resizeObserver)resizeObserver.disconnect();if(resizeFallback)root.removeEventListener("resize",resizeFallback);if(controls)controls.dispose();if(renderer){renderer.dispose();renderer.domElement.remove();}host.replaceChildren();},selectRegion(id){const r=regions.find(x=>x.id===id);if(r)select(r);},resetView(){if(controls){camera.position.set(3.8,2.2,4.2);controls.target.set(0,0,0);controls.update();}}};
  (async()=>{
   try{
    const {THREE,OrbitControls}=await loadThree();
@@ -72,10 +72,10 @@ function initBrainAtlas3D(options){
     else meshById.set(region.id,mesh);
     scene.add(mesh);
    });
-   function pick(event){const rect=canvas.getBoundingClientRect();pointer.x=((event.clientX-rect.left)/rect.width)*2-1;pointer.y=-((event.clientY-rect.top)/rect.height)*2+1;raycaster.setFromCamera(pointer,camera);const hits=raycaster.intersectObjects(Array.from(meshById.values()),false);if(hits.length){const r=regions.find(x=>x.id===hits[0].object.name);if(r)select(r);}}
+   let pointerStart=null;canvas.addEventListener("pointerdown",event=>{pointerStart={x:event.clientX,y:event.clientY};});\n   function pick(event){if(pointerStart&&Math.hypot(event.clientX-pointerStart.x,event.clientY-pointerStart.y)>6){pointerStart=null;return;}pointerStart=null;const rect=canvas.getBoundingClientRect();pointer.x=((event.clientX-rect.left)/rect.width)*2-1;pointer.y=-((event.clientY-rect.top)/rect.height)*2+1;raycaster.setFromCamera(pointer,camera);const hits=raycaster.intersectObjects(pickMeshes,false);if(hits.length){const r=regions.find(x=>x.id===hits[0].object.name);if(r)select(r);}}
    canvas.addEventListener("pointerup",pick);
    function resize(){const w=Math.max(stage.clientWidth,280),h=Math.max(Math.min(stage.clientWidth*.68,420),300);camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false);}
-   if(typeof ResizeObserver!=="undefined"){resizeObserver=new ResizeObserver(resize);resizeObserver.observe(stage);}else root.addEventListener("resize",resize);
+   if(typeof ResizeObserver!=="undefined"){resizeObserver=new ResizeObserver(resize);resizeObserver.observe(stage);}else {resizeFallback=resize;root.addEventListener("resize",resizeFallback);}
    reset.addEventListener("click",()=>api.resetView());
    surface.addEventListener("click",()=>{surfaceVisible=!surfaceVisible;surface.setAttribute("aria-pressed",String(surfaceVisible));surface.classList.toggle("is-active",surfaceVisible);regions.filter(r=>r.layer==="surface").forEach(r=>{const m=meshById.get(r.id);if(m)m.visible=surfaceVisible;});});
    deep.addEventListener("click",()=>{deepVisible=!deepVisible;deep.setAttribute("aria-pressed",String(deepVisible));deep.classList.toggle("is-active",deepVisible);regions.filter(r=>r.layer==="deep").forEach(r=>{const m=meshById.get(r.id);if(m)m.visible=deepVisible;if(m?.userData.mirror)m.userData.mirror.visible=deepVisible;});});
