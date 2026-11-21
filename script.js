@@ -44,7 +44,7 @@
     const wrap = document.getElementById('topicsGrid');
     if (!wrap) return;
     wrap.innerHTML = t(lang).topics.items.map((item, i) => `
-      <div class="card topic-card reveal" data-index="${i}" role="button" {{/* Access indicators */}} tabindex="0" aria-haspopup="dialog">
+      <div class="card topic-card reveal" data-index="${i}" role="button" tabindex="0" aria-haspopup="dialog">
         <div class="icon">${ICONS.topics[i] || '•'}</div>
         <h3><span class="tag-dot"></span>${escapeHtml(item.title)}</h3>
         <p>${escapeHtml(item.desc)}</p>
@@ -228,7 +228,7 @@
           <span class="evidence-topic-icon">${topic.icon}</span>
           <span class="evidence-topic-copy">
             <strong>${escapeHtml(topic.title)}</strong>
-            <small>${escapeHtml(topic.level)} · Reviewed ${escapeHtml(topic.review)}</small>
+            <small>${escapeHtml(topic.level)} · Content updated ${escapeHtml(topic.contentUpdated)}</small>
           </span>
         </button>`;
     }).join('') : '<div class="evidence-no-results">No matching learning topic found.</div>';
@@ -262,7 +262,7 @@
             <h3>${escapeHtml(selected.title)}</h3>
             <p>${escapeHtml(selected.summary)}</p>
           </div>
-          <div class="evidence-review">Reviewed: ${escapeHtml(selected.review)}</div>
+          <div class="evidence-review">Content updated: ${escapeHtml(selected.contentUpdated)}</div>
         </div>
         <div class="evidence-tabs">
           <button class="evidence-tab active" data-view="public">Public learning</button>
