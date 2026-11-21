@@ -71,6 +71,14 @@ function initBrainAtlas(){
   layout.append(nav,reader);host.append(layout);
  }
  render();
+ root.openBrainAtlasStructure=function(id){
+  const item=getStructureById(data,id);
+  if(!item)return false;
+  activeSystem="all";query="";activeId=item.id;render();
+  const reader=host.querySelector(".atlas-reader");
+  reader?.scrollIntoView({behavior:"smooth",block:"start"});
+  return true;
+ };
 }
 root.searchStructures=searchStructures;root.getStructureById=getStructureById;root.initBrainAtlas=initBrainAtlas;
 if(typeof module!=="undefined"&&module.exports)module.exports={searchStructures,getStructureById};
