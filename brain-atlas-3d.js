@@ -56,7 +56,7 @@
     const list=host.querySelector("[data-3d-list]"),details=host.querySelector("[data-3d-details]");
     const reset=host.querySelector("[data-3d-reset]");
     if(!loadButton||!canvas||!status||!list||!details)return;
-    let scene,camera,renderer,controls,modelRoot,selectedMesh=null,dracoLoader=null,resizeBound=false,pointerDown=null,suppressClick=false;
+    let scene,camera,renderer,controls,modelRoot,selectedMesh=null,selectedNodeId=null,dracoLoader=null,resizeBound=false,pointerDown=null,suppressClick=false;
     let manifestNodes=[],meshesById=new Map(),nodesById=new Map(),loaded=false,loading=false;
     const setStatus=(message,isError)=>{status.textContent=message;status.classList.toggle("is-error",Boolean(isError));};
     const make=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
@@ -91,7 +91,7 @@
     function selectNode(node,shouldFocus) {
       if(!node)return;
       const meshes=meshesById.get(String(node.id))||[],mesh=meshes[0]||null;
-      highlight(mesh);showDetails(node);
+      selectedNodeId=node.id;highlight(mesh);showDetails(node);
       list.querySelectorAll("button[data-node-id]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.nodeId===String(node.id))));
       if(shouldFocus&&mesh&&camera&&controls){
         const box=new root.THREE.Box3().setFromObject(mesh),sphere=box.getBoundingSphere(new root.THREE.Sphere());
@@ -105,7 +105,7 @@
       list.replaceChildren();list.append(make("p","brain-3d-list-count",matches.length+" structures"));
       matches.slice(0,120).forEach(node=>{
         const b=make("button","brain-3d-structure",node.label+(node.side==="median"?"":" · "+node.side));
-        b.type="button";b.dataset.nodeId=String(node.id);b.setAttribute("aria-pressed",String(selectedMesh&&selectedMesh.userData.bx_id===node.id));
+        b.type="button";b.dataset.nodeId=String(node.id);b.setAttribute("aria-pressed",String(String(selectedNodeId)===String(node.id)));
         b.addEventListener("click",()=>selectNode(node,true));list.append(b);
       });
       if(matches.length>120)list.append(make("p","brain-3d-muted","Showing first 120 results. Refine your search to narrow the list."));
@@ -191,7 +191,7 @@
     if(reset)reset.addEventListener("click",()=>{
       if(!camera||!controls||!modelRoot)return;
       controls.target.set(0,0,0);camera.position.set(1.7*2.8,1.7*1.1,1.7*3.2);
-      controls.update();highlight(null);showDetails(null);
+      controls.update();selectedNodeId=null;highlight(null);showDetails(null);
     });
     canvas.addEventListener("pointerdown",event=>{pointerDown={x:event.clientX,y:event.clientY};});
     canvas.addEventListener("pointerup",event=>{
