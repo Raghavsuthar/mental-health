@@ -65,6 +65,12 @@
         if (!topicId || typeof evidenceLibrary === 'undefined') return;
         selectedEvidenceTopic = topicId;
         evidenceLevel = 'all';
+        evidenceQuery = '';
+        const searchInput = document.getElementById('evidenceSearch');
+        if (searchInput) searchInput.value = '';
+        document.querySelectorAll('.evidence-filter').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.level === 'all');
+        });
         const target = document.getElementById('evidence-library');
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         renderEvidenceLibrary();
@@ -308,8 +314,7 @@
     if (search) search.addEventListener('input', () => {
       evidenceQuery = search.value;
       selectedEvidenceTopic = null;
-      renderEvidenceLibrary();
-    });
+      });
     document.querySelectorAll('.evidence-filter').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.evidence-filter').forEach(x => x.classList.remove('active'));
@@ -424,6 +429,7 @@
     initMobileMenu();
     initBackToTop();
     initSmoothScroll();
+    initEvidenceLibrary();
     setLanguage(currentLang);
   });
 })();
