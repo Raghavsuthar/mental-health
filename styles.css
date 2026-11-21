@@ -381,3 +381,51 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .atlas-flow-arrow{font-size:1.2rem;color:var(--accent,#2d6a6a);font-weight:700}
 .atlas-flow-note{font-size:.84rem;color:var(--muted,#667775);margin:12px 0 0;line-height:1.5}
 @media(max-width:520px){.atlas-flow{flex-direction:column}.atlas-flow-arrow{transform:rotate(90deg)}.atlas-flow-node{width:100%}}
+
+
+/* ---------- interactive 3D brain explorer ---------- */
+.brain-3d-card{
+  margin:0 0 44px;
+  padding:26px;
+  border:1px solid rgba(22,58,58,.12);
+  border-radius:var(--radius-lg);
+  background:var(--panel);
+  box-shadow:var(--shadow-card);
+}
+.brain-3d-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:12px}
+.brain-3d-heading h3{font-size:clamp(22px,3vw,29px);margin-bottom:6px}
+.brain-3d-heading p{max-width:660px;margin:0}
+.brain-3d-load{flex-shrink:0;white-space:nowrap}
+.brain-3d-status{font-size:13px;margin:14px 0;padding:10px 13px;border-radius:10px;background:var(--teal-soft);color:var(--teal-deep)}
+.brain-3d-status.is-error{background:#fff0ed;color:#8a2d22}
+.brain-3d-stage{position:relative;overflow:hidden;border-radius:16px;background:radial-gradient(ellipse at 50% 42%,#31585a 0%,#19383b 55%,#10282d 100%);min-height:340px}
+.brain-3d-stage canvas{display:block;width:100%;height:420px;outline:none;touch-action:pan-y}
+.brain-3d-stage canvas:focus-visible{outline:3px solid var(--gold);outline-offset:-4px}
+.brain-3d-reset{position:absolute;right:14px;top:14px;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(255,255,255,.92);color:var(--teal-deep);padding:9px 14px;font-weight:600}
+.brain-3d-browser{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.8fr);gap:18px;margin-top:18px}
+.brain-3d-list-panel,.brain-3d-details{min-width:0;border:1px solid rgba(22,58,58,.1);border-radius:14px;padding:16px;background:#fbfcf9}
+.brain-3d-list-panel label{display:block;font-weight:600;color:var(--teal-deep);font-size:14px;margin-bottom:7px}
+.brain-3d-list-panel input{width:100%;padding:11px 13px;border:1px solid rgba(22,58,58,.2);border-radius:9px;background:white;color:var(--text);font:inherit}
+.brain-3d-list-panel input:focus,.brain-3d-structure:focus-visible,.brain-3d-chapter-link:focus-visible,.brain-3d-reset:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.brain-3d-list{max-height:250px;overflow:auto;margin-top:10px;display:flex;flex-direction:column;gap:4px}
+.brain-3d-list-count,.brain-3d-muted{font-size:13px;color:var(--text-soft);margin:4px 0}
+.brain-3d-structure{border:0;border-radius:8px;background:transparent;color:var(--text);padding:8px 10px;text-align:left;font:inherit;font-size:13px}
+.brain-3d-structure:hover,.brain-3d-structure[aria-pressed="true"]{background:var(--teal-soft);color:var(--teal-deep)}
+.brain-3d-details h3{font-size:21px;margin:4px 0 8px;overflow-wrap:anywhere}
+.brain-3d-kicker{font-size:11px;letter-spacing:.08em;color:var(--teal);font-weight:700;margin:0}
+.brain-3d-path{font-size:12px;line-height:1.55;overflow-wrap:anywhere}
+.brain-3d-chapter-link{border:0;border-radius:999px;background:var(--teal);color:white;padding:10px 14px;font:inherit;font-size:13px;font-weight:600}
+.brain-3d-attribution{font-size:12px;line-height:1.6;margin:16px 0 0}
+.brain-3d-attribution a{color:var(--teal);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:760px){
+  .brain-3d-card{padding:16px;margin-left:-4px;margin-right:-4px}
+  .brain-3d-heading{align-items:flex-start;flex-direction:column;gap:12px}
+  .brain-3d-load{width:100%}
+  .brain-3d-stage{min-height:270px}
+  .brain-3d-stage canvas{height:300px}
+  .brain-3d-browser{grid-template-columns:1fr}
+  .brain-3d-list{max-height:210px}
+}
+@media(prefers-reduced-motion:reduce){
+  .brain-3d-structure,.brain-3d-reset{transition:none}
+}
