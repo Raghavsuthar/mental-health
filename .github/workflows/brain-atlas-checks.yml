@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feat/brain-atlas
+      - feat/interactive-3d-brain-atlas
   pull_request:
     branches:
       - main
@@ -19,6 +20,8 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           for file in *.js; do node --check "$file"; done
-          for file in tests/*.js; do node --check "$file"; done
+          for file in tests/*.js tests/*.cjs; do
+            if [ -f "$file" ]; then node --check "$file"; fi
+          done
       - name: Run tests
-        run: node --test tests/*.test.js
+        run: node --test tests/*.test.*

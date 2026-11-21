@@ -381,3 +381,21 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .atlas-flow-arrow{font-size:1.2rem;color:var(--accent,#2d6a6a);font-weight:700}
 .atlas-flow-note{font-size:.84rem;color:var(--muted,#667775);margin:12px 0 0;line-height:1.5}
 @media(max-width:520px){.atlas-flow{flex-direction:column}.atlas-flow-arrow{transform:rotate(90deg)}.atlas-flow-node{width:100%}}
+
+
+/* ================= INTERACTIVE 3D BRAIN ATLAS ================= */
+.atlas3d-host{margin:22px 0 28px;min-width:0}
+.atlas3d-shell{padding:18px;border:1px solid rgba(22,58,58,.12);border-radius:18px;background:linear-gradient(145deg,#fff 0%,#eef3ee 100%);box-shadow:var(--shadow-card);min-width:0}
+.atlas3d-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:300px;overflow:hidden;border-radius:14px;background:radial-gradient(ellipse at 50% 45%,#fff 0%,#edf3ef 72%,#e4ece7 100%);touch-action:pan-y}
+.atlas3d-canvas{display:block;width:100%;max-width:720px;height:auto;min-height:300px;outline:none;touch-action:none}
+.atlas3d-status{margin:10px 2px 14px;font-size:.9rem;color:var(--text-soft);text-align:center}
+.atlas3d-toolbar{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:12px 0}
+.atlas3d-control,.atlas3d-region{min-height:42px;padding:9px 14px;border:1px solid rgba(22,58,58,.18);border-radius:999px;background:#fff;color:var(--teal-deep);font:inherit;font-size:.9rem;font-weight:600;cursor:pointer}
+.atlas3d-control.is-active{background:var(--teal-soft);border-color:var(--sage)}
+.atlas3d-region-list{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:14px}
+.atlas3d-region[aria-pressed="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+.atlas3d-disclaimer{margin:14px 0 0;color:var(--text-soft);font-size:.82rem;line-height:1.5;text-align:center}
+.atlas3d-fallback{max-width:540px;margin:0;padding:24px;text-align:center;color:var(--text-soft);line-height:1.6}
+.atlas3d-control:focus-visible,.atlas3d-region:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media(max-width:600px){.atlas3d-shell{padding:12px}.atlas3d-stage{min-height:280px}.atlas3d-canvas{min-height:280px}.atlas3d-region-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.atlas3d-region{width:100%;border-radius:11px;padding:9px 8px;font-size:.84rem}}
+@media(prefers-reduced-motion:reduce){.atlas3d-shell *{scroll-behavior:auto!important;transition:none!important}}

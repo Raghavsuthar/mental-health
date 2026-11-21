@@ -35,8 +35,7 @@
         <li><a href="#home" data-i18n="nav.home">Home</a></li>
         <li><a href="#about" data-i18n="nav.about">About</a></li>
         <li><a href="#services" data-i18n="nav.services">Outreach</a></li>
-        <li><a href="#topics" data-i18n="nav.topics">Topics</a>
-    <a href="#brain-atlas">Brain Atlas</a></li>
+        <li><a href="#topics" data-i18n="nav.topics">Topics</a></li>
         <li><a href="#brain-atlas">Brain Atlas</a></li>
         <li><a href="#resources" data-i18n="nav.resources">Resources</a></li>
         <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
@@ -59,6 +58,7 @@
     <a href="#about" data-i18n="nav.about">About</a>
     <a href="#services" data-i18n="nav.services">Outreach</a>
     <a href="#topics" data-i18n="nav.topics">Topics</a>
+    <a href="#brain-atlas">Brain Atlas</a>
     <a href="#resources" data-i18n="nav.resources">Resources</a>
     <a href="#blog" data-i18n="nav.blog">Blog</a>
     <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -148,6 +148,7 @@
       <strong>How to use this atlas:</strong> Search by structure, function, symptom or clinical syndrome, or browse by anatomical system. Each chapter includes a short revision question.
       <span class="atlas-language-note">Anatomical chapters are currently provided in English; the surrounding website interface may be viewed in Hindi or Gujarati.</span>
     </div>
+    <div id="brainAtlas3D" class="atlas3d-host" aria-label="Interactive schematic three-dimensional brain atlas"></div>
     <div id="brainAtlasApp" aria-live="polite">
       <p>Loading brain atlas…</p>
     </div>
@@ -336,6 +337,9 @@
 <script src="translations.js"></script>
 <script src="evidence-library.js"></script>
 <script src="brain-atlas.js"></script>
+<script src="brain-atlas-3d-data.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"}}</script>
+<script type="module" src="brain-atlas-3d.js"></script>
 <script src="brain-atlas-ui.js"></script>
 <script src="script.js"></script>
 </body>
