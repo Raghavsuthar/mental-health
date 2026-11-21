@@ -36,7 +36,7 @@ test('blog cards do not render inert read-more links', () => {
 test('mobile menu exposes and updates its expanded state', () => {
   assert.match(html, /id="hamburger"[^>]*aria-controls="mobileMenu"[^>]*aria-expanded="false"/);
   assert.match(script, /setAttribute\('aria-expanded'/);
-  assert.match(script, /e\.key === 'Escape'/);
+  assert.match(script, /event\.key === 'Escape'/);
 });
 
 test('topic cards contain valid HTML rather than JSX-only syntax', () => {
