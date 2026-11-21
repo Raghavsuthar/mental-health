@@ -39,6 +39,14 @@ test('contact section does not collect data or claim messages were sent', () => 
   assert.doesNotMatch(script, /formSuccess|function initForm/);
 });
 
+test('static HTML fallbacks do not promise unavailable contact actions', () => {
+  assert.doesNotMatch(html, /Ask an Anonymous Question|Have a query regarding mental health terminology|Public Awareness & Inquiries/);
+});
+
+test('topic cards do not use an invalid ARIA popup type', () => {
+  assert.doesNotMatch(script, /aria-haspopup="region"/);
+});
+
 test('blog cards do not render inert read-more links', () => {
   assert.doesNotMatch(script, /href="#" class="readmore"/);
   assert.doesNotMatch(script, /onclick="return false;"/);
