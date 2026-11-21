@@ -37,6 +37,27 @@ function initBrainAtlas(){
    reader.append(el("p","atlas-kicker",item.systemTitle+" · English learning content"));
    reader.append(el("h2","atlas-title",item.name));
    reader.append(el("p","atlas-lead",item.location));
+   const pathways={
+    "hippocampus":["Entorhinal cortex","Dentate gyrus","CA3","CA1","Subiculum"],
+    "amygdala":["Sensory thalamus / cortex","Basolateral amygdala","Central amygdala","Hypothalamus / PAG / brainstem"],
+    "nucleus-accumbens":["Ventral tegmental area (VTA)","Nucleus accumbens","Ventral pallidum","Thalamocortical / behavioural output"],
+    "subthalamic-nucleus":["Cortex","Subthalamic nucleus","GPi / SNr","Motor thalamus","Cortex"],
+    "mammillary-bodies":["Hippocampal formation","Fornix","Mammillary bodies","Mammillothalamic tract","Anterior thalamus","Cingulate cortex"],
+    "mesolimbic-dopamine":["VTA","Nucleus accumbens / limbic targets"],
+    "nigrostriatal-pathway":["Substantia nigra pars compacta","Caudate + putamen"],
+    "tuberoinfundibular-pathway":["Arcuate hypothalamus","Median eminence / portal blood","Anterior pituitary lactotrophs"],
+    "mesocortical-pathway":["VTA","Prefrontal cortex"],
+    "serotonin-system":["Dorsal / median raphe nuclei","Cortex, limbic system, hypothalamus and spinal cord"],
+    "noradrenaline-system":["Locus coeruleus","Widespread cortical, limbic and spinal projections"]
+   };
+   if(pathways[item.id]){
+    const diagram=el("section","atlas-pathway");
+    diagram.append(el("h3","atlas-subheading","Simplified pathway diagram"));
+    const flow=el("div","atlas-flow");flow.setAttribute("role","img");flow.setAttribute("aria-label","Simplified pathway: "+pathways[item.id].join(" to "));
+    pathways[item.id].forEach((label,index)=>{flow.append(el("span","atlas-flow-node",label));if(index<pathways[item.id].length-1)flow.append(el("span","atlas-flow-arrow","→"));});
+    diagram.append(flow,el("p","atlas-flow-note","Teaching schematic only; omits parallel projections, feedback loops and intermediate nuclei."));
+    reader.append(diagram);
+   }
    section(reader,"Anatomy and subdivisions",[item.anatomy,...(item.subdivisions||[])]);
    section(reader,"Connections",[item.connections]);
    section(reader,"Normal functions",item.functions);
