@@ -20,6 +20,16 @@ test('topic cards map only to the matching evidence guides', () => {
   assert.doesNotMatch(script, /const evidenceIds = \['depression','anxiety','bipolar','schizophrenia'/);
 });
 
+test('evidence library search and filters are initialized on page load', () => {
+  assert.match(script, /initEvidenceLibrary\(\);\s*setLanguage\(currentLang\)/);
+});
+
+test('opening a topic guide clears stale evidence filters and search text', () => {
+  assert.match(script, /evidenceQuery = ''/);
+  assert.match(script, /searchInput\.value = ''/);
+  assert.match(script, /btn\.dataset\.level === 'all'/);
+});
+
 test('contact section does not collect data or claim messages were sent', () => {
   assert.doesNotMatch(html, /<form id="contactForm"/);
   assert.doesNotMatch(html, /temporary-email@example\.com/);
