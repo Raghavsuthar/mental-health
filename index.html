@@ -49,7 +49,7 @@
         <button data-lang="hi">हिंदी</button>
         <button data-lang="gu">ગુજરાતી</button>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 
@@ -79,7 +79,7 @@
       <p class="subtitle" data-i18n="hero.subtitle">A space for honest, judgement-free information on mental health.</p>
       <div class="hero-ctas">
         <a href="#about" class="btn btn-primary" data-i18n="hero.ctaLearn">Learn More</a>
-        <a href="#contact" class="btn btn-ghost" data-i18n="hero.ctaResources">Submit a Query</a>
+        <a href="#resources" class="btn btn-ghost" data-i18n="hero.ctaResources">View Resources</a>
       </div>
     </div>
 
@@ -258,38 +258,13 @@
     </div>
     <div class="contact-grid">
       <div class="form-panel reveal">
-        <div class="form-success" id="formSuccess"></div>
-        <form id="contactForm" novalidate>
-          <div class="field">
-            <label for="fName" data-i18n="contact.formName">Full Name</label>
-            <input type="text" id="fName" name="name" required>
-          </div>
-          <div class="field">
-            <label for="fEmail" data-i18n="contact.formEmail">Email Address</label>
-            <input type="email" id="fEmail" name="email" required>
-          </div>
-          <div class="field">
-            <label for="fLang" data-i18n="contact.formLanguage">Preferred Language</label>
-            <select id="fLang" name="language">
-              <option value="en">English</option>
-              <option value="hi">हिंदी</option>
-              <option value="gu">ગુજરાતી</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="fMessage" data-i18n="contact.formMessage">Message / General Query</label>
-            <textarea id="fMessage" name="message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="contact.formSubmit">Send Message</button>
-          <p class="form-note" data-i18n="contact.formNote">This box is for general awareness queries only.</p>
-        </form>
+        <p class="contact-unavailable" role="status" data-i18n="contact.unavailable">No contact form is active. Messages are not sent or stored. Please do not share personal, identifying, or health information through this page.</p>
       </div>
 
       <div class="contact-side">
         <div class="info-card reveal">
           <h3 data-i18n="contact.clinicTitle">Public Project</h3>
           <p data-i18n="contact.clinicAddressNote">This platform is strictly dedicated to medical education and stigma reduction.</p>
-          <p><strong data-i18n="contact.emailLabel">Email</strong>: temporary-email@example.com</p>
         </div>
       </div>
     </div>
