@@ -161,6 +161,25 @@ const evidenceLibrary = {
       ]
     },
     {
+      id:"child-adolescent",
+      icon:"🧒",
+      title:"Child & adolescent mental health",
+      level:"Core",
+      review:"2026-11",
+      evidence:"WHO + developmental psychiatry guidance",
+      summary:"Mental health in children and adolescents is shaped by development, family, school, peers, biology and environment. Assessment must be developmentally informed.",
+      public:[
+        ["Development matters","Symptoms can look different at different ages. Changes in behaviour, school functioning, sleep, play, relationships or development may be important signals."],
+        ["Assessment","A good assessment considers the young person's account as well as parent/caregiver and school information when appropriate, while respecting confidentiality and safeguarding."],
+        ["When to seek help","Persistent functional decline, severe behavioural change, self-harm or suicidal thoughts, psychosis, significant eating problems, developmental concerns or suspected abuse require professional assessment."]
+      ],
+      clinical:[
+        ["Developmental formulation","Assess symptoms in developmental context, developmental milestones, family history, school functioning, peer relationships, trauma, neurodevelopmental features, medical conditions and substance exposure."],
+        ["Collateral and confidentiality","Use collateral information thoughtfully and explain confidentiality and its limits. Safeguarding concerns may require information sharing according to law and local policy."],
+        ["Treatment principles","Use age-appropriate psychological, family, school and social interventions. Medication decisions require diagnosis-specific evidence, age-specific indications and careful monitoring."]
+      ]
+    },
+    {
       id:"suicide",
       icon:"🕊️",
       title:"Suicide and self-harm",
