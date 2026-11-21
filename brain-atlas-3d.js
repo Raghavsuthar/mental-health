@@ -192,6 +192,7 @@
       if(!camera||!controls||!modelRoot)return;
       controls.target.set(0,0,0);camera.position.set(1.7*2.8,1.7*1.1,1.7*3.2);
       controls.update();selectedNodeId=null;highlight(null);showDetails(null);
+      list.querySelectorAll("button[data-node-id]").forEach(b=>b.setAttribute("aria-pressed","false"));
     });
     canvas.addEventListener("pointerdown",event=>{pointerDown={x:event.clientX,y:event.clientY};});
     canvas.addEventListener("pointerup",event=>{
