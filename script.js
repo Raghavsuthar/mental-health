@@ -181,7 +181,131 @@
       </div>`).join('');
   }
 
-  function escapeHtml(str) {
+
+  let evidenceLevel = 'all';
+  let evidenceQuery = '';
+  let selectedEvidenceTopic = null;
+
+  function evidenceText(topic) {
+    const lang = currentLang;
+    const key = ['en','hi','gu'].includes(lang) ? lang : 'en';
+    return topic[key] || topic.en || '';
+  }
+
+  function renderEvidenceLibrary() {
+    const list = document.getElementById('evidenceTopicList');
+    const reader = document.getElementById('evidenceReader');
+    const sourceList = document.getElementById('evidenceSourceList');
+    if (!list || !reader || typeof evidenceLibrary === 'undefined') return;
+
+    const meta = evidenceLibrary.meta;
+    const title = document.getElementById('evidenceTitle');
+    const subtitle = document.getElementById('evidenceSubtitle');
+    if (title) title.textContent = meta.title[currentLang] || meta.title.en;
+    if (subtitle) subtitle.textContent = meta.subtitle[currentLang] || meta.subtitle.en;
+
+    const q = evidenceQuery.trim().toLowerCase();
+    const filtered = evidenceLibrary.topics.filter(topic => {
+      const matchesLevel = evidenceLevel === 'all' || topic.level === evidenceLevel;
+      const haystack = [
+        topic.title, topic.summary, topic.evidence,
+        ...topic.public.flat(), ...topic.clinical.flat()
+      ].join(' ').toLowerCase();
+      return matchesLevel && (!q || haystack.includes(q));
+    });
+
+    list.innerHTML = filtered.length ? filtered.map(topic => {
+      const active = topic.id === selectedEvidenceTopic ? ' active' : '';
+      return `
+        <button class="evidence-topic${active}" data-topic-id="${escapeHtml(topic.id)}">
+          <span class="evidence-topic-icon">${topic.icon}</span>
+          <span class="evidence-topic-copy">
+            <strong>${escapeHtml(topic.title)}</strong>
+            <small>${escapeHtml(topic.level)} · Reviewed ${escapeHtml(topic.review)}</small>
+          </span>
+        </button>`;
+    }).join('') : '<div class="evidence-no-results">No matching learning topic found.</div>';
+
+    list.querySelectorAll('.evidence-topic').forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedEvidenceTopic = btn.dataset.topicId;
+        renderEvidenceLibrary();
+      });
+    });
+
+    let selected = evidenceLibrary.topics.find(t => t.id === selectedEvidenceTopic);
+    if (!selected && filtered.length) {
+      selected = filtered[0];
+      selectedEvidenceTopic = selected.id;
+    }
+
+    if (!selected) {
+      reader.innerHTML = '<div class="evidence-empty"><div class="evidence-empty-icon">🔎</div><h3>No topic matches your search</h3><p>Try a broader term such as depression, psychosis, anxiety or safety.</p></div>';
+    } else {
+      const renderBlocks = blocks => blocks.map(([heading, body]) => `
+        <section class="evidence-block">
+          <h4>${escapeHtml(heading)}</h4>
+          <p>${escapeHtml(body)}</p>
+        </section>`).join('');
+
+      reader.innerHTML = `
+        <div class="evidence-reader-head">
+          <div>
+            <span class="evidence-badge">${escapeHtml(selected.level)}</span>
+            <h3>${escapeHtml(selected.title)}</h3>
+            <p>${escapeHtml(selected.summary)}</p>
+          </div>
+          <div class="evidence-review">Reviewed: ${escapeHtml(selected.review)}</div>
+        </div>
+        <div class="evidence-tabs">
+          <button class="evidence-tab active" data-view="public">Public learning</button>
+          <button class="evidence-tab" data-view="clinical">Student / clinician</button>
+        </div>
+        <div id="evidenceContent" class="evidence-content">
+          ${renderBlocks(selected.public)}
+        </div>
+        <div class="evidence-citation">
+          <strong>Evidence base:</strong> ${escapeHtml(selected.evidence)}
+        </div>`;
+
+      const content = reader.querySelector('#evidenceContent');
+      reader.querySelectorAll('.evidence-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          reader.querySelectorAll('.evidence-tab').forEach(x => x.classList.remove('active'));
+          tab.classList.add('active');
+          content.innerHTML = renderBlocks(tab.dataset.view === 'clinical' ? selected.clinical : selected.public);
+        });
+      });
+    }
+
+    if (sourceList) {
+      sourceList.innerHTML = evidenceLibrary.sources.map(source => `
+        <a class="source-chip" href="${source.url}" target="_blank" rel="noopener noreferrer">
+          <strong>${escapeHtml(source.name)}</strong><span>${escapeHtml(source.type)}</span>
+        </a>`).join('');
+    }
+  }
+
+  function initEvidenceLibrary() {
+    if (typeof evidenceLibrary === 'undefined') return;
+    const search = document.getElementById('evidenceSearch');
+    if (search) search.addEventListener('input', () => {
+      evidenceQuery = search.value;
+      selectedEvidenceTopic = null;
+      renderEvidenceLibrary();
+    });
+    document.querySelectorAll('.evidence-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.evidence-filter').forEach(x => x.classList.remove('active'));
+        btn.classList.add('active');
+        evidenceLevel = btn.dataset.level;
+        selectedEvidenceTopic = null;
+        renderEvidenceLibrary();
+      });
+    });
+    renderEvidenceLibrary();
+  }
+\n  function escapeHtml(str) {
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
