@@ -37,7 +37,7 @@
 **Interfaces:**
 - Add a pure `visibleMeshesForPicking(meshes)` helper to `brain-atlas-3d.js`; it returns only meshes whose `visible` property is not false.
 
-- [ ] Add tests for explicit topic-to-guide mapping, truthful/non-collecting contact UI, removal of inert blog anchors, and mobile-menu ARIA state.
+- [x] Add tests for explicit topic-to-guide mapping, truthful/non-collecting contact UI, removal of inert blog anchors, and mobile-menu ARIA state.
 - [ ] Add a test proving invisible meshes are excluded from the 3D pick list.
 - [ ] Run the relevant tests and confirm the new assertions fail against the current code.
 
@@ -75,7 +75,7 @@
 - [ ] Use the helper before raycasting.
 - [ ] Run the 3D regression tests.
 
-### Task 5: Improve mobile-menu accessibility
+### Task 5: Improve mobile-menu and topic-card accessibility
 
 **Files:**
 - Modify: `index.html`
@@ -87,7 +87,18 @@
 - [ ] Close the menu on Escape and return focus to the menu button.
 - [ ] Run the focused regression tests.
 
-### Task 6: Verify and review
+
+### Task 6: Restore evidence-library interactions
+
+**Files:**
+- Modify: `script.js`
+- Test: `tests/site-stability.test.js`
+
+- [x] Initialise search and filter listeners during page startup.
+- [x] Ensure typing rerenders results and opening a topic clears stale search/filter state.
+- [x] Run the focused regression tests.
+
+### Task 7: Verify and review
 
 **Files:**
 - Review all changed files and workflow output.
