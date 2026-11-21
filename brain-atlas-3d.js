@@ -63,7 +63,7 @@ function initBrainAtlas3D(options){
    shellGeometry.computeVertexNormals();
    const baseMat=new THREE.MeshStandardMaterial({color:"#d8e2dc",roughness:.88,metalness:0.02});
    [-.38,.38].forEach(x=>{const base=new THREE.Mesh(shellGeometry,baseMat);base.scale.set(.58,.78,1.18);base.position.x=x;base.position.z=.03;scene.add(base);});
-   const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();
+   const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();let pointerStart=null;
    regions.forEach(region=>{
     const geo=new THREE.SphereGeometry(1,32,24);
     const mat=new THREE.MeshStandardMaterial({color:region.color,roughness:.62,transparent:region.layer==="surface",opacity:region.layer==="surface"?.76:1,emissive:region.color,emissiveIntensity:.04,depthWrite:region.layer!=="surface"});
