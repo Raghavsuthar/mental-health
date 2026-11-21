@@ -13,6 +13,8 @@
     topics: ['🌧️', '🌀', '🔥', '🌗', '🔁', '🧭', '🧒', '🕊️']
   };
 
+  const TOPIC_EVIDENCE_IDS = Object.freeze(['depression', 'anxiety', null, 'bipolar', 'ocd', 'substance-use', 'child-adolescent', 'suicide']);
+
   function t(lang) { return translations[lang] || translations.en; }
 
   function applySimpleStrings(lang) {
@@ -43,28 +45,37 @@
   function renderTopics(lang) {
     const wrap = document.getElementById('topicsGrid');
     if (!wrap) return;
-    wrap.innerHTML = t(lang).topics.items.map((item, i) => `
-      <div class="card topic-card reveal" data-index="${i}" role="button" tabindex="0" aria-haspopup="dialog">
-        <div class="icon">${ICONS.topics[i] || '•'}</div>
-        <h3><span class="tag-dot"></span>${escapeHtml(item.title)}</h3>
-        <p>${escapeHtml(item.desc)}</p>
-        <span style="color:var(--teal); font-size:13px; font-weight:600; display:block; margin-top:14px;">Open evidence-based learning guide →</span>
-      </div>`).join('');
+    wrap.innerHTML = t(lang).topics.items.map((item, i) => {
+      const topicId = TOPIC_EVIDENCE_IDS[i];
+      const cardClass = topicId ? 'topic-card' : 'topic-card-static';
+      const interaction = topicId ? `data-evidence-topic="${topicId}" role="button" tabindex="0" aria-haspopup="region"` : '';
+      const action = topicId ? '<span class="topic-card-action">Open evidence-based learning guide →</span>' : '';
+      return `
+        <div class="card ${cardClass} reveal" ${interaction}>
+          <div class="icon">${ICONS.topics[i] || '•'}</div>
+          <h3><span class="tag-dot"></span>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.desc)}</p>
+          ${action}
+        </div>`;
+    }).join('');
 
-    wrap.querySelectorAll('.topic-card').forEach(card => {
-      const triggerModal = () => {
-        const evidenceIds = ['depression','anxiety','bipolar','schizophrenia','ocd','substance-use','child-adolescent','suicide'];
-        const idx = Number(card.getAttribute('data-index'));
-        const topicId = evidenceIds[idx];
-        if (topicId && typeof evidenceLibrary !== 'undefined') {
-          selectedEvidenceTopic = topicId;
-          const target = document.getElementById('evidence-library');
-          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          renderEvidenceLibrary();
-        }
+    wrap.querySelectorAll('.topic-card[data-evidence-topic]').forEach(card => {
+      const triggerGuide = () => {
+        const topicId = card.dataset.evidenceTopic;
+        if (!topicId || typeof evidenceLibrary === 'undefined') return;
+        selectedEvidenceTopic = topicId;
+        evidenceLevel = 'all';
+        const target = document.getElementById('evidence-library');
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        renderEvidenceLibrary();
       };
-      card.addEventListener('click', triggerModal);
-      card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerModal(); } });
+      card.addEventListener('click', triggerGuide);
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          triggerGuide();
+        }
+      });
     });
   }
 
@@ -167,13 +178,11 @@
   function renderBlog(lang) {
     const wrap = document.getElementById('blogGrid');
     if (!wrap) return;
-    const readMore = t(lang).blog.readMore;
     wrap.innerHTML = t(lang).blog.posts.map(post => `
       <div class="card blog-card reveal">
         <span class="tag">${escapeHtml(post.tag)}</span>
         <h3>${escapeHtml(post.title)}</h3>
         <p>${escapeHtml(post.excerpt)}</p>
-        <a href="#" class="readmore" onclick="return false;">${escapeHtml(readMore)} →</a>
       </div>`).join('');
   }
 
@@ -344,8 +353,21 @@
     const btn = document.getElementById('hamburger');
     const menu = document.getElementById('mobileMenu');
     if (!btn || !menu) return;
-    btn.addEventListener('click', () => menu.classList.toggle('open'));
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+    const setOpen = (open) => {
+      menu.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    btn.setAttribute('aria-controls', 'mobileMenu');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.addEventListener('click', () => setOpen(!menu.classList.contains('open')));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menu.classList.contains('open')) {
+        setOpen(false);
+        btn.focus();
+      }
+    });
   }
 
   function initBackToTop() {
@@ -375,47 +397,6 @@
     document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
   }
 
-  function initForm() {
-    const form = document.getElementById('contactForm');
-    if (!form) return;
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = form.querySelector('#fName');
-      const email = form.querySelector('#fEmail');
-      let valid = true;
-
-      form.querySelectorAll('.error-msg').forEach(msg => msg.remove());
-      [name, email].forEach(f => f.style.borderColor = '');
-
-      if (!name.value.trim()) { 
-        name.style.borderColor = '#c0533f'; 
-        valid = false;
-        const err = document.createElement('span');
-        err.className = 'error-msg';
-        err.style.cssText = 'color:#c0533f; font-size:12px; display:block; margin-top:4px;';
-        err.textContent = t(currentLang).contact.errorName || 'Required';
-        name.parentNode.appendChild(err);
-      }
-      
-      if (!email.value.trim() || !/^\S+@\S+\.\S+$/.test(email.value)) { 
-        email.style.borderColor = '#c0533f'; 
-        valid = false;
-        const err = document.createElement('span');
-        err.className = 'error-msg';
-        err.style.cssText = 'color:#c0533f; font-size:12px; display:block; margin-top:4px;';
-        err.textContent = t(currentLang).contact.errorEmail || 'Invalid Email';
-        email.parentNode.appendChild(err);
-      }
-
-      if (!valid) return;
-
-      const successBox = document.getElementById('formSuccess');
-      successBox.textContent = t(currentLang).contact.formSuccess;
-      successBox.classList.add('show');
-      form.reset();
-    });
-  }
-
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
@@ -442,7 +423,6 @@
 
     initMobileMenu();
     initBackToTop();
-    initForm();
     initSmoothScroll();
     setLanguage(currentLang);
   });
