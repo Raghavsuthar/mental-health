@@ -6,6 +6,7 @@ const html = fs.readFileSync('index.html', 'utf8');
 const script = fs.readFileSync('script.js', 'utf8');
 const evidence = fs.readFileSync('evidence-library.js', 'utf8');
 const translations = fs.readFileSync('translations.js', 'utf8');
+const styles = fs.readFileSync('styles.css', 'utf8');
 
 test('HTML loads the evidence library as a real script element', () => {
   assert.match(html, /<script src="translations\.js"><\/script>\s*<script src="evidence-library\.js"><\/script>/);
@@ -31,6 +32,10 @@ test('contact section does not collect data or claim messages were sent', () => 
 test('blog cards do not render inert read-more links', () => {
   assert.doesNotMatch(script, /href="#" class="readmore"/);
   assert.doesNotMatch(script, /onclick="return false;"/);
+});
+
+test('keyboard-activatable topic cards have a visible focus indicator', () => {
+  assert.match(styles, /\.topic-card:focus-visible/);
 });
 
 test('mobile menu exposes and updates its expanded state', () => {
