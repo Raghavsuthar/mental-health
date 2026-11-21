@@ -184,8 +184,7 @@
     if(search)search.addEventListener("input",()=>renderList(search.value));
     if(reset)reset.addEventListener("click",()=>{
       if(!camera||!controls||!modelRoot)return;
-      const bounds=new root.THREE.Box3().setFromObject(modelRoot),sphere=bounds.getBoundingSphere(new root.THREE.Sphere());
-      controls.target.copy(sphere.center);camera.position.copy(sphere.center).add(new root.THREE.Vector3(sphere.radius*2.8,sphere.radius*1.1,sphere.radius*3.2));
+      controls.target.set(0,0,0);camera.position.set(1.7*2.8,1.7*1.1,1.7*3.2);
       controls.update();highlight(null);showDetails(null);
     });
     canvas.addEventListener("click",event=>{
