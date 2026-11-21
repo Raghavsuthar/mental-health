@@ -48,13 +48,20 @@
         <div class="icon">${ICONS.topics[i] || '•'}</div>
         <h3><span class="tag-dot"></span>${escapeHtml(item.title)}</h3>
         <p>${escapeHtml(item.desc)}</p>
-        <span style="color:var(--teal); font-size:13px; font-weight:600; display:block; margin-top:14px;">Click to read layout →</span>
+        <span style="color:var(--teal); font-size:13px; font-weight:600; display:block; margin-top:14px;">Open evidence-based learning guide →</span>
       </div>`).join('');
 
     wrap.querySelectorAll('.topic-card').forEach(card => {
       const triggerModal = () => {
-        const idx = card.getAttribute('data-index');
-        openDetailModal(idx, lang);
+        const evidenceIds = ['depression','anxiety','bipolar','schizophrenia','ocd','substance-use','evidence-placeholder','suicide'];
+        const idx = Number(card.getAttribute('data-index'));
+        const topicId = evidenceIds[idx];
+        if (topicId && typeof evidenceLibrary !== 'undefined') {
+          selectedEvidenceTopic = topicId;
+          const target = document.getElementById('evidence-library');
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          renderEvidenceLibrary();
+        }
       };
       card.addEventListener('click', triggerModal);
       card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); triggerModal(); } });
