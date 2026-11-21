@@ -68,11 +68,12 @@ function initBrainAtlas3D(options){
     const geo=new THREE.SphereGeometry(1,32,24);
     const mat=new THREE.MeshStandardMaterial({color:region.color,roughness:.62,transparent:region.layer==="surface",opacity:region.layer==="surface"?.76:1,emissive:region.color,emissiveIntensity:.04,depthWrite:region.layer!=="surface"});
     const mesh=new THREE.Mesh(geo,mat);mesh.name=region.id;mesh.position.set(...region.position);mesh.scale.set(...region.scale);
-    if(region.layer==="deep"){const mirror=mesh.clone();mirror.position.x=-region.position[0];scene.add(mirror);meshById.set(region.id,mesh);mesh.userData.mirror=mirror;}
+    if(region.layer==="deep"){const mirror=mesh.clone();mirror.position.x=-region.position[0];scene.add(mirror);meshById.set(region.id,mesh);mesh.userData.mirror=mirror;pickMeshes.push(mirror);}
     else meshById.set(region.id,mesh);
-    scene.add(mesh);
+    pickMeshes.push(mesh);scene.add(mesh);
    });
-   let pointerStart=null;canvas.addEventListener("pointerdown",event=>{pointerStart={x:event.clientX,y:event.clientY};});\n   function pick(event){if(pointerStart&&Math.hypot(event.clientX-pointerStart.x,event.clientY-pointerStart.y)>6){pointerStart=null;return;}pointerStart=null;const rect=canvas.getBoundingClientRect();pointer.x=((event.clientX-rect.left)/rect.width)*2-1;pointer.y=-((event.clientY-rect.top)/rect.height)*2+1;raycaster.setFromCamera(pointer,camera);const hits=raycaster.intersectObjects(pickMeshes,false);if(hits.length){const r=regions.find(x=>x.id===hits[0].object.name);if(r)select(r);}}
+   canvas.addEventListener("pointerdown",event=>{pointerStart={x:event.clientX,y:event.clientY};});
+   function pick(event){if(pointerStart&&Math.hypot(event.clientX-pointerStart.x,event.clientY-pointerStart.y)>6){pointerStart=null;return;}pointerStart=null;const rect=canvas.getBoundingClientRect();pointer.x=((event.clientX-rect.left)/rect.width)*2-1;pointer.y=-((event.clientY-rect.top)/rect.height)*2+1;raycaster.setFromCamera(pointer,camera);const hits=raycaster.intersectObjects(pickMeshes,false);if(hits.length){const r=regions.find(x=>x.id===hits[0].object.name);if(r)select(r);}}
    canvas.addEventListener("pointerup",pick);
    function resize(){const w=Math.max(stage.clientWidth,280),h=Math.max(Math.min(stage.clientWidth*.68,420),300);camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false);}
    if(typeof ResizeObserver!=="undefined"){resizeObserver=new ResizeObserver(resize);resizeObserver.observe(stage);}else {resizeFallback=resize;root.addEventListener("resize",resizeFallback);}
@@ -81,6 +82,7 @@ function initBrainAtlas3D(options){
    deep.addEventListener("click",()=>{deepVisible=!deepVisible;deep.setAttribute("aria-pressed",String(deepVisible));deep.classList.toggle("is-active",deepVisible);regions.filter(r=>r.layer==="deep").forEach(r=>{const m=meshById.get(r.id);if(m)m.visible=deepVisible;if(m?.userData.mirror)m.userData.mirror.visible=deepVisible;});});
    stage.classList.remove("is-fallback");stage.replaceChildren(canvas);status.textContent="Drag to rotate · scroll or pinch to zoom · select a region or use the buttons below.";
    const reduced=root.matchMedia&&root.matchMedia("(prefers-reduced-motion: reduce)").matches;
+   controls.addEventListener("change",()=>{if(reduced&&renderer)renderer.render(scene,camera);});
    function animate(){if(disposed)return;frame=requestAnimationFrame(animate);controls.update();renderer.render(scene,camera);}
    if(!reduced)animate();else renderer.render(scene,camera);
    resize();
