@@ -35,8 +35,7 @@
         <li><a href="#home" data-i18n="nav.home">Home</a></li>
         <li><a href="#about" data-i18n="nav.about">About</a></li>
         <li><a href="#services" data-i18n="nav.services">Outreach</a></li>
-        <li><a href="#topics" data-i18n="nav.topics">Topics</a>
-    <a href="#brain-atlas">Brain Atlas</a></li>
+        <li><a href="#topics" data-i18n="nav.topics">Topics</a></li>
         <li><a href="#brain-atlas">Brain Atlas</a></li>
         <li><a href="#resources" data-i18n="nav.resources">Resources</a></li>
         <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
@@ -59,6 +58,7 @@
     <a href="#about" data-i18n="nav.about">About</a>
     <a href="#services" data-i18n="nav.services">Outreach</a>
     <a href="#topics" data-i18n="nav.topics">Topics</a>
+    <a href="#brain-atlas">Brain Atlas</a>
     <a href="#resources" data-i18n="nav.resources">Resources</a>
     <a href="#blog" data-i18n="nav.blog">Blog</a>
     <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -148,6 +148,34 @@
       <strong>How to use this atlas:</strong> Search by structure, function, symptom or clinical syndrome, or browse by anatomical system. Each chapter includes a short revision question.
       <span class="atlas-language-note">Anatomical chapters are currently provided in English; the surrounding website interface may be viewed in Hindi or Gujarati.</span>
     </div>
+    <section class="brain-3d-card" id="brainAtlas3D" aria-labelledby="brain3DTitle">
+      <div class="brain-3d-heading">
+        <div>
+          <span class="eyebrow">Interactive anatomy</span>
+          <h3 id="brain3DTitle">Explore the brain in 3D</h3>
+          <p>Rotate the brain, zoom in, and select individual anatomical structures to see their names and open matching learning chapters.</p>
+        </div>
+        <button class="btn btn-primary brain-3d-load" type="button" data-3d-load>Load interactive 3D brain</button>
+      </div>
+      <p class="brain-3d-status" data-3d-status role="status" aria-live="polite">The 3D model is not loaded yet. Loading it will request viewer libraries and anatomy assets from their source hosts.</p>
+      <div class="brain-3d-stage">
+        <canvas tabindex="0" aria-label="Interactive three-dimensional anatomical brain. Drag to rotate after loading; select a structure to inspect it."></canvas>
+        <button class="brain-3d-reset" type="button" data-3d-reset>Reset view</button>
+      </div>
+      <div class="brain-3d-browser">
+        <div class="brain-3d-list-panel">
+          <label for="brain3DSearch">Search model structures</label>
+          <input id="brain3DSearch" type="search" data-3d-search placeholder="e.g. hippocampus, thalamus, arcuate fasciculus" autocomplete="off">
+          <div class="brain-3d-list" data-3d-list aria-label="3D model structure list">
+            <p class="brain-3d-muted">Load the model to browse its selectable structures.</p>
+          </div>
+        </div>
+        <aside class="brain-3d-details" data-3d-details aria-live="polite">
+          <p class="brain-3d-muted">Select a structure in the model or the list to view its details.</p>
+        </aside>
+      </div>
+      <p class="brain-3d-attribution">3D anatomy assets: Z-Anatomy / BodyParts3D and Brain Project contributors, licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. <a href="https://github.com/itayinbarr/brainproject" target="_blank" rel="noopener noreferrer">Source project and full attribution</a>. The model is an educational reference, not an individual's brain; registered deep structures and pathways are approximate and must not be used for diagnosis, volumetry or surgical planning. Viewer libraries are loaded from jsDelivr only after you activate the viewer.</p>
+    </section>
     <div id="brainAtlasApp" aria-live="polite">
       <p>Loading brain atlas…</p>
     </div>
@@ -337,6 +365,7 @@
 <script src="evidence-library.js"></script>
 <script src="brain-atlas.js"></script>
 <script src="brain-atlas-ui.js"></script>
+<script src="brain-atlas-3d.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
