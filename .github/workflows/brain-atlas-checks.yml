@@ -3,18 +3,22 @@ name: Brain Atlas checks
 on:
   push:
     branches:
-      - feat/brain-atlas
-      - feat/interactive-3d-brain-atlas
+      - main
+      - 'feat/**'
+      - 'fix/**'
   pull_request:
     branches:
       - main
+
+permissions:
+  contents: read
 
 jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: 22
       - name: Check JavaScript syntax

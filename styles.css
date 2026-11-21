@@ -173,6 +173,9 @@ header{
 .card p{ font-size:14.5px; margin:0; }
 
 .topic-card{ cursor:pointer; }
+.topic-card-static{cursor:default;}
+.topic-card:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+.topic-card-action{color:var(--teal);font-size:13px;font-weight:600;display:block;margin-top:14px;}
 .topic-card .tag-dot{ width:8px; height:8px; border-radius:50%; background: var(--gold); display:inline-block; margin-right:8px; }
 
 /* ---------- resources ---------- */
@@ -213,6 +216,7 @@ header{
 .contact-grid{ display:grid; grid-template-columns: 1.1fr .9fr; gap:48px; }
 @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; } }
 .form-panel{ background: var(--panel); border-radius: var(--radius-lg); padding:32px; box-shadow: var(--shadow-card); }
+.contact-unavailable{margin:0;line-height:1.7;color:var(--text-soft);}
 .field{ margin-bottom:18px; }
 .field label{ display:block; font-size:13px; font-weight:600; color: var(--teal-deep); margin-bottom:6px; }
 .field input, .field select, .field textarea{

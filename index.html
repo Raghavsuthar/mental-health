@@ -49,7 +49,7 @@
         <button data-lang="hi">हिंदी</button>
         <button data-lang="gu">ગુજરાતી</button>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 
@@ -79,7 +79,7 @@
       <p class="subtitle" data-i18n="hero.subtitle">A space for honest, judgement-free information on mental health.</p>
       <div class="hero-ctas">
         <a href="#about" class="btn btn-primary" data-i18n="hero.ctaLearn">Learn More</a>
-        <a href="#contact" class="btn btn-ghost" data-i18n="hero.ctaResources">Submit a Query</a>
+        <a href="#resources" class="btn btn-ghost" data-i18n="hero.ctaResources">View Resources</a>
       </div>
     </div>
 
@@ -116,8 +116,8 @@
   <div class="container">
     <div class="section-head">
       <div class="eyebrow" data-i18n="services.eyebrow">Community Outreach</div>
-      <h2 data-i18n="services.title">Public Awareness & Inquiries</h2>
-      <p data-i18n="services.subtitle">A safe space to ask questions, counter misconceptions, and gather clear medical guidance.</p>
+      <h2 data-i18n="services.title">Public Awareness & Learning</h2>
+      <p data-i18n="services.subtitle">Explore reliable mental-health education and community awareness information.</p>
     </div>
     <div class="grid-4" id="servicesGrid"></div>
   </div>
@@ -129,7 +129,7 @@
     <div class="section-head">
       <div class="eyebrow" data-i18n="topics.eyebrow">Learn</div>
       <h2 data-i18n="topics.title">Common Mental Health Topics</h2>
-      <p data-i18n="topics.subtitle">Understanding is the first step.</p>
+      <p data-i18n="topics.subtitle">Browse common mental-health topics and open a linked evidence guide where available.</p>
     </div>
     <div class="grid-2x4" id="topicsGrid"></div>
   </div>
@@ -252,44 +252,19 @@
 <section id="contact" class="section-alt">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow" data-i18n="contact.eyebrow">Get in Touch</div>
-      <h2 data-i18n="contact.title">Ask an Anonymous Question</h2>
-      <p data-i18n="contact.subtitle">Have a query regarding mental health terminology or awareness? Contact me below.</p>
+      <div class="eyebrow" data-i18n="contact.eyebrow">Contact</div>
+      <h2 data-i18n="contact.title">Contact channel unavailable</h2>
+      <p data-i18n="contact.subtitle">This public education site does not currently accept messages. A secure contact channel will be published when available.</p>
     </div>
     <div class="contact-grid">
       <div class="form-panel reveal">
-        <div class="form-success" id="formSuccess"></div>
-        <form id="contactForm" novalidate>
-          <div class="field">
-            <label for="fName" data-i18n="contact.formName">Full Name</label>
-            <input type="text" id="fName" name="name" required>
-          </div>
-          <div class="field">
-            <label for="fEmail" data-i18n="contact.formEmail">Email Address</label>
-            <input type="email" id="fEmail" name="email" required>
-          </div>
-          <div class="field">
-            <label for="fLang" data-i18n="contact.formLanguage">Preferred Language</label>
-            <select id="fLang" name="language">
-              <option value="en">English</option>
-              <option value="hi">हिंदी</option>
-              <option value="gu">ગુજરાતી</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="fMessage" data-i18n="contact.formMessage">Message / General Query</label>
-            <textarea id="fMessage" name="message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="contact.formSubmit">Send Message</button>
-          <p class="form-note" data-i18n="contact.formNote">This box is for general awareness queries only.</p>
-        </form>
+        <p class="contact-unavailable" role="status" data-i18n="contact.unavailable">No contact form is active. Messages are not sent or stored. Please do not share personal, identifying, or health information through this page.</p>
       </div>
 
       <div class="contact-side">
         <div class="info-card reveal">
           <h3 data-i18n="contact.clinicTitle">Public Project</h3>
           <p data-i18n="contact.clinicAddressNote">This platform is strictly dedicated to medical education and stigma reduction.</p>
-          <p><strong data-i18n="contact.emailLabel">Email</strong>: temporary-email@example.com</p>
         </div>
       </div>
     </div>

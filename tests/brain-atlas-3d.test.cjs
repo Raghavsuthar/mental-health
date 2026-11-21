@@ -29,7 +29,7 @@ test('chapter IDs are either null or known Brain Atlas chapter IDs', () => {
 
 const { brainAtlasData } = require('../brain-atlas.js');
 const { getStructureById } = require('../brain-atlas-ui.js');
-const { initBrainAtlas3D } = require('../brain-atlas-3d.js');
+const { initBrainAtlas3D, visibleMeshesForPicking } = require('../brain-atlas-3d.js');
 
 test('each mapped 3D region opens an existing chapter; unmapped regions stay unmapped', () => {
   for (const region of data) {
@@ -39,6 +39,13 @@ test('each mapped 3D region opens an existing chapter; unmapped regions stay unm
       assert.equal(getStructureById(brainAtlasData, region.chapterId), null);
     }
   }
+});
+
+test('hidden 3D layers are excluded from pointer hit-testing', () => {
+  const visible = { visible: true };
+  const hidden = { visible: false };
+  const defaultVisible = {};
+  assert.deepEqual(visibleMeshesForPicking([visible, hidden, defaultVisible]), [visible, defaultVisible]);
 });
 
 test('3D viewer safely no-ops when no host is available', () => {

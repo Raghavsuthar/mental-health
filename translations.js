@@ -12,8 +12,8 @@ const translations = {
       eyebrow:"Mental Health Awareness · Gujarat",
       title1:"It's okay to not be okay.",
       title2:"Let's talk about it, together.",
-      subtitle:"A space for honest, judgement-free information on mental health — created by a practising psychiatrist to help you understand, cope, and address basic queries safely.",
-      ctaLearn:"Learn More", ctaResources:"Submit a Query"
+      subtitle:"A space for honest, judgement-free information on mental health — created by a practising psychiatrist to help you understand common concerns and find reliable learning resources.",
+      ctaLearn:"Learn More", ctaResources:"View Resources"
     },
     about: {
       eyebrow:"About", title:"About the Doctor",
@@ -23,16 +23,16 @@ const translations = {
       missionText:"To reduce social stigma, spread accurate clinical awareness benchmarks, and guide individuals regarding safety frameworks safely."
     },
     services: {
-      eyebrow:"Community Outreach", title:"Public Awareness & Inquiries", subtitle:"A safe space to ask questions, counter misconceptions, and gather clear medical guidance.",
+      eyebrow:"Community Outreach", title:"Public Awareness & Learning", subtitle:"Explore reliable mental-health education and community awareness information.",
       items:[
-        {title:"Public Query Box", desc:"Have a general question regarding symptoms, psychiatric terminology, or medication principles? Drop a message in the secure contact panel below."},
-        {title:"Anonymous Guidance", desc:"Ask questions regarding mental health stigma, family support approaches, or lifestyle metrics completely free of charge and securely."},
-        {title:"School & College Outreach", desc:"Request community awareness workshops or informative presentations for your educational institute to support local students."},
+        {title:"Learning Resources", desc:"Explore general information on symptoms, psychiatric terminology, and medication principles in the learning library."},
+        {title:"Family & Community Guidance", desc:"Learn about mental-health stigma, family support approaches, and practical wellbeing principles."},
+        {title:"School & College Outreach", desc:"Explore ideas for community awareness workshops and informative presentations for educational institutes."},
         {title:"Stigma Reduction", desc:"Access cross-referenced biological guidelines designed to dismantle harmful social myths surrounding psychiatric care."}
       ]
     },
     topics: {
-      eyebrow:"Learn", title:"Common Mental Health Topics", subtitle:"Understanding is the first step. Click any card to read deep medical insights.",
+      eyebrow:"Learn", title:"Common Mental Health Topics", subtitle:"Browse common mental-health topics and open a linked evidence guide where available.",
       items:[
         {
           title: "Depression (Major Depressive Disorder)", 
@@ -121,12 +121,9 @@ const translations = {
       disclaimer:"Shared with permission. Identifying details removed to protect privacy."
     },
     contact: {
-      eyebrow:"Get in Touch", title:"Ask an Anonymous Question", subtitle:"Have a query regarding mental health terminology or awareness? Contact me below.",
-      formName:"Full Name", formEmail:"Email Address", formLanguage:"Preferred Language", formMessage:"Message / General Query",
-      formSubmit:"Send Message", formNote:"This form is for general questions. If this is a medical crisis, please access the helpline framework instead.",
-      clinicTitle:"Public Project", clinicAddressNote:"This platform is strictly dedicated to medical education and stigma reduction.", phoneLabel:"Phone / WhatsApp", emailLabel:"Email",
-      formSuccess:"Thank you — your awareness question has been captured. We will respond to your provided inbox shortly.",
-      errorName:"Please enter your full name.", errorEmail:"Please enter a valid email address."
+      eyebrow:"Contact", title:"Contact channel unavailable", subtitle:"This public education site does not currently accept messages. A secure contact channel will be published when available.",
+      clinicTitle:"Public Project", clinicAddressNote:"This platform is dedicated to mental-health education and stigma reduction.",
+      unavailable:"No contact form is active. Messages are not sent or stored. Please do not share personal, identifying, or health information through this page."
     },
     footer: {
       about:"A public mental health awareness initiative by a practising psychiatrist in Gujarat.",
@@ -143,8 +140,8 @@ const translations = {
       eyebrow:"मानसिक स्वास्थ्य जागरूकता · गुजरात",
       title1:"ठीक न होना भी ठीक है।",
       title2:"आइए, इस बारे में मिलकर बात करें।",
-      subtitle:"मानसिक स्वास्थ्य पर ईमानदार, बिना किसी पूर्वाग्रह वाली जानकारी का एक स्थान — एक प्रैक्टिसिंग मनोचिकित्सक द्वारा बनाया गया, ताकि आप समझ सकें, सामना कर सकें, और सामान्य प्रश्नों को सुरक्षित रूप से पूछ सकें।",
-      ctaLearn:"अधिक जानें", ctaResources:"प्रश्न भेजें"
+      subtitle:"मानसिक स्वास्थ्य पर ईमानदार, बिना किसी पूर्वाग्रह वाली जानकारी का एक स्थान — एक प्रैक्टिसिंग मनोचिकित्सक द्वारा बनाया गया, ताकि आप सामान्य चिंताओं को समझ सकें और विश्वसनीय अध्ययन संसाधन पा सकें।",
+      ctaLearn:"अधिक जानें", ctaResources:"संसाधन देखें"
     },
     about: {
       eyebrow:"परिचय", title:"डॉक्टर के बारे में",
@@ -154,16 +151,16 @@ const translations = {
       missionText:"सामाजिक कलंक को कम करना, सटीक नैदानिक जागरूकता मानकों को फैलाना, और सुरक्षा ढाँचे के संबंध में लोगों का मार्गदर्शन करना।"
     },
     services: {
-      eyebrow:"सामुदायिक संपर्क", title:"सार्वजनिक जागरूकता एवं प्रश्न", subtitle:"मानसिक स्वास्थ्य से जुड़े सवाल पूछने, भ्रांतियों को दूर करने और सटीक चिकित्सीय मार्गदर्शन पाने का एक सुरक्षित स्थान।",
+      eyebrow:"सामुदायिक संपर्क", title:"सार्वजनिक जागरूकता एवं अध्ययन", subtitle:"मानसिक स्वास्थ्य के बारे में विश्वसनीय शैक्षिक जानकारी और सामुदायिक जागरूकता सामग्री देखें।",
       items:[
-        {title:"सार्वजनिक प्रश्न बॉक्स", desc:"क्या आपके पास मानसिक स्वास्थ्य के लक्षणों, शब्दावली या दवाओं से जुड़ा कोई सामान्य सवाल है? नीचे दिए गए संपर्क पैनल में अपना संदेश लिखें।"},
-        {title:"निःशुल्क मार्गदर्शन", desc:"मानसिक बीमारी से जुड़े कलंक (स्टिग्मा), पारिवारिक सहयोग या जीवनशैली में सुधार से जुड़े प्रश्न पूरी तरह से सुरक्षित रूप से पूछें।"},
-        {title:"स्कूल और कॉलेज आउटरीच", desc:"युवा छात्रों की मदद के लिए अपने शैक्षणिक संस्थान में जागरूकता कार्यशालाओं या सत्रों के आयोजन के लिए अनुरोध भेजें।"},
+        {title:"अध्ययन संसाधन", desc:"लक्षणों, मनोचिकित्सकीय शब्दावली और दवाओं के सिद्धांतों के बारे में सामान्य जानकारी अध्ययन पुस्तकालय में देखें।"},
+        {title:"परिवार एवं सामुदायिक सहयोग", desc:"मानसिक स्वास्थ्य से जुड़े कलंक, परिवार के सहयोग और व्यावहारिक कल्याण के सिद्धांतों के बारे में जानें।"},
+        {title:"स्कूल और कॉलेज जागरूकता", desc:"शैक्षणिक संस्थानों के लिए सामुदायिक जागरूकता कार्यशालाओं और जानकारीपूर्ण प्रस्तुतियों के विचार देखें।"},
         {title:"भ्रांतियों का निवारण", desc:"मानसिक स्वास्थ्य के इलाज से जुड़े सामाजिक अंधविश्वासों और भ्रांतियों को वैज्ञानिक तर्कों से दूर करने में मदद पाएं।"}
       ]
     },
     topics: {
-      eyebrow:"जानिए", title:"सामान्य मानसिक स्वास्थ्य विषय", subtitle:"समझना पहला कदम है। गहन चिकित्सा जानकारी पढ़ने के लिए किसी भी कार्ड पर क्लिक करें।",
+      eyebrow:"जानिए", title:"सामान्य मानसिक स्वास्थ्य विषय", subtitle:"सामान्य मानसिक स्वास्थ्य विषय देखें और जहाँ उपलब्ध हो, संबंधित साक्ष्य-आधारित मार्गदर्शिका खोलें।",
       items:[
         {
           title: "अवसाद (गंभीर डिप्रेशन रोग)", 
@@ -252,12 +249,9 @@ const translations = {
       disclaimer:"अनुमति से साझा किया गया। गोपनीयता की सुरक्षा के लिए पहचान संबंधी विवरण हटा दिए गए हैं।"
     },
     contact: {
-      eyebrow:"संपर्क करें", title:"एक सामान्य प्रश्न पूछें", subtitle:"क्या आपके पास मानसिक स्वास्थ्य शब्दावली या जागरूकता के संबंध में कोई प्रश्न है? नीचे मुझसे संपर्क करें।",
-      formName:"पूरा नाम", formEmail:"ईमेल पता", formLanguage:"पसंदीदा भाषा", formMessage:"संदेश / सामान्य प्रश्न",
-      formSubmit:"संदेश भेजें", formNote:"यह फॉर्म सामान्य प्रश्नों के लिए है। यदि यह एक चिकित्सा संकट है, तो कृपया इसके बजाय हेल्पलाइन ढांचे का उपयोग करें।",
-      clinicTitle:"सार्वजनिक परियोजना", clinicAddressNote:"यह मंच पूरी तरह से चिकित्सा शिक्षा और कलंक को कम करने के लिए समर्पित है।", phoneLabel:"फोन / व्हाट्सऐप", emailLabel:"ईमेल",
-      formSuccess:"धन्यवाद — आपका जागरूकता प्रश्न दर्ज कर लिया गया है। हम जल्द ही आपके द्वारा प्रदान किए गए इनबॉक्स पर प्रतिक्रिया देंगे।",
-      errorName:"कृपया अपना पूरा नाम दर्ज करें।", errorEmail:"कृपया एक मान्य ईमेल पता दर्ज करें।"
+      eyebrow:"संपर्क", title:"संपर्क माध्यम उपलब्ध नहीं", subtitle:"यह सार्वजनिक शैक्षिक वेबसाइट फिलहाल संदेश स्वीकार नहीं करती। सुरक्षित संपर्क माध्यम उपलब्ध होने पर प्रकाशित किया जाएगा।",
+      clinicTitle:"सार्वजनिक परियोजना", clinicAddressNote:"यह मंच मानसिक स्वास्थ्य शिक्षा और सामाजिक कलंक को कम करने के लिए समर्पित है।",
+      unavailable:"अभी कोई संपर्क फ़ॉर्म सक्रिय नहीं है। संदेश न भेजे जाते हैं और न संग्रहीत किए जाते हैं। कृपया इस पृष्ठ पर व्यक्तिगत, पहचान संबंधी या स्वास्थ्य जानकारी साझा न करें।"
     },
     footer: {
       about:"गुजरात में एक प्रैक्टिसिंग मनोचिकित्सक द्वारा सार्वजनिक मानसिक स्वास्थ्य जागरूकता पहल।",
@@ -274,8 +268,8 @@ const translations = {
       eyebrow:"માનસિક સ્વાસ્થ્ય જાગૃતિ · ગુજરાત",
       title1:"સારું ન લાગવું પણ ઠીક છે.",
       title2:"ચાલો, સાથે મળીને વાત કરીએ.",
-      subtitle:"માનસિક સ્વાસ્થ્ય વિશે પ્રામાણિક, પૂર્વગ્રહ વિનાની માહિતી માટેનું સ્થળ — એક પ્રેક્ટિસિંગ મનોચિકિત્સક દ્વારા બનાવવામાં આવ્યું, જેથી તમે સમજી શકો, સામનો કરી શકો અને સામાન્ય પ્રશ્નો સુરક્ષિત રીતે પૂછી શકો.",
-      ctaLearn:"વધુ જાણો", ctaResources:"પ્રશ્ન મોકલો"
+      subtitle:"માનસિક સ્વાસ્થ્ય વિશે પ્રામાણિક, પૂર્વગ્રહ વિનાની માહિતી માટેનું સ્થળ — એક પ્રેક્ટિસિંગ મનોચિકિત્સક દ્વારા બનાવવામાં આવ્યું, જેથી તમે સામાન્ય ચિંતાઓ સમજી શકો અને વિશ્વસનીય અભ્યાસ સંસાધનો મેળવી શકો.",
+      ctaLearn:"વધુ જાણો", ctaResources:"સંસાધનો જુઓ"
     },
     about: {
       eyebrow:"વિશે", title:"ડોક્ટર વિશે",
@@ -285,16 +279,16 @@ const translations = {
       missionText:"સામાજિક કલંક ઘટાડવું, સચોટ ક્લિનિકલ જાગૃતિના ધોરણો ફેલાવવા અને સુરક્ષા માળખા અંગે લોકોને માર્ગદર્શન આપવું."
     },
     services: {
-      eyebrow:"સામુદાયિક સંપર્ક", title:"જાહેર જાગૃતિ અને પ્રશ્નો", subtitle:"માનસિક સ્વાસ્થ્ય સંબંધિત પ્રશ્નો પૂછવા, ભ્રમણાઓ દૂર કરવા અને સચોટ તબીબી માર્ગદર્શન મેળવવાનું એક સુરક્ષિત સ્થાન.",
+      eyebrow:"સામુદાયિક સંપર્ક", title:"જાહેર જાગૃતિ અને અભ્યાસ", subtitle:"માનસિક સ્વાસ્થ્ય અંગે વિશ્વસનીય શૈક્ષણિક માહિતી અને સામુદાયિક જાગૃતિ સામગ્રી જુઓ.",
       items:[
-        {title:"જાહેર પ્રશ્ન બોક્સ", desc:"શું તમારી પાસે માનસિક સ્વાસ્થ્યના લક્ષણો, તબીબી શબ્દો અથવા દવાઓ વિશે કોઈ સામાન્ય પ્રશ્ન છે? નીચે આપેલા સંપર્ક પેનલમાં તમારો સંદેશ લખો."},
-        {title:"મફત અને સુરક્ષિત માર્ગદર્શન", desc:"માનસિક બીમારી સાથે જોડાયેલા સામાજિક કલંક, કૌટુંબિક સહયોગ અથવા જીવનશૈલી સંબંધિત પ્રશ્નો સંપૂર્ણપણે સુરક્ષિત રીતે પૂછો."},
-        {title:"શાળા & કોલેજ આઉટરીચ", desc:"યુવા વિદ્યાર્થીઓની મદદ માટે તમારી શૈક્ષણિક સંસ્થામાં જાગૃતિ વર્કશોપ અથવા સત્રોના આયોજન માટે વિનંતી મોકલો."},
+        {title:"અભ્યાસ સંસાધનો", desc:"લક્ષણો, મનોચિકિત્સાકીય પરિભાષા અને દવાઓના સિદ્ધાંતો વિશેની સામાન્ય માહિતી અભ્યાસ પુસ્તકાલયમાં જુઓ."},
+        {title:"પરિવાર અને સમુદાય માટે માર્ગદર્શન", desc:"માનસિક સ્વાસ્થ્ય સાથે જોડાયેલા કલંક, પરિવારના સહયોગ અને વ્યવહારુ સુખાકારીના સિદ્ધાંતો વિશે જાણો."},
+        {title:"શાળા અને કોલેજ જાગૃતિ", desc:"શૈક્ષણિક સંસ્થાઓ માટે સામુદાયિક જાગૃતિ વર્કશોપ અને માહિતીપ્રદ પ્રસ્તુતિઓના વિચારો જુઓ."},
         {title:"ભ્રમણાઓનું નિવારણ", desc:"માનસિક સ્વાસ્થ્યની સારવાર સાથે જોડાયેલી સામાજિક માન્યતાઓ અને અંધશ્રદ્ધાઓને વૈજ્ઞાનિક તથ્યો દ્વારા દૂર કરવામાં મદદ મેળવો."}
       ]
     },
     topics: {
-      eyebrow:"જાણો", title:"સામાન્ય માનસિક સ્વાસ્થ્ય વિષયો", subtitle:"સમજવું એ પ્રથમ પગલું છે. ઊંડી તબીબી માહિતી વાંચવા માટે કોઈપણ કાર્ડ પર ક્લિક કરો.",
+      eyebrow:"જાણો", title:"સામાન્ય માનસિક સ્વાસ્થ્ય વિષયો", subtitle:"સામાન્ય માનસિક સ્વાસ્થ્ય વિષયો જુઓ અને જ્યાં ઉપલબ્ધ હોય ત્યાં સંબંધિત પુરાવા-આધારિત માર્ગદર્શિકા ખોલો.",
       items:[
         {
           title: "ડિપ્રેશન (ગંભીર હતાશાનો રોગ)", 
@@ -383,12 +377,9 @@ const translations = {
       disclaimer:"પરવાનગીથી શેર કરવામાં આવ્યું છે. ગોપનીયતાના રક્ષણ માટે ઓળખ સંબંધિત વિગતો દૂર કરવામાં આવી છે."
     },
     contact: {
-      eyebrow:"સંપર્કમાં રહો", title:"સામાન્ય પ્રશ્ન પૂછો", subtitle:"શું તમારી પાસે માનસિક સ્વાસ્થ્ય પરિભાષા અથવા જાગૃતિ સંબંધિત કોઈ પ્રશ્ન છે? નીચે મારો સંપર્ક કરો.",
-      formName:"પૂરું નામ", formEmail:"ઇમેઇલ સરનામું", formLanguage:"પસંદગીની ભાષા", formMessage:"સંદેશ / સામાન્ય પ્રશ્ન",
-      formSubmit:"સંદેશ મોકલો", formNote:"આ ફોર્મ સામાન્ય પ્રશ્નો માટે છે. જો આ તબીબી કટોકટી હોય, તો કૃપા કરીને તેના બદલે હેલ્પલાઇન માળખાનો ઉપયોગ કરો.",
-      clinicTitle:"જાહેર પ્રોજેક્ટ", clinicAddressNote:"આ મંચ સંપૂર્ણપણે તબીબી શિક્ષણ અને કલંક ઘટાડવા માટે સમર્પિત છે.", phoneLabel:"ફોન / વોટ્સએપ", emailLabel:"ઇમેઇલ",
-      formSuccess:"આભાર — તમારો જાગૃતિ પ્રશ્ન નોંધી લેવામાં આવ્યો છે. અમે ટૂંક સમયમાં તમારા આપેલા ઇનબોક્સમાં જવાબ આપીશું.",
-      errorName:"કૃપા કરીને તમારું પૂરું નામ દાખલ કરો.", errorEmail:"કૃપા કરીને માન્ય ઇમેઇલ સરનામું દાખલ કરો."
+      eyebrow:"સંપર્ક", title:"સંપર્ક માધ્યમ ઉપલબ્ધ નથી", subtitle:"આ જાહેર શૈક્ષણિક વેબસાઇટ હાલમાં સંદેશા સ્વીકારતી નથી. સુરક્ષિત સંપર્ક માધ્યમ ઉપલબ્ધ થશે ત્યારે તેની માહિતી આપવામાં આવશે.",
+      clinicTitle:"જાહેર પ્રોજેક્ટ", clinicAddressNote:"આ મંચ માનસિક સ્વાસ્થ્ય શિક્ષણ અને સામાજિક કલંક ઘટાડવા માટે સમર્પિત છે.",
+      unavailable:"હાલમાં કોઈ સંપર્ક ફોર્મ સક્રિય નથી. સંદેશા મોકલાતા નથી કે સંગ્રહિત થતા નથી. કૃપા કરીને આ પૃષ્ઠ પર વ્યક્તિગત, ઓળખ દર્શાવતી અથવા આરોગ્ય સંબંધિત માહિતી શેર કરશો નહીં."
     },
     footer: {
       about:"ગુજરાતમાં એક પ્રેક્ટિસિંગ મનોચિકિત્સક દ્વારા જાહેર માનસિક સ્વાસ્થ્ય જાગૃતિ પહેલ.",
