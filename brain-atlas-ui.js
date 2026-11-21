@@ -17,7 +17,7 @@ function initBrainAtlas(){
  function render(){
   host.replaceChildren();
   const toolbar=el("div","atlas-toolbar");
-  const search=el("input","atlas-search");search.type="search";search.placeholder="Search structure, function, symptom or syndrome";search.setAttribute("aria-label","Search brain anatomy");search.value=query;search.addEventListener("input",()=>{query=search.value;render();const next=host.querySelector(".atlas-search");next?.focus();next?.setSelectionRange(query.length,query.length);});
+  const search=el("input","atlas-search");search.type="search";search.placeholder="Search structure, function, symptom or syndrome";search.setAttribute("aria-label","Search brain anatomy");search.value=query;search.addEventListener("input",()=>{query=search.value;const matches=searchStructures(data,query,activeSystem);if(!matches.some(x=>x.id===activeId))activeId=matches[0]?.id||null;render();const next=host.querySelector(".atlas-search");next?.focus();next?.setSelectionRange(query.length,query.length);});
   const filter=el("select","atlas-filter");filter.setAttribute("aria-label","Filter anatomical system");
   [["all","All systems"],...data.systems.map(x=>[x.id,x.title])].forEach(([v,t])=>{const o=el("option","",t);o.value=v;o.selected=v===activeSystem;filter.append(o);});
   filter.addEventListener("change",()=>{activeSystem=filter.value;const results=searchStructures(data,query,activeSystem);if(!results.some(x=>x.id===activeId))activeId=results[0]?.id||null;render();});
