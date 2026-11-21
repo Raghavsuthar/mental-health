@@ -41,7 +41,7 @@ test('mobile menu exposes and updates its expanded state', () => {
 
 test('topic cards contain valid HTML rather than JSX-only syntax', () => {
   assert.doesNotMatch(script, /\{\{\s*\/\*\s*Access indicators\s*\*\/\}\}/);
-  assert.match(script, /class="card topic-card reveal"/);
+  assert.match(script, /const cardClass = topicId \? 'topic-card' : 'topic-card-static'/);
 });
 
 test('evidence entries do not claim an undocumented clinical review', () => {
