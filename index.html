@@ -133,7 +133,54 @@
   </div>
 </section>
 
-<!-- ================= RESOURCES ================= -->
+
+<!-- ================= EVIDENCE-BASED LEARNING LIBRARY ================= -->
+<section id="evidence-library" class="evidence-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Evidence Library</div>
+      <h2 id="evidenceTitle">Evidence-Based Psychiatry Learning Library</h2>
+      <p id="evidenceSubtitle">Structured learning notes for students, clinicians and the public — with guideline-level sources and review metadata.</p>
+    </div>
+
+    <div class="evidence-controls">
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="evidenceSearch" type="search" placeholder="Search topics, symptoms, treatment..." autocomplete="off">
+      </label>
+      <div class="evidence-filters" id="evidenceFilters" role="tablist" aria-label="Evidence library filters">
+        <button class="evidence-filter active" data-level="all" role="tab">All</button>
+        <button class="evidence-filter" data-level="Core" role="tab">Core Psychiatry</button>
+        <button class="evidence-filter" data-level="Safety" role="tab">Safety</button>
+      </div>
+    </div>
+
+    <div class="evidence-layout">
+      <div class="evidence-topic-list" id="evidenceTopicList" aria-live="polite"></div>
+      <article class="evidence-reader" id="evidenceReader" aria-live="polite">
+        <div class="evidence-empty">
+          <div class="evidence-empty-icon">📚</div>
+          <h3>Select a topic to start learning</h3>
+          <p>Each topic separates public-facing explanations from clinician/student learning notes and identifies its evidence base.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="evidence-sources">
+      <div>
+        <span class="eyebrow">Evidence sources</span>
+        <h3>How this library is sourced</h3>
+        <p>Priority is given to WHO guidance, current national/international clinical practice guidelines, systematic reviews and high-quality biomedical literature. Local Indian guidance is included where available.</p>
+      </div>
+      <div id="evidenceSourceList" class="source-list"></div>
+    </div>
+
+    <div class="evidence-disclaimer">
+      <strong>Educational use:</strong> This library supports learning and public awareness. It is not a diagnostic service, prescription, or substitute for an individual clinical assessment. Recommendations can change as evidence and guidelines are updated.
+    </div>
+  </div>
+</section>
+\n<!-- ================= RESOURCES ================= -->
 <section id="resources">
   <div class="container">
     <div class="section-head">
