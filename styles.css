@@ -174,6 +174,7 @@ header{
 
 .topic-card{ cursor:pointer; }
 .topic-card-static{cursor:default;}
+.topic-card:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
 .topic-card-action{color:var(--teal);font-size:13px;font-weight:600;display:block;margin-top:14px;}
 .topic-card .tag-dot{ width:8px; height:8px; border-radius:50%; background: var(--gold); display:inline-block; margin-right:8px; }
 
