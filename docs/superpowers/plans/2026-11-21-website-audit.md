@@ -38,8 +38,8 @@
 - Add a pure `visibleMeshesForPicking(meshes)` helper to `brain-atlas-3d.js`; it returns only meshes whose `visible` property is not false.
 
 - [x] Add tests for explicit topic-to-guide mapping, truthful/non-collecting contact UI, removal of inert blog anchors, and mobile-menu ARIA state.
-- [ ] Add a test proving invisible meshes are excluded from the 3D pick list.
-- [ ] Run the relevant tests and confirm the new assertions fail against the current code.
+- [x] Add a test proving invisible meshes are excluded from the 3D pick list.
+- [x] Run the relevant tests and confirm the new assertions fail against the current code.
 
 ### Task 2: Correct topic guide mapping and inactive blog links
 
@@ -47,9 +47,9 @@
 - Modify: `script.js`
 - Test: `tests/site-stability.test.js`
 
-- [ ] Replace the incorrect index-to-guide mapping with the correct explicit mapping; leave Stress & Burnout non-interactive until a matching guide exists.
-- [ ] Remove the inert `href="#"` Read More anchors from blog cards.
-- [ ] Run the focused regression tests.
+- [x] Replace the incorrect index-to-guide mapping with the correct explicit mapping; leave Stress & Burnout non-interactive until a matching guide exists.
+- [x] Remove the inert `href="#"` Read More anchors from blog cards.
+- [x] Run the focused regression tests.
 
 ### Task 3: Make contact UI honest and privacy-preserving
 
@@ -59,11 +59,11 @@
 - Modify: `script.js`
 - Test: `tests/site-stability.test.js`
 
-- [ ] Replace the inactive form with a clear notice that no secure contact channel is configured and no messages are sent or stored.
-- [ ] Remove the placeholder email and the English anonymity claim.
-- [ ] Remove obsolete fake-success form handling.
-- [ ] Update English, Hindi, and Gujarati contact copy consistently.
-- [ ] Run the focused regression tests.
+- [x] Replace the inactive form with a clear notice that no secure contact channel is configured and no messages are sent or stored.
+- [x] Remove the placeholder email and the English anonymity claim.
+- [x] Remove obsolete fake-success form handling.
+- [x] Update English, Hindi, and Gujarati contact copy consistently.
+- [x] Run the focused regression tests.
 
 ### Task 4: Exclude hidden 3D meshes from picking
 
@@ -71,9 +71,9 @@
 - Modify: `brain-atlas-3d.js`
 - Modify: `tests/brain-atlas-3d.test.cjs`
 
-- [ ] Add and export `visibleMeshesForPicking(meshes)`.
-- [ ] Use the helper before raycasting.
-- [ ] Run the 3D regression tests.
+- [x] Add and export `visibleMeshesForPicking(meshes)`.
+- [x] Use the helper before raycasting.
+- [x] Run the 3D regression tests.
 
 ### Task 5: Improve mobile-menu and topic-card accessibility
 
@@ -82,10 +82,11 @@
 - Modify: `script.js`
 - Test: `tests/site-stability.test.js`
 
-- [ ] Add `aria-controls` and `aria-expanded` to the menu button.
-- [ ] Keep `aria-expanded` synchronised when opening and closing.
-- [ ] Close the menu on Escape and return focus to the menu button.
-- [ ] Run the focused regression tests.
+- [x] Add `aria-controls` and `aria-expanded` to the menu button.
+- [x] Keep `aria-expanded` synchronised when opening and closing.
+- [x] Close the menu on Escape and return focus to the menu button.
+- [x] Add a visible focus indicator and remove obsolete popup semantics from topic cards.
+- [x] Run the focused regression tests.
 
 
 ### Task 6: Restore evidence-library interactions
@@ -103,9 +104,9 @@
 **Files:**
 - Review all changed files and workflow output.
 
-- [ ] Run `node --check` on all top-level JavaScript and test files.
-- [ ] Run `node --test tests/*.test.*`.
-- [ ] Confirm GitHub Actions checks pass on the pull request.
-- [ ] Perform a separate self-review because no independent reviewer subagent is available.
-- [ ] Open a PR to `main`; do not merge it.
-- [ ] Document any deferred findings and verification limitations.
+- [x] Run `node --check` on all top-level JavaScript and test files.
+- [x] Run `node --test tests/*.test.*`.
+- [x] Confirm GitHub Actions checks pass on the pull request.
+- [x] Perform a separate self-review because no independent reviewer subagent is available.
+- [x] Open a PR to `main`; do not merge it.
+- [x] Document any deferred findings and verification limitations.
